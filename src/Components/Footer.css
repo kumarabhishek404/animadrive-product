@@ -1,0 +1,135 @@
+.footer {
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: #fff;
+    padding: 30px 10px;
+}
+.footer > section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo_container {
+    /* border: 2px solid red; */
+    height: 100%;
+    padding: 6px 8px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.logo {
+    text-decoration: none;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    margin-left: -75px;
+}
+.footer_links {
+    margin-bottom: 20px;
+    display: flex;
+    list-style: none;
+    align-self: flex-start;
+}
+.footer_link_item {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+.websites_rights {
+    margin-left: -160px;
+}
+.copyright {
+    margin-bottom: -5px;
+}
+
+.contact_container {
+    /* border: 2px solid red; */
+    height: 100%;
+    padding: 6px 8px;;
+    display: grid;
+}
+.contact_container h1 {
+    margin-bottom: 10px;
+}
+.address {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.phone, .email {
+    display: flex;
+}
+.address p {
+    /* margin-left: 5px; */
+}
+.phone p, .email p {
+    /* margin-left: 5px; */
+    margin-top: 5px;
+}
+
+.about_container {
+    /* border: 2px solid red; */
+    padding: 6px 8px;
+    height: 100%;
+}
+.about_container > h1 {
+    margin-bottom: 10px;
+}
+.about_company p{
+    padding: 10px 8px 0 0;
+}
+.social_links {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 18px 8px 0px 0px ;
+}
+.link_item {
+    color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+    .footer {
+        grid-template-columns: 1fr;
+    }
+    .logo_container,.about_container,.contact_container {
+        text-align: center;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    .logo,.websites_rights,.footer_links {
+        margin-left: 0;
+        align-self: center;
+    }
+    .address p {
+        display: block;
+        text-align: start;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .contact_container {
+        width: 70%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .footer_links {
+        flex-flow: column;
+    }
+    .footer_links span {
+        display: none;
+    }
+    .footer_link_item {
+        margin-bottom: 10px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .contact_container {
+        width: 85%;
+    }
+    .about_container {
+        width: 70%;
+    }
+
+}
