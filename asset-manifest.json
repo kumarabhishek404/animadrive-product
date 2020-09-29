@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/animadrive-product/static/css/main.87d91fdd.chunk.css",
+    "main.js": "/animadrive-product/static/js/main.0e692809.chunk.js",
+    "main.js.map": "/animadrive-product/static/js/main.0e692809.chunk.js.map",
+    "runtime-main.js": "/animadrive-product/static/js/runtime-main.eaad0d75.js",
+    "runtime-main.js.map": "/animadrive-product/static/js/runtime-main.eaad0d75.js.map",
+    "static/js/2.6b405073.chunk.js": "/animadrive-product/static/js/2.6b405073.chunk.js",
+    "static/js/2.6b405073.chunk.js.map": "/animadrive-product/static/js/2.6b405073.chunk.js.map",
+    "index.html": "/animadrive-product/index.html",
+    "precache-manifest.c5d8eabeda9f669cba5ffc4305a8e7e9.js": "/animadrive-product/precache-manifest.c5d8eabeda9f669cba5ffc4305a8e7e9.js",
+    "service-worker.js": "/animadrive-product/service-worker.js",
+    "static/css/main.87d91fdd.chunk.css.map": "/animadrive-product/static/css/main.87d91fdd.chunk.css.map",
+    "static/js/2.6b405073.chunk.js.LICENSE.txt": "/animadrive-product/static/js/2.6b405073.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eaad0d75.js",
+    "static/js/2.6b405073.chunk.js",
+    "static/css/main.87d91fdd.chunk.css",
+    "static/js/main.0e692809.chunk.js"
+  ]
+}
