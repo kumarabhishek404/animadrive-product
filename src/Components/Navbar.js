@@ -18,7 +18,6 @@ function Navbar() {
 
     const openSignInMenu = (e) => {
         setSignmenu(!signmenu)
-        var target = e.currentTarget
     }
 
     const closeButtonHandler = () => {
@@ -70,14 +69,14 @@ function Navbar() {
                                         SignIn
                                     <div className={signmenu ? 'dropdown_content_active' : 'dropdown_content'}>
                                             <div className='register_container'>
-                                                <Link to='/signin'>
+                                                <Link to='/signin' onClick={closeButtonHandler}>
                                                     <button>SignIn</button><ExpandMoreIcon className='dropdown_symbol' />
                                                 </Link>
-                                                <CloseIcon className='signmenu_close_btn' />
+                                                <CloseIcon className='signmenu_close_btn' onClick={closeButtonHandler} />
                                                 <div className='register_newuser'>
                                                     <h6>New customer?</h6>
                                                     <span>
-                                                        <Link to='/register'>
+                                                        <Link to='/register' onClick={closeButtonHandler}>
                                                             Start here.
                                                         </Link>
                                                     </span>
@@ -86,13 +85,13 @@ function Navbar() {
                                             <hr />
                                             <div className='dropdown_content_container'>
                                                 <h3>Your Acount</h3>
-                                                <Link to='/acount' className='dropdown_content_item'>
+                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
                                                     Your Acount
                                         </Link>
-                                                <Link to='/orders' className='dropdown_content_item'>
+                                                <Link to='/orders' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Orders
                                         </Link>
-                                                <Link to='/offers' className='dropdown_content_item'>
+                                                <Link to='/offers' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Offers
                                         </Link>
                                             </div>

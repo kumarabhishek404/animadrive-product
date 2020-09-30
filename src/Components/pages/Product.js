@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Product.css'
 import { Link } from 'react-router-dom'
 import FacebookIcon from '@material-ui/icons/Facebook';
+import Button from '../Button'
 import InstagramIcon from '@material-ui/icons/Instagram';
 // import LinkedInIcon from '@material-ui/icons/LinkedIn';
 // import TwitterIcon from '@material-ui/icons/Twitter';
@@ -154,7 +155,7 @@ function Product() {
                                     </div>
                                 </div>
                                 <div className='input_submit_btn'>
-                                    <button>Submit</button>
+                                    <Button buttonStyle='btn_outline'>Submit</Button>
                                 </div>
                             </div>
                         </form>

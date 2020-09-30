@@ -6,6 +6,7 @@ import Footer from './Components/Footer'
 import Home from './Components/pages/Home'
 import Orders from './Components/pages/Orders'
 import Product from './Components/pages/Product'
+import Products from './Components/pages/Products'
 import Register from './Components/pages/Register'
 import Signin from './Components/pages/Signin'
 import Cart from './Components/pages/Cart'
@@ -16,7 +17,6 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' component={Home} exact />
           <Route path='/products' component={Product} />
           <Route path='/register' component={Register} />
           <Route path='/signin' component={Signin} />
@@ -25,6 +25,7 @@ function App() {
           <Route path='/acount' component={Orders} />
           <Route path='/orders' component={Orders} />
           <Route path='/offers' component={Orders} />
+          <Route path='/' component={Products} exact />
         </Switch>
         <Footer />
       </Router>

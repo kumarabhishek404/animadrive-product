@@ -1,0 +1,88 @@
+.register {
+    /* border: 2px solid red; */
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+.register_form_container {
+    width: 400px;
+    min-width: 400px;
+    /* padding: 0 100px; */
+    /* border: 2px solid blue; */
+}
+.register_container h1 {
+    text-align: center;
+}
+.register_form {
+    /* border: 2px solid green; */
+    padding: 20px 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+/* .username,.contact {
+    border: 2px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+} */
+.user_already_exist {
+    display: flex;
+    margin-top: 10px;
+}
+.user_already_exist h5 {
+    margin-right: 5px;
+}
+.username,.email,.mobile_number, .password {
+    width: 100%;
+}
+.username input,.email input,.code input, .phone input, .password input {
+    width: 100%;
+    padding: 6px 8px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    height: 40px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #e1e1e1;
+}
+.username input:focus,.email input:focus,.code input:focus, .phone input:focus .password input:focus{
+    background-color: green;
+    transition: background-color 1s ease-in;
+
+}
+.mobile_number {
+    display: flex;
+}
+.code input {
+    width: 40%;
+}
+.code {
+    width: 40%;
+}
+.phone {
+    width: 100%;
+}
+.phone input {
+    width: 150%;
+    margin-left: -50px;
+}
+.register button {
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    border: 2px solid #000;
+}
+
+@media screen and (max-width: 700px) {
+    .register_form_container {
+        width: 300px;
+        min-width: 15px;
+        padding: 0 10px;
+        /* border: 2px solid blue; */
+    }
+    .code {
+        width: 100%;
+    }
+}
