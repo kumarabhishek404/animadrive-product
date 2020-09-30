@@ -22,7 +22,7 @@ function Product_card({ name, price, pic_src }) {
             <li className='card_item'>
                 <Link to='/products' className='card_item_link'>
                     <figure className='card_item_pic-wrap'>
-                        <image src={pic_src} alt='product Image' className='card_item_image' />
+                        <img src={pic_src} alt='product Image' className='card_item_image' />
                     </figure>
                     <div className='card_item_info'>
                         <h1 className='card_item_text'>{name}</h1>

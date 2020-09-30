@@ -9,7 +9,6 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import StarIcon from '@material-ui/icons/Star';
-import StarRating from 'react-star-rating'
 
 
 function Product() {
@@ -21,7 +20,6 @@ function Product() {
     const [rating4, setRating4] = useState(false)
     const [rating5, setRating5] = useState(false)
 
-    const [ratingCounter, setRatingCounter] = useState(0)
 
     const clickLoadImage = (e) => {
         setSelectedImage(e.target.src)
