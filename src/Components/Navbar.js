@@ -27,7 +27,7 @@ function Navbar() {
     const closeMenuHandler = () => {
         setClick(false)
     }
-    const closeSearchHandler = () => {
+    const handleSearchAnimation = () => {
         setSearch(!search)
         setClick(false)
     }
@@ -39,20 +39,25 @@ function Navbar() {
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
                         <div><PetIcon className='petIcon' fontSize="large" /></div>
                     </Link>
-                    <div className='search_Bar' onClick={closeSearchHandler}>
+                    {/* <div className='search_Bar' onClick={closeSearchHandler}>
                         {search ? <CloseIcon fontSize='large' /> : <SearchIcon fontSize='large' />}
-                    </div>
+                    </div> */}
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
                     </div>
-                    <div className={search ? 'navbar_search active' : 'navbar_search'}>
+                    <div className={search ? 'active_navbar_search_input' : 'navbar_search_input'}>
                         <form>
-                            <input type='text' className='search' />
+                            <input type='text' className='search' placeholder='Explore products...' />
                         </form>
+                    </div>
+                    <div className='search_bar_icon' onClick={handleSearchAnimation}>
+                        <SearchIcon fontSize='large' />
                     </div>
                     <ul className={click ? 'nav_menu active' : 'nav_menu'}>
                         <div className='nav_menu_box'>
-
+                            {/* <div className='search_Bar' onClick={closeSearchHandler}>
+                                {search ? <CloseIcon fontSize='large' /> : <SearchIcon fontSize='large' />}
+                            </div> */}
                             <li className='nav_item'>
                                 <Link to='/' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Home
@@ -88,7 +93,7 @@ function Navbar() {
                                                 <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
                                                     Your Acount
                                         </Link>
-                                                <Link to='/orders' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                <Link to='' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Orders
                                         </Link>
                                                 <Link to='/offers' className='dropdown_content_item' onClick={closeButtonHandler} >
@@ -100,12 +105,11 @@ function Navbar() {
                                     <ExpandMoreIcon className='dropdown_symbol' />
                                 </div>
                             </li>
-                        </div>
-                        <div className='nav_menu_box'>
-                            <Link to='/cart' className='navbar_links_item'>
-                                <ShoppingCartIcon fontSize='large' />
-                            </Link>
-                            {/* <li className='nav_item'>
+                            <div className='nav_menu_boxer'>
+                                <Link to='/cart' className='navbar_links_item'>
+                                    <ShoppingCartIcon fontSize='large' />
+                                </Link>
+                                {/* <li className='nav_item'>
                                 <Link to='/register' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Register
                             </Link>
@@ -115,6 +119,7 @@ function Navbar() {
                                     SignIn
                             </Link>
                             </li> */}
+                            </div>
                         </div>
                     </ul>
                 </div>

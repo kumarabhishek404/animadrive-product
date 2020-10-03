@@ -12,7 +12,7 @@
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 999;
+    z-index: 9;
 }
 .navbar_container {
     display: flex;
@@ -36,9 +36,70 @@
     margin-left: 5px;
 }
 
-.navbar_search {
+
+
+.navbar_search_input {
+    position: absolute;
+    top: 25px;
+    right: 440px;
+    /* min-width: 400px; */
+    /* visibility: hidden; */
+}
+.navbar_search_input input {
+    width: 1px;
+    height: 30px;
+    padding: 2px 2px;
+    font-size: 1rem;
+    border-radius: 5px;
+    animation: zero 0.6s 1 ease-in;
+}
+.search_bar_icon {
+    position: absolute;
+    top: 23px;
+    right: 400px;
+    color: white;
+    cursor: pointer;
+}
+.active_navbar_search_input input {
+    border-radius: 5px;
+    height: 30px;
     width: 40vw;
-    margin: 2rem;
+    padding: 6px 8px;
+    font-size: 1rem;
+    animation: full 0.6s 1 ease-in;
+    /* border: 2px solid red; */
+}
+.active_navbar_search_input{
+    position: absolute;
+    top: 25px;
+    right: 440px;
+    z-index: 100;
+    
+}
+@keyframes full {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 40vw;
+    }
+}
+@keyframes zero {
+    0% {
+        width: 40vw;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+
+
+
+.navbar_search {
+    display: none;
+    width: 40vw;
+    /* margin: 2rem; */
     display: grid;
 }
 .navbar_search input {
@@ -67,9 +128,11 @@
     grid-gap: 0px;
     text-align: center;
     margin-right: 1rem;
-    width: 30vw;
+    width: 70vw;
 }
 .nav_menu_box {
+    /* border: 2px solid blue; */
+    min-width: 50px;
     display: flex;
 }
 .signIn .navbar_links_item{
@@ -201,6 +264,8 @@
         opacity: 1;
         z-index: -1;
         transition: all 0.5s ease;
+    }.navbar_logo {
+        margin-right: 200%;
     }
     .nav_menu_box {
         flex-direction: column;
@@ -223,15 +288,17 @@
       position: absolute;
       top: -3px;
       right: 0;
+      /* width: 30vw; */
       transform: translate(-50%, 60%);
       font-size: 1.8rem;
       cursor: pointer;
+      /* margin-left: 900px; */
     }
-    .navbar_search {
-        margin-right: 3.5rem;
+    .search_bar_icon {
+        right: 60px;
     }
-    .navbar_search input {
-        width: 100%;
+    .navbar_search_input,.active_navbar_search_input {
+        right: 100px;
     }
     .navbar_logo {
         margin-left: 10px;

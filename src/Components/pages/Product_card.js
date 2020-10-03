@@ -31,8 +31,8 @@ function Product_card({ name, price, pic_src }) {
                             <p>A paragraph is a series<br /> of related sentences developing a <br />central idea, called the topic.<br /> Try to think about paragraphin terms of th: a paragraph<br /> is a sentence or a group of sentences e central,<br /> unified idea. Paragraphs add one idea at a time to yt.</p>
                         </div>
                         <div className='product_btn'>
-                            <Button id='btn' buttonSize={changeClass} buttonStyle='btn_outline'>Add to cart</Button>
-                            <Button buttonSize={changeClass} buttonStyle='btn_outline'>Buy now</Button>
+                            <Button className='btn' buttonStyle='btn_outline'>Add to cart</Button>
+                            <Button buttonStyle='btn_outline'>Buy now</Button>
                         </div>
                     </div>
                 </Link>

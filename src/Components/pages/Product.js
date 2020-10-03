@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Product.css'
 import { Link } from 'react-router-dom'
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -64,6 +64,10 @@ function Product() {
         setRating4(true)
         setRating5(true)
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     return (
         <div className='product'>

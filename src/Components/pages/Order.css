@@ -1,0 +1,167 @@
+.order {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+.order_container {
+    /* border: 2px solid green; */
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    margin-bottom: 20px;
+}
+.order_container_wrapper {
+    /* border: 2px solid pink; */
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.order_details_form {
+    /* border: 2px solid black; */
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 2.4rem;
+    padding: 50px 10px;
+}
+.order_details_form form {
+    text-align: center;
+    width: 70%;
+    max-width: 700px
+}
+.order_username {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.order_username input {
+    padding: 6px 8px;
+    font-size: 1rem;
+    width: 48%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #a6a6a6;
+    border-right: 1px solid #a6a6a6;
+}
+.additional_info textarea, .order_region input, .order_region select, .order_username input, .order_address input, .order_email input, .order_phone input, .city input {
+    background-color: #e1e1e1;
+}
+.order_address input, .order_email input, .order_phone input, .city input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 6px 8px ;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #a6a6a6;
+    border-right: 1px solid #a6a6a6;
+}
+.order_region {
+    display: flex;
+    justify-content: space-between;
+}
+.order_region input, .order_region select {
+    width: 30%;
+    font-size: 1rem;
+    padding: 6px 8px ;
+    margin-bottom: 10px;
+}
+.additional_info textarea {
+    padding: 6px 8px ;
+    width: 100%;
+}
+
+.your_order {
+    width: 100%;
+    padding: 30px 20px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.final_order_container {
+    border: 2px solid #e1e1e1;
+    padding: 10px 0;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.your_order_container {
+    /* border: 2px solid red; */
+    width: 100%;
+    padding: 20px 30px;
+    /* height: 100px; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.product_list {
+    /* border: 2px solid pink; */
+    width: 20%;
+}
+.CCAvenue {
+    text-align: center;
+    padding: 20px 10px;
+    width: 50%;
+    border: 2px solid #e1e1e1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.CCAvenue img {
+    width: 95%;
+}
+.CCAvenue p {
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width:960px) {
+    .order_container,.order_container_wrapper {
+        width: 100%;
+    }
+    .your_order_container {
+        flex-flow: column;
+        line-height: 1.3rem;
+    }
+    .product_list {
+        width: 100%;
+    }
+    .final_order_container {
+        width: 70%;
+    }
+    .CCAvenue {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .order_details_form {
+        width: 100%;
+    }
+    .order_username, .order_region {
+        flex-flow: column;
+    }
+    .order_username input, .order_region input, .order_region select {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .final_order_container {
+        width: 80%;
+    }
+    .CCAvenue {
+        width: 80%;
+    }
+}

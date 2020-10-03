@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 
 const styles = ["btn_primary", "btn_outline"]
 
-const sizes = ['btn_medium', 'btn_large']
+const sizes = ['btn_size']
 
-function Button({ type, onClick, buttonStyle, buttonSize, children }) {
+function Button({ path, type, onClick, buttonStyle, buttonSize, children }) {
     const checkButtonStyle = styles.includes(buttonStyle)
         ? buttonStyle
         : styles[0]
 
-    const checkButtonSize = sizes.includes(buttonSize)
-        ? buttonSize
-        : sizes[0]
+    // const checkButtonSize = sizes.includes(buttonSize)
+    //     ? buttonSize
+    //     : sizes[0]
 
     return (
-        <div>
-            <Link>
+        <div className='button_container'>
+            <Link className='button_link' to={path ? path : '#'} >
                 <button
-                    className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+                    className={`btn ${checkButtonStyle} ${sizes}`}
                     onClick={onClick}
                     type={type}>
                     {children}
