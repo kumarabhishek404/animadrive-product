@@ -12,16 +12,18 @@ function Cart_item({ item, OneSingleTotal }) {
     const [singleTotal, setSingleTotal] = useState(item.price)
     const [productQuantity, setProductQuantity] = useState(0)
 
+
     useEffect(() => {
         setProductQuantity(item.quantity)
         setSingleTotal(item.price * (item.quantity))
         OneSingleTotal(item.price * (item.quantity))
+
     }, [])
 
     //to remove the item completely
     const handleRemoveProduct = (id) => {
         removeProduct(`product_${id}`)
-        window.location.reload()
+        // window.location.reload()
 
     }
     //to add the quantity
@@ -30,6 +32,7 @@ function Cart_item({ item, OneSingleTotal }) {
         setSingleTotal((price * (productQuantity)) + price)
         // OneTotal((price * (productQuantity)) + price)
         setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity + 1 }, { path: '/' })
+        // window.location.reload()
     }
     //to substruct from the quantity
     const handleSubtractQuantity = (id, name, image, desc, price) => {
@@ -67,6 +70,7 @@ function Cart_item({ item, OneSingleTotal }) {
                         </div>
                         <Button className="waves-effect waves-light btn pink remove" onClick={() => handleRemoveProduct(item.id)} >Remove</Button>
                     </div>
+                    {singleTotal}
                 </div>
             </div>
         </div>

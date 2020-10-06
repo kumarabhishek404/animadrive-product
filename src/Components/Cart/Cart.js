@@ -13,6 +13,7 @@ function Cart(props) {
     const [cookiesArray, setCookiesArray] = useState([])
     const [total, setTotal] = useState(0)
     const [oneTotal, setOneTotal] = useState(0)
+    // const [render, setRender] = useState(false)
 
     const [productFromCookies, getProductFromCookies] = useCookies()
     // const [quantity, setQuantity] = useCookies()
@@ -22,41 +23,42 @@ function Cart(props) {
         getProductFromCookies({ path: '/' })
         console.log(productFromCookies);
         var objMap = new Map(Object.entries(productFromCookies));
-
-        objMap.forEach((item, key) => {
-            if (key.includes('product')) {
-                cookiesArray.push(item)
-                console.log(key, item);
-            }
-        })
+        setCookiesArray(objMap)
         console.log(cookiesArray);
-        console.log(cookiesArray);
-        cookiesArray.map(item => {
-            console.log(item.price);
-        })
+        // objMap.forEach((item, key) => {
+        //     if (key.includes('product')) {
+        //         cookiesArray.push(item)
+        //         console.log(key, item.price, "price");
+        //     }
+        // })
+        // console.log(cookiesArray);
+        // cookiesArray.map(item => {
+        //     console.log(item.price);
+        // })
 
         setTotal(prevTotal => prevTotal + oneTotal)
+        // alert(render)
+        console.log(productFromCookies);
     }, [])
+    // var objMap = new Map(Object.entries(productFromCookies));
+    console.log(productFromCookies);
 
     const handleOneTotal = (one) => {
         setTotal(prevTotal => prevTotal + one)
     }
-
+    // getProductFromCookies({ path: '/' })
+    // var objMap = new Map(Object.entries(productFromCookies));
     return (
         <div className="cart">
             <h1>You have ordered:</h1>
             <div className="cart_container">
                 <div className="cart_container_wrapper">
-                    {cookiesArray.length
-                        ? (
-                            cookiesArray.map(item =>
-                                <div>
-                                    <CartItem item={item} OneSingleTotal={handleOneTotal} />
-                                </div>
-                            )
-                        ) :
-                        (
-                            <p>Nothing.</p>
+                    {
+                        Object.keys(productFromCookies).map((item, key) =>
+                            (item.includes('product'))
+                                ? <CartItem item={productFromCookies[item]} OneSingleTotal={handleOneTotal} />
+                                : null
+
                         )
                     }
 
