@@ -2,3 +2,33 @@
     font-family: 'Abril Fatface', cursive;
     scroll-behavior: smooth;
 }
+.App {
+    height: 669px;
+    /* padding-bottom: 100%; */
+    overflow: auto;
+}
+.comeToStart {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    transition: all 1s ease;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    /* z-index: -1; */
+}
+.signDisplay {
+    /* position: fixed; */
+    bottom: 20px;
+    right: -40px;
+}
+@media screen and (max-width: 960px) {
+    .comeToStart {
+        right: 10px;
+    }
+    .signDisplay {
+        right: -40px;
+    }
+}

@@ -1,5 +1,5 @@
 import './Navbar.css'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 // import SvgIcon from '@material-ui/core/SvgIcon';
@@ -15,6 +15,10 @@ function Navbar() {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
+    const [windowScroll, setWindowScroll] = useState(false)
+    const [prevScrollPos, setPrevScrollPos] = useState()
+    const [currentScrollPos, setCurrentScrollPos] = useState()
+    const scrollNavbar = useRef()
 
     const openSignInMenu = (e) => {
         setSignmenu(!signmenu)
@@ -32,6 +36,39 @@ function Navbar() {
         setClick(false)
     }
 
+    // window.onscroll = () => {
+    //     setPrevScrollPos(window.pageYOffset)
+    //     if (prevScrollPos > 100) {
+    //         console.log(prevScrollPos);
+    //         scrollNavbar.current.style.top = '-80px';
+    //     }
+    //     else {
+    //         scrollNavbar.current.style.top = '0px';
+    //     }
+    //     // alert("scrolling navbar")
+    //     // setCurrentScrollPos(window.pageYOffset)
+    //     // if (prevScrollPos > currentScrollPos) {
+    //     //     scrollNavbar.current.style.top = '0';
+    //     // }
+    //     // else {
+    //     //     scrollNavbar.current.style.top = '-40px';
+    //     // }
+    //     // prevScrollPos = currentScrollPos
+
+    // }
+
+    // var prevScrollpos = window.pageYOffset;
+    // window.onscroll = function () {
+    //     var currentScrollpos = window.pageYOffset;
+    //     if (prevScrollpos > currentScrollpos) {
+    //         scrollNavbar.current.style.top = "0";
+    //     }
+    //     else {
+    //         scrollNavbar.current.style.top = "-80px"
+    //     }
+    //     prevScrollpos = currentScrollpos
+    // }
+
     return (
         <>
             <nav className='navbar'>
@@ -45,13 +82,15 @@ function Navbar() {
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
                     </div>
-                    <div className={search ? 'active_navbar_search_input' : 'navbar_search_input'}>
-                        <form>
-                            <input type='text' className='search' placeholder='Explore products...' />
-                        </form>
-                    </div>
-                    <div className='search_bar_icon' onClick={handleSearchAnimation}>
-                        <SearchIcon fontSize='large' />
+                    <div className={search ? 'search_box active' : 'search_box'}>
+                        <div className={search ? 'active_navbar_search_input' : 'navbar_search_input'}>
+                            <form>
+                                <input type='text' className='search' placeholder='Explore products...' />
+                            </form>
+                        </div>
+                        <div className='search_bar_icon' onClick={handleSearchAnimation}>
+                            <SearchIcon fontSize='large' />
+                        </div>
                     </div>
                     <ul className={click ? 'nav_menu active' : 'nav_menu'}>
                         <div className='nav_menu_box'>
@@ -69,8 +108,21 @@ function Navbar() {
                             </Link>
                             </li>
                             <li className='nav_item'>
+                                <Link to='/register' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Join us
+                            </Link>
+                            </li>
+                            <li className='nav_item'>
+                                <Link to='/signin' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Colleboration
+                            </Link>
+                            </li>
+                            <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
+                                    <Link className='navbar_links_item dropdown_btn'>
+                                        SignIn
+                                </Link>
+                                    {/* <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
                                         SignIn
                                     <div className={signmenu ? 'dropdown_content_active' : 'dropdown_content'}>
                                             <div className='register_container'>
@@ -102,7 +154,7 @@ function Navbar() {
                                             </div>
                                         </div>
                                     </Link>
-                                    <ExpandMoreIcon className='dropdown_symbol' />
+                                    <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
                             <div className='nav_menu_boxer'>

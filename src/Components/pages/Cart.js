@@ -16,10 +16,14 @@ function Cart() {
                 <h1>Cart</h1>
                 <div className='cart_container'>
                     <div className='cart_container_wrapper'>
-                        <CartItem productName='Plant food 1' price='$23,000' product_src='https://elcopcbonline.com/photos/product/4/176/4.jpg' />
+
+                        {/* <CartItem productName='Plant food 1' price='$23,000' product_src='https://elcopcbonline.com/photos/product/4/176/4.jpg' />
                         <CartItem productName='Plant food 2' price='$21,000' product_src='https://elcopcbonline.com/photos/product/4/176/4.jpg' />
-                        <CartItem productName='Plant food 3' price='$26,000' product_src='https://elcopcbonline.com/photos/product/4/176/4.jpg' />
+                        <CartItem productName='Plant food 3' price='$26,000' product_src='https://elcopcbonline.com/photos/product/4/176/4.jpg' /> */}
                     </div>
+
+
+
                     <div className='cart_action'>
                         <Button buttonStyle='btn_outline'>Update cart</Button>
                         <Button buttonStyle='btn_outline'>More Shop</Button>

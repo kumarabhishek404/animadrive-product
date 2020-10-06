@@ -1,0 +1,29 @@
+.home {
+    border: 2px solid red;
+}
+.home_container {
+    border: 2px solid blue;
+}
+.home_wrapper {
+    border: 2px solid pink;
+}
+.home_image_slide {
+    border: 2px solid green;
+    width: 100%;
+    height: 15vw;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.home_image_slide img {
+    width: 100%;
+    height: 15vw;
+    z-index: -1;
+}
+.next_image {
+    /* border: 2px solid red; */
+    padding: 6px 8px;
+    z-index: 999;
+    /* position: absolute;
+    top: 180px;
+    right: 30px; */
+}

@@ -8,7 +8,7 @@ function Signin() {
         <div>
             <div className='register'>
                 <div className='register_form_container'>
-                    <h1>SignIn Here</h1>
+                    <h1>Colleboration with Us</h1>
                     <form className='register_form'>
                         <div className='email'>
                             <input type='email' for='email' name='email' placeholder='Your email;' />
@@ -16,13 +16,13 @@ function Signin() {
                         <div className='password'>
                             <input type='password' for='password' name='password' placeholder='Password:' />
                         </div>
-                        <Button>SignIn</Button>
-                        <div className='user_already_exist'>
+                        <Button>Colleborate</Button>
+                        {/* <div className='user_already_exist'>
                             <h5>Create an acount</h5>
                             <Link to='/register'>
                                 register
                         </Link>
-                        </div>
+                        </div> */}
                     </form>
                 </div>
             </div>

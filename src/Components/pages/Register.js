@@ -7,7 +7,7 @@ function Register() {
     return (
         <div className='register'>
             <div className='register_form_container'>
-                <h1>Register Here</h1>
+                <h1>Join Us</h1>
                 <form className='register_form'>
                     <div className='username'>
                         <input type='text' for='name' name='name' placeholder='Username:' />
@@ -27,13 +27,13 @@ function Register() {
                         <input type='password' for='password' name='password' placeholder='Password:' />
                     </div>
 
-                    <Button>Register</Button>
-                    <div className='user_already_exist'>
+                    <Button>Join</Button>
+                    {/* <div className='user_already_exist'>
                         <h5>Already have an acount</h5>
                         <Link to='/signin'>
                             signin
                         </Link>
-                    </div>
+                    </div> */}
                 </form>
             </div>
         </div>
