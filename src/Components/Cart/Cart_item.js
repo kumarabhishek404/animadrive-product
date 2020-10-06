@@ -6,15 +6,16 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import Button from '../Button'
 import { Link } from 'react-router-dom'
 
-function Cart_item({ item }) {
+function Cart_item({ item, OneSingleTotal }) {
     const [product, setProduct, removeProduct] = useCookies()
 
     const [singleTotal, setSingleTotal] = useState(item.price)
-    const [productQuantity, setProductQuantity] = useState(1)
+    const [productQuantity, setProductQuantity] = useState(0)
 
     useEffect(() => {
         setProductQuantity(item.quantity)
         setSingleTotal(item.price * (item.quantity))
+        OneSingleTotal(item.price * (item.quantity))
     }, [])
 
     //to remove the item completely
@@ -25,22 +26,18 @@ function Cart_item({ item }) {
     }
     //to add the quantity
     const handleAddQuantity = (id, name, image, desc, price, quantity) => {
-        // alert(id, name)
         setProductQuantity(prevQuantity => prevQuantity + 1)
         setSingleTotal((price * (productQuantity)) + price)
-        // console.log(id, name, image, desc, price, productQuantity);
-        setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity }, { path: '/' })
-        // window.location.reload()
+        // OneTotal((price * (productQuantity)) + price)
+        setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity + 1 }, { path: '/' })
     }
     //to substruct from the quantity
     const handleSubtractQuantity = (id, name, image, desc, price) => {
         if (productQuantity > 1) {
             setProductQuantity(prevQuantity => prevQuantity - 1)
             setSingleTotal(singleTotal - (price))
+            setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity - 1 }, { path: '/' })
         }
-        // console.log(id, name, image, desc, price, productQuantity);
-        setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity }, { path: '/' })
-        // window.location.reload()
     }
 
     return (

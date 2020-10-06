@@ -12,6 +12,7 @@ import '../pages/Cart.css'
 function Cart(props) {
     const [cookiesArray, setCookiesArray] = useState([])
     const [total, setTotal] = useState(0)
+    const [oneTotal, setOneTotal] = useState(0)
 
     const [productFromCookies, getProductFromCookies] = useCookies()
     // const [quantity, setQuantity] = useCookies()
@@ -32,9 +33,14 @@ function Cart(props) {
         console.log(cookiesArray);
         cookiesArray.map(item => {
             console.log(item.price);
-            setTotal(prevState => prevState + item.price)
         })
+
+        setTotal(prevTotal => prevTotal + oneTotal)
     }, [])
+
+    const handleOneTotal = (one) => {
+        setTotal(prevTotal => prevTotal + one)
+    }
 
     return (
         <div className="cart">
@@ -44,7 +50,9 @@ function Cart(props) {
                     {cookiesArray.length
                         ? (
                             cookiesArray.map(item =>
-                                <CartItem item={item} />
+                                <div>
+                                    <CartItem item={item} OneSingleTotal={handleOneTotal} />
+                                </div>
                             )
                         ) :
                         (
