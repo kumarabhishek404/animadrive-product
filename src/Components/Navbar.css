@@ -287,6 +287,14 @@
     text-decoration: none;
     color: #fff;
 }
+.cart_image::after {
+    content: '3';
+    color: red;
+    position: absolute;
+    top: 12px;
+    right: 80px;
+    z-index: 1;
+}
 
 @media screen and (max-width: 960px){
     .nav_menu {

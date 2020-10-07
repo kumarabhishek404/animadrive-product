@@ -8,6 +8,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -15,6 +16,7 @@ function Navbar() {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
+    const [authenticate, setAuthenticate] = useState(true)
     const [windowScroll, setWindowScroll] = useState(false)
     const [prevScrollPos, setPrevScrollPos] = useState()
     const [currentScrollPos, setCurrentScrollPos] = useState()
@@ -108,36 +110,36 @@ function Navbar() {
                             </Link>
                             </li>
                             <li className='nav_item'>
-                                <Link to='/register' className='navbar_links_item' onClick={closeMenuHandler}>
-                                    Join us
+                                <Link to='/joinus' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Join Us
                             </Link>
                             </li>
                             <li className='nav_item'>
-                                <Link to='/signin' className='navbar_links_item' onClick={closeMenuHandler}>
+                                <Link to='/colleboration' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Colleboration
                             </Link>
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn'>
-                                        SignIn
-                                </Link>
-                                    {/* <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
-                                        SignIn
-                                    <div className={signmenu ? 'dropdown_content_active' : 'dropdown_content'}>
+                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
+                                        {(authenticate) ? <PersonOutlineIcon /> : 'SignUp'}
+                                        {/* </Link>
+                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
+                                        SignIn */}
+                                        <div className={signmenu ? 'dropdown_content_active' : 'dropdown_content'}>
                                             <div className='register_container'>
                                                 <Link to='/signin' onClick={closeButtonHandler}>
                                                     <button>SignIn</button><ExpandMoreIcon className='dropdown_symbol' />
                                                 </Link>
                                                 <CloseIcon className='signmenu_close_btn' onClick={closeButtonHandler} />
-                                                <div className='register_newuser'>
+                                                {/* <div className='register_newuser'>
                                                     <h6>New customer?</h6>
                                                     <span>
                                                         <Link to='/register' onClick={closeButtonHandler}>
                                                             Start here.
                                                         </Link>
                                                     </span>
-                                                </div>
+                                                </div> */}
                                             </div>
                                             <hr />
                                             <div className='dropdown_content_container'>
@@ -154,11 +156,11 @@ function Navbar() {
                                             </div>
                                         </div>
                                     </Link>
-                                    <ExpandMoreIcon className='dropdown_symbol' /> */}
+                                    {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
                             <div className='nav_menu_boxer'>
-                                <Link to='/cart' className='navbar_links_item'>
+                                <Link to='/cart' className='navbar_links_item cart_image'>
                                     <ShoppingCartIcon fontSize='large' />
                                 </Link>
                                 {/* <li className='nav_item'>

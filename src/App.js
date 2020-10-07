@@ -7,13 +7,12 @@ import Home from './Components/pages/Home'
 import Order from './Components/pages/Order'
 import Product from './Components/pages/Product'
 import Products from './Components/pages/Products'
-import Register from './Components/pages/Register'
-import Signin from './Components/pages/Signin'
+import Colleboration from './Components/pages/Colleboration'
+import JoinUs from './Components/pages/JoinUs'
 import Cart from './Components/pages/Cart'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import Shop from './Components/Cart/Shop'
-import CartNew from './Components/Cart/Cart';
-
+import Shop from './Components/Cart_New/Home'
+import CartNew from './Components/Cart_New/Cart';
 function App() {
   const scrollDoc = useRef()
   const [scrollState, setScrollState] = useState()
@@ -24,15 +23,7 @@ function App() {
 
   const handleScroll = () => {
     setScrollState(scrollDoc.current.scrollTop)
-    // if (scrollDoc.scrollY > 10) {
-    //   alert(window.pageYOffset, scrollDoc.scrollY);
-    // }
   }
-
-
-  // document.onscroll = () => {
-  //   console.log("scrolling window")
-  // }
 
   return (
     <div className='App' ref={scrollDoc} onScroll={handleScroll}>
@@ -43,8 +34,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route path='/products' component={Product} />
-          <Route path='/register' component={Register} />
-          <Route path='/signin' component={Signin} />
+          <Route path='/colleboration' component={Colleboration} />
+          <Route path='/joinus' component={JoinUs} />
 
           <Route path='/cart' component={CartNew} />
           {/* <Route path='/acount' component={Orders} /> */}

@@ -30,9 +30,7 @@ function Cart_item({ item, OneSingleTotal }) {
     const handleAddQuantity = (id, name, image, desc, price, quantity) => {
         setProductQuantity(prevQuantity => prevQuantity + 1)
         setSingleTotal((price * (productQuantity)) + price)
-        // OneTotal((price * (productQuantity)) + price)
         setProduct(`product_${id}`, { id: id, title: name, image: image, price: price, desc: desc, quantity: productQuantity + 1 }, { path: '/' })
-        // window.location.reload()
     }
     //to substruct from the quantity
     const handleSubtractQuantity = (id, name, image, desc, price) => {

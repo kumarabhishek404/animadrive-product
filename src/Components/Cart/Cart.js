@@ -1,8 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
-// import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-// import { removeItem, addQuantity, subtractQuantity } from './actions/cartActions'
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Button from '../Button'
@@ -13,10 +11,8 @@ function Cart(props) {
     const [cookiesArray, setCookiesArray] = useState([])
     const [total, setTotal] = useState(0)
     const [oneTotal, setOneTotal] = useState(0)
-    // const [render, setRender] = useState(false)
 
     const [productFromCookies, getProductFromCookies] = useCookies()
-    // const [quantity, setQuantity] = useCookies()
 
 
     useEffect(() => {
@@ -25,29 +21,15 @@ function Cart(props) {
         var objMap = new Map(Object.entries(productFromCookies));
         setCookiesArray(objMap)
         console.log(cookiesArray);
-        // objMap.forEach((item, key) => {
-        //     if (key.includes('product')) {
-        //         cookiesArray.push(item)
-        //         console.log(key, item.price, "price");
-        //     }
-        // })
-        // console.log(cookiesArray);
-        // cookiesArray.map(item => {
-        //     console.log(item.price);
-        // })
 
         setTotal(prevTotal => prevTotal + oneTotal)
-        // alert(render)
         console.log(productFromCookies);
     }, [])
-    // var objMap = new Map(Object.entries(productFromCookies));
     console.log(productFromCookies);
 
     const handleOneTotal = (one) => {
         setTotal(prevTotal => prevTotal + one)
     }
-    // getProductFromCookies({ path: '/' })
-    // var objMap = new Map(Object.entries(productFromCookies));
     return (
         <div className="cart">
             <h1>You have ordered:</h1>

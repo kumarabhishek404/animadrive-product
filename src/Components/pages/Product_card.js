@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie';
-// import { connect } from 'react-redux'
 import './Products_card.css'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
-// import { addToCart } from '../Cart/actions/cartActions'
 
 function Product_card({ id, name, price, pic_src, description, onSelectAddToCart }) {
     const [product, setProduct, removeProduct] = useCookies()

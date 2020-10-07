@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import '../pages/Product.css'
-// import { connect } from 'react-redux'
 import Card from '../pages/Product_card'
-// import Button from '../Button'
-// import { addToCart } from './actions/cartActions'
 
 
 class Home extends Component {
@@ -21,11 +18,6 @@ class Home extends Component {
             ]
         }
     }
-
-
-    // handleAddToCart = (id) => {
-    //     this.props.addToCart(id);
-    // }
 
     render() {
         let itemList = this.state.items.map(item => {
