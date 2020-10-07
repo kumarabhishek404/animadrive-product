@@ -13,6 +13,7 @@ import Cart from './Components/pages/Cart'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Shop from './Components/Cart_New/Home'
 import CartNew from './Components/Cart_New/Cart';
+import Acount from './Components/pages/Acount';
 function App() {
   const scrollDoc = useRef()
   const [scrollState, setScrollState] = useState()
@@ -40,6 +41,7 @@ function App() {
           <Route path='/cart' component={CartNew} />
           {/* <Route path='/acount' component={Orders} /> */}
           <Route path='/order' component={Order} />
+          <Route path='/acount' component={Acount} />
           {/* <Route path='/offers' component={Orders} /> */}
           <Route path='/' component={Shop} exact />
         </Switch>

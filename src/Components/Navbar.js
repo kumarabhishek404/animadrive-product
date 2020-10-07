@@ -1,7 +1,7 @@
 import './Navbar.css'
 import React, { useState, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, Route, Redirect } from 'react-router-dom';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 import PetIcon from '@material-ui/icons/Pets';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -36,6 +36,10 @@ function Navbar() {
     const handleSearchAnimation = () => {
         setSearch(!search)
         setClick(false)
+    }
+    const handleLogOut = () => {
+        setClick(false)
+        setAuthenticate(false)
     }
 
     // window.onscroll = () => {
@@ -123,15 +127,29 @@ function Navbar() {
                                 <div className='dropdown'>
                                     <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
                                         {(authenticate) ? <PersonOutlineIcon /> : 'SignUp'}
-                                        {/* </Link>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
-                                        SignIn */}
-                                        <div className={signmenu ? 'dropdown_content_active' : 'dropdown_content'}>
+                                        <div className={(signmenu && authenticate) ? 'dropdown_content_active' : 'dropdown_content'}>
+
+                                            <div className='dropdown_content_container'>
+                                                <h3>Your Acount</h3>
+                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
+                                                    Your Acount
+                                        </Link>
+                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                    Your Orders
+                                        </Link>
+                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                    Your Offers
+                                        </Link>
+                                            </div>
+                                            <hr />
                                             <div className='register_container'>
-                                                <Link to='/signin' onClick={closeButtonHandler}>
-                                                    <button>SignIn</button><ExpandMoreIcon className='dropdown_symbol' />
+                                                <Link to='/signin' onClick={handleLogOut}>
+                                                    <Route exact path='/signin'>
+                                                        {!authenticate ? <Redirect to='/' /> : null}
+                                                    </Route>
+                                                    <button>LogOut</button>
                                                 </Link>
-                                                <CloseIcon className='signmenu_close_btn' onClick={closeButtonHandler} />
+                                                <CloseIcon className='signmenu_close_btn' />
                                                 {/* <div className='register_newuser'>
                                                     <h6>New customer?</h6>
                                                     <span>
@@ -140,19 +158,6 @@ function Navbar() {
                                                         </Link>
                                                     </span>
                                                 </div> */}
-                                            </div>
-                                            <hr />
-                                            <div className='dropdown_content_container'>
-                                                <h3>Your Acount</h3>
-                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
-                                                    Your Acount
-                                        </Link>
-                                                <Link to='' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                    Your Orders
-                                        </Link>
-                                                <Link to='/offers' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                    Your Offers
-                                        </Link>
                                             </div>
                                         </div>
                                     </Link>

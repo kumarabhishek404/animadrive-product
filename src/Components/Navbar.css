@@ -167,10 +167,13 @@
     text-align: center;
     margin-right: 1rem;
     width: 70vw;
+    /* border: 2px solid blue; */
 }
 .nav_menu_box {
+    /* float: right; */
     /* border: 2px solid blue; */
     min-width: 50px;
+    margin-right: 0;
     display: flex;
 }
 .signIn .navbar_links_item{

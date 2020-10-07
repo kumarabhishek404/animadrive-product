@@ -44,7 +44,7 @@ class Home extends Component {
         return (
             <div className="products">
                 <div className='products_container'>
-                    <h3 className="center">Our items</h3>
+                    <h1 className="center">Our Products</h1>
                     <div className="all_products">
                         <div className='all_products_item'>
                             {itemList}

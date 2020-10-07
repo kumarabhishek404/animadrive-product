@@ -4,6 +4,14 @@ import Button from '../Button'
 import '../pages/Cart.css'
 //import { addShipping } from './actions/cartActions'
 class Recipe extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            coupon: true
+        }
+    }
+
 
     render() {
 
@@ -27,7 +35,7 @@ class Recipe extends Component {
                         <h1>Cart total</h1>
                         <hr />
                         <h3>Total amount: ${this.props.total} </h3>
-                        <h3>After Discount: ${this.props.total} </h3>
+                        <h3>After Discount: ${(this.props.total !== 0 && this.state.coupon) ? this.props.total - 10 : this.props.total} </h3>
                         <Button path='/order'>Proceed</Button>
                     </div>
                 </div>
