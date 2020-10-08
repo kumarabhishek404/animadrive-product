@@ -26,16 +26,16 @@ const product_list = [
 
 
 function Products() {
-    const ScrollDoc = useRef()
+    // const ScrollDoc = useRef()
 
-    const handleScroll = () => {
-        const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
-        const scrollTop = ScrollDoc.current.scrollTop
-        console.log(`onScroll, window.scrollY: ${scrollTop} myRef.scrollTop: ${scrollTop}`)
-        // if (scrollTop >= 10) {
-        //     alert('scrolled')
-        // }
-    }
+    // const handleScroll = () => {
+    //     const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
+    //     const scrollTop = ScrollDoc.current.scrollTop
+    //     console.log(`onScroll, window.scrollY: ${scrollTop} myRef.scrollTop: ${scrollTop}`)
+    //     // if (scrollTop >= 10) {
+    //     //     alert('scrolled')
+    //     // }
+    // }
 
     useEffect(() => {
         Axios.get("http://api.openweathermap.org/data/2.5/weather?q=Agra,IN&appid=28eadd90ad607fa43911b4f733752611&units=metric")

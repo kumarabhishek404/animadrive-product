@@ -10,17 +10,17 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Navbar() {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
     const [authenticate, setAuthenticate] = useState(true)
-    const [windowScroll, setWindowScroll] = useState(false)
-    const [prevScrollPos, setPrevScrollPos] = useState()
-    const [currentScrollPos, setCurrentScrollPos] = useState()
-    const scrollNavbar = useRef()
+    // const [windowScroll, setWindowScroll] = useState(false)
+    // const [prevScrollPos, setPrevScrollPos] = useState()
+    // const [currentScrollPos, setCurrentScrollPos] = useState()
+    // const scrollNavbar = useRef()
 
     const openSignInMenu = (e) => {
         setSignmenu(!signmenu)
@@ -42,39 +42,6 @@ function Navbar() {
         setAuthenticate(false)
     }
 
-    // window.onscroll = () => {
-    //     setPrevScrollPos(window.pageYOffset)
-    //     if (prevScrollPos > 100) {
-    //         console.log(prevScrollPos);
-    //         scrollNavbar.current.style.top = '-80px';
-    //     }
-    //     else {
-    //         scrollNavbar.current.style.top = '0px';
-    //     }
-    //     // alert("scrolling navbar")
-    //     // setCurrentScrollPos(window.pageYOffset)
-    //     // if (prevScrollPos > currentScrollPos) {
-    //     //     scrollNavbar.current.style.top = '0';
-    //     // }
-    //     // else {
-    //     //     scrollNavbar.current.style.top = '-40px';
-    //     // }
-    //     // prevScrollPos = currentScrollPos
-
-    // }
-
-    // var prevScrollpos = window.pageYOffset;
-    // window.onscroll = function () {
-    //     var currentScrollpos = window.pageYOffset;
-    //     if (prevScrollpos > currentScrollpos) {
-    //         scrollNavbar.current.style.top = "0";
-    //     }
-    //     else {
-    //         scrollNavbar.current.style.top = "-80px"
-    //     }
-    //     prevScrollpos = currentScrollpos
-    // }
-
     return (
         <>
             <nav className='navbar'>
@@ -82,9 +49,6 @@ function Navbar() {
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
                         <div><PetIcon className='petIcon' fontSize="large" /></div>
                     </Link>
-                    {/* <div className='search_Bar' onClick={closeSearchHandler}>
-                        {search ? <CloseIcon fontSize='large' /> : <SearchIcon fontSize='large' />}
-                    </div> */}
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
                     </div>
@@ -100,17 +64,14 @@ function Navbar() {
                     </div>
                     <ul className={click ? 'nav_menu active' : 'nav_menu'}>
                         <div className='nav_menu_box'>
-                            {/* <div className='search_Bar' onClick={closeSearchHandler}>
-                                {search ? <CloseIcon fontSize='large' /> : <SearchIcon fontSize='large' />}
-                            </div> */}
                             <li className='nav_item'>
                                 <Link to='/' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Home
                             </Link>
                             </li>
                             <li className='nav_item'>
-                                <Link to='/products' className='navbar_links_item' onClick={closeMenuHandler}>
-                                    Products
+                                <Link to='/shop' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Shop
                             </Link>
                             </li>
                             <li className='nav_item'>
@@ -130,16 +91,9 @@ function Navbar() {
                                         <div className={(signmenu && authenticate) ? 'dropdown_content_active' : 'dropdown_content'}>
 
                                             <div className='dropdown_content_container'>
-                                                {/* <h3>Your Acount</h3> */}
-                                                {/* <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
-                                                    Your Acount
-                                        </Link> */}
                                                 <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Orders
                                         </Link>
-                                                {/* <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                    Your Offers
-                                        </Link> */}
                                             </div>
                                             <hr />
                                             <div className='register_container'>
@@ -150,14 +104,6 @@ function Navbar() {
                                                     <button>LogOut</button>
                                                 </Link>
                                                 <CloseIcon className='signmenu_close_btn' />
-                                                {/* <div className='register_newuser'>
-                                                    <h6>New customer?</h6>
-                                                    <span>
-                                                        <Link to='/register' onClick={closeButtonHandler}>
-                                                            Start here.
-                                                        </Link>
-                                                    </span>
-                                                </div> */}
                                             </div>
                                         </div>
                                     </Link>
@@ -168,16 +114,6 @@ function Navbar() {
                                 <Link to='/cart' className='navbar_links_item cart_image'>
                                     <ShoppingCartIcon fontSize='large' />
                                 </Link>
-                                {/* <li className='nav_item'>
-                                <Link to='/register' className='navbar_links_item' onClick={closeMenuHandler}>
-                                    Register
-                            </Link>
-                            </li>
-                            <li className='nav_item signIn'>
-                                <Link to='/signin' className='navbar_links_item' onClick={closeMenuHandler}>
-                                    SignIn
-                            </Link>
-                            </li> */}
                             </div>
                         </div>
                     </ul>

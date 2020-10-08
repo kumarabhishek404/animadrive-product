@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Axios from 'axios'
 import { Link } from 'react-router-dom'
 import CartItem from './Cart_item'
@@ -7,15 +7,25 @@ import './Cart.css'
 
 const result = [
     { title: 'product_1', price: 1, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_2', price: 2, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_3', price: 3, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 3 }
+    { title: 'product_2', price: 20, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
+    { title: 'product_3', price: 8, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 3 }
 ]
+
+
 
 function Cart() {
     const [cartData, setCartData] = useState([])
+    const [coupon, setCoupon] = useState(false)
+    const [couponList, setCouponList] = useState([
+        'Abhishek',
+        'Sushant',
+        'Himanshu'
+    ])
     const [total, setTotal] = useState(0)
     const [quant, setQuant] = useState(0)
+    const [couponState, setCouponState] = useState()
 
+    // const couponInput = useRef()
     useEffect(() => {
         window.scrollTo(0, 0)
 
@@ -26,6 +36,14 @@ function Cart() {
         // handleProductTotal()
         // setTotal(total)
     }
+    const handleCouponApply = () => {
+        (couponList.length)
+            ? (couponList.includes(couponState))
+                ? setCoupon(true)
+                : setCoupon(false)
+            : setCoupon(false)
+    }
+
 
     const handleProductTotal = (tot) => {
         setTotal(prevTotal => prevTotal + tot)
@@ -51,8 +69,6 @@ function Cart() {
 
 
                     <div className='cart_action'>
-                        <h1>{quant}</h1>,
-                        <h1>{total}</h1>
                         <Button buttonStyle='btn_outline' onClick={handleUpdateCart}>Update cart</Button>
                         <Button buttonStyle='btn_outline'>More Shop</Button>
                     </div>
@@ -62,15 +78,15 @@ function Cart() {
                             <hr />
                             <h3>Enter your coupen code if you have</h3>
                             <form>
-                                <input type='text' placeholder='Enter your code' />
-                                <Button path='/'>Apply</Button>
+                                <input type='text' onChange={e => setCouponState(e.target.value)} placeholder='Enter your code' />
+                                <Button onClick={handleCouponApply}>Apply</Button>
                             </form>
                         </div>
                         <div className='cart_total'>
                             <h1>Cart total</h1>
                             <hr />
-                            <h3>Total amount: $34,000</h3>
-                            <h3>After Discount: $30,000</h3>
+                            <h3>Total amount: ${total}</h3>
+                            <h3>After Discount: ${coupon ? Math.ceil(total - (total / 10)) : total}</h3>
                             <Button path='/order'>Proceed</Button>
                         </div>
                     </div>

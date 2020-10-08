@@ -6,7 +6,7 @@ import Footer from './Components/Footer'
 import Home from './Components/pages/Home'
 import Order from './Components/pages/Order'
 import Product from './Components/pages/Product'
-import Products from './Components/pages/Products'
+import Shop from './Components/pages/Shop'
 import Colleboration from './Components/pages/Colleboration'
 import JoinUs from './Components/pages/JoinUs'
 import Cart from './Components/pages/Cart'
@@ -43,7 +43,8 @@ function App() {
           <Route path='/order' component={Order} />
           <Route path='/acount' component={MyOrders} />
           {/* <Route path='/offers' component={Orders} /> */}
-          <Route path='/' component={Products} exact />
+          <Route path='/shop' component={Shop} exact />
+          <Route path='/' component={Home} exact />
         </Switch>
         <Footer />
       </Router>

@@ -27,7 +27,7 @@ function Cart_item({ productName, product_src, price, ProductQuantity, onProduct
 
     useEffect(() => {
         setProductPrice(price * ProductQuantity)
-        onProductTotal(price)
+        onProductTotal(price * ProductQuantity)
         onProductQuantity(quantity)
     }, [])
 
