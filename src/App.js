@@ -6,13 +6,13 @@ import Footer from './Components/Footer'
 import Home from './Components/pages/Home'
 import Order from './Components/pages/Order'
 import Product from './Components/pages/Product'
-// import Products from './Components/pages/Products'
+import Products from './Components/pages/Products'
 import Colleboration from './Components/pages/Colleboration'
 import JoinUs from './Components/pages/JoinUs'
-// import Cart from './Components/pages/Cart'
+import Cart from './Components/pages/Cart'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import Shop from './Components/pages/Shop'
-import CartNew from './Components/pages/Cart';
+// import Shop from './Components/pages/Shop'
+// import CartNew from './Components/pages/Cart';
 import MyOrders from './Components/pages/MyOrders';
 function App() {
   const scrollDoc = useRef()
@@ -38,12 +38,12 @@ function App() {
           <Route path='/colleboration' component={Colleboration} />
           <Route path='/joinus' component={JoinUs} />
 
-          <Route path='/cart' component={CartNew} />
+          <Route path='/cart' component={Cart} />
           {/* <Route path='/acount' component={Orders} /> */}
           <Route path='/order' component={Order} />
           <Route path='/acount' component={MyOrders} />
           {/* <Route path='/offers' component={Orders} /> */}
-          <Route path='/' component={Shop} exact />
+          <Route path='/' component={Products} exact />
         </Switch>
         <Footer />
       </Router>

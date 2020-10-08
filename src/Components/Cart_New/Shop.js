@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import Button from '../Button';
 // import '../pages/Product.css'
 import '../pages/Products_card.css'
-import { addToCart } from '../Cart_New/actions/cartActions'
+import { addToCart } from './actions/cartActions'
 
 class Home extends Component {
 
