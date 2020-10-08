@@ -1,0 +1,46 @@
+.acount {
+    border: 2px solid red;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acount_container {
+    border: 2px solid green;
+    width: 90%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.acount_container_wrapper {
+    border: 2px solid pink;
+    width: 90%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.acount_container_wrapper h1 {
+    font-size: 3rem;
+}
+.my_order {
+    padding: 10px;
+    border: 2px solid black;
+    width: 90%;
+}
+.my_order_list_container {
+    border: 2px solid red;
+}
+.my_order_list_wrapper {
+}
+.my_order_list {
+    padding-left: 5px;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

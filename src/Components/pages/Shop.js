@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Button from '../Button';
-import '../pages/Product.css'
-import { addToCart } from './actions/cartActions'
+// import '../pages/Product.css'
+import '../pages/Products_card.css'
+import { addToCart } from '../Cart_New/actions/cartActions'
 
 class Home extends Component {
 

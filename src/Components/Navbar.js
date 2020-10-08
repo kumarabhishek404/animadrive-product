@@ -130,16 +130,16 @@ function Navbar() {
                                         <div className={(signmenu && authenticate) ? 'dropdown_content_active' : 'dropdown_content'}>
 
                                             <div className='dropdown_content_container'>
-                                                <h3>Your Acount</h3>
-                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
+                                                {/* <h3>Your Acount</h3> */}
+                                                {/* <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler}>
                                                     Your Acount
-                                        </Link>
+                                        </Link> */}
                                                 <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Orders
                                         </Link>
-                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                {/* <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                     Your Offers
-                                        </Link>
+                                        </Link> */}
                                             </div>
                                             <hr />
                                             <div className='register_container'>

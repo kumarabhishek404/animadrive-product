@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react';
 import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY, ADD_SHIPPING } from '../actions/action-types/cart-actions'
 
 
@@ -14,7 +15,11 @@ const initState = {
     total: 0
 
 }
-const cartReducer = (state = initState, action) => {
+
+const CartReducer = (state = initState, action) => {
+
+    // const [items, setItems] = useState([])
+    // const [total, setTotal] = useState(0)
 
     //INSIDE HOME COMPONENT
     if (action.type === ADD_TO_CART) {
@@ -107,4 +112,4 @@ const cartReducer = (state = initState, action) => {
 
 }
 
-export default cartReducer
+export default CartReducer;

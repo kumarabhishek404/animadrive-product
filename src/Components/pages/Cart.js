@@ -1,83 +1,96 @@
-import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
+import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import CartItem from './Cart_item'
+import { removeItem, addQuantity, subtractQuantity } from '../Cart_New/actions/cartActions'
+import Recipe from '../Cart_New/Recipe'
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import Button from '../Button'
-import './Cart.css'
+import '../pages/Cart.css'
 
-const result = [
-    { title: 'product_1', price: 1, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_2', price: 2, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_3', price: 3, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 3 }
-]
+class Cart extends Component {
 
-function Cart() {
-    const [cartData, setCartData] = useState([])
-    const [total, setTotal] = useState(0)
-    const [quant, setQuant] = useState(0)
-
-    useEffect(() => {
-        window.scrollTo(0, 0)
-
-    }, [])
-
-    const handleUpdateCart = () => {
-        // alert("alert")
-        // handleProductTotal()
-        // setTotal(total)
+    //to remove the item completely
+    handleRemove = (id) => {
+        this.props.removeItem(id);
     }
-
-    const handleProductTotal = (tot) => {
-        setTotal(prevTotal => prevTotal + tot)
+    //to add the quantity
+    handleAddQuantity = (id) => {
+        this.props.addQuantity(id);
     }
-
-    const handleProductQuantity = (quant) => {
-        setQuant(prevQuant => prevQuant + quant)
+    //to substruct from the quantity
+    handleSubtractQuantity = (id) => {
+        this.props.subtractQuantity(id);
     }
+    render() {
 
-    return (
-        <>
-            <div className='cart'>
+        let addedItems = this.props.items.length ?
+            (
+                this.props.items.map(item => {
+                    return (
+
+                        <div className="product_item_list" key={item.id}>
+                            <div className='product_item_container'>
+
+                                <div className="cart_product_image">
+                                    <figure className='product_image_wrap'>
+                                        <img src={item.img} />
+                                    </figure>
+                                    <h2>{`$${item.price}`}</h2>
+                                </div>
+                                <div className='cart_product_info'>
+                                    <div>
+                                        <h2>{item.title}</h2>
+                                        <p>{item.desc}</p>
+                                    </div>
+                                    <h2 className='price_head'>{`$${item.price * item.quantity}`}</h2>
+                                </div>
+                                <div className='product_action'>
+                                    <div className='product_quantity'>
+                                        <Link to="/cart"><RemoveIcon onClick={(item.quantity > 1) ? (() => this.handleSubtractQuantity(item.id)) : null} /></Link>
+                                        <h3>{item.quantity}</h3>
+                                        <Link to="/cart"><AddIcon onClick={() => { this.handleAddQuantity(item.id) }} /></Link>
+                                    </div>
+                                    <div>
+                                        <Button onClick={() => { this.handleRemove(item.id) }}>Remove</Button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    )
+                })
+            ) :
+
+            (
+                <p>Nothing.</p>
+            )
+        return (
+            <div className="cart">
                 <h1>Cart</h1>
-                <div className='cart_container'>
-                    <div className='cart_container_wrapper'>
-                        {
-                            result.map(product =>
-                                <CartItem productName={product.title} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.image} ProductQuantity={product.quantity} />
-                            )
-                        }
+                <div className="cart_container">
+                    <h2>You have ordered:</h2>
+                    <div className="cart_container_wrapper">
+                        {addedItems}
                     </div>
-
-
-
-                    <div className='cart_action'>
-                        <h1>{quant}</h1>,
-                        <h1>{total}</h1>
-                        <Button buttonStyle='btn_outline' onClick={handleUpdateCart}>Update cart</Button>
-                        <Button buttonStyle='btn_outline'>More Shop</Button>
-                    </div>
-                    <div className='final_payment'>
-                        <div className='coupon_container'>
-                            <h1>Coupon Discount</h1>
-                            <hr />
-                            <h3>Enter your coupen code if you have</h3>
-                            <form>
-                                <input type='text' placeholder='Enter your code' />
-                                <Button path='/'>Apply</Button>
-                            </form>
-                        </div>
-                        <div className='cart_total'>
-                            <h1>Cart total</h1>
-                            <hr />
-                            <h3>Total amount: $34,000</h3>
-                            <h3>After Discount: $30,000</h3>
-                            <Button path='/order'>Proceed</Button>
-                        </div>
-                    </div>
+                    <Recipe />
                 </div>
             </div>
-        </>
-    )
+        )
+    }
 }
 
-export default Cart
+
+const mapStateToProps = (state) => {
+    return {
+        items: state.addedItems,
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        removeItem: (id) => { dispatch(removeItem(id)) },
+        addQuantity: (id) => { dispatch(addQuantity(id)) },
+        subtractQuantity: (id) => { dispatch(subtractQuantity(id)) }
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)
