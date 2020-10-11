@@ -45,13 +45,9 @@
     align-items: center; */
     font-size: 2rem;
     text-decoration: none;
-<<<<<<< HEAD
     width: 20vw;
     color: black;
-=======
-    /* width: 20vw; */
-    color: #000000;
->>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
+
     cursor: pointer;
     /* margin-left: 15px; */
 }

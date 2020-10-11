@@ -1,9 +1,7 @@
 .footer {
     /* background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%); */
-<<<<<<< HEAD
     background-color: #99cc4a;
-=======
->>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     color: #fff;
