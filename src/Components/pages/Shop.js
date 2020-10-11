@@ -8,19 +8,19 @@ const product_list = [
         id: 1,
         title: "product_1",
         price: '$23,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
     },
     {
         id: 2,
         title: "product_2",
         price: '$21,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
     },
     {
         id: 3,
         title: "product_3",
         price: '$13,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
     }
 ]
 
@@ -54,11 +54,10 @@ function Products() {
                 <div className='products_container'>
                     <h1>Products</h1>
                     <div className='all_products'>
-                        <ul className='all_products_item'>{product_list.map(item =>
+                        <div className='all_products_item'>{product_list.map(item =>
                             <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} />
                         )}
-                        </ul>
-                        <h1 onClick={handleScrollToTop}>Scroll</h1>
+                        </div>
                     </div>
                 </div>
             </div>

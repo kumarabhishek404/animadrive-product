@@ -32,24 +32,24 @@ function Product_card({ id, name, price, pic_src, description, onSelectAddToCart
 
     return (
         <>
-            <li className='card_item'>
+            <div className='card_item'>
                 <Link to='/products' className='card_item_link'>
-                    <figure className='card_item_pic-wrap'>
-                        <img src={pic_src} alt={id} className='card_item_image' />
-                    </figure>
                     <div className='card_item_info'>
                         <h1 className='card_item_text'>{name}</h1>
                         <h1>Price: {price}</h1>
                         <div className='product_description'>
-                            <p>{description}</p>
+                            <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea.</p>
                         </div>
                         <div className='product_btn'>
                             <Button className='btn' buttonStyle='btn_outline' onClick={() => handleAddToCart({ id, name, price, pic_src, description })} >Add to cart</Button>
                             <Button buttonStyle='btn_outline' onClick={() => onhandleRemoveProduct(id)} >Buy now</Button>
                         </div>
                     </div>
+                    <figure className='card_item_pic-wrap'>
+                        <img src={pic_src} alt={id} className='card_item_image' />
+                    </figure>
                 </Link>
-            </li>
+            </div>
         </>
     )
 }

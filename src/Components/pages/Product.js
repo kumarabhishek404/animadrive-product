@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import './Product.css'
+import React, { useState, useEffect, useRef } from 'react'
+import './Shop.css'
 import { Link } from 'react-router-dom'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Button from '../Button'
@@ -12,10 +12,14 @@ import StarIcon from '@material-ui/icons/Star';
 
 
 function Product() {
-    const [selectedImage, setSelectedImage] = useState('https://elcopcbonline.com/photos/product/4/176/4.jpg')
+    const [selectedImage, setSelectedImage] = useState('https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70')
+    // const [slideImage, setSlideImage] = useState(false)
+
+    const slideImage = useRef()
 
     const clickLoadImage = (e) => {
         setSelectedImage(e.target.src)
+        slideImage.current.style.border = "red"
     }
 
 
@@ -27,14 +31,17 @@ function Product() {
         <div className='product'>
             <div className='product_container'>
                 <div className='product_image'>
+                    <div className='product_detail_heading'>
+                        <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1>
+                    </div>
                     <div className='product_image_container'>
                         <div className='product_main_image'>
                             <img src={selectedImage} alt='Image' />
                         </div>
                         <div className='product_image_side'>
-                            <img src='https://elcopcbonline.com/photos/product/4/176/4.jpg' alt='Image' onClick={clickLoadImage} />
-                            <img src='https://m.media-amazon.com/images/I/41+fXlXMPyL._SR500,500_.jpg' onClick={clickLoadImage} />
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/5103Xi7yQgL._SL1024_.jpg' alt='Image' onClick={clickLoadImage} />
+                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70' alt='Image' onMouseEnter={clickLoadImage} ref={slideImage} />
+                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/w/v/z/ydtdqc01jy-mi-original-imaftfwewqvy9rnf.jpeg?q=70' onMouseEnter={clickLoadImage} />
+                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/z/x/e/ydtdqc01jy-mi-original-imaftfwebp6gd5xw.jpeg?q=70' alt='Image' onMouseEnter={clickLoadImage} />
                         </div>
                     </div>
                 </div>
@@ -81,7 +88,7 @@ function Product() {
                         </div>
                         <form>
                             <div className='product_rating_container'>
-                                <h3>Rating:</h3>
+                                <h1>Your Valuable Review</h1>
                             </div>
                             <div className='input_detail'>
                                 <textarea cols='80' rows='10' placeholder='Write Somethings about product' />
