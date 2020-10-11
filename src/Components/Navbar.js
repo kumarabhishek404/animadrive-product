@@ -20,7 +20,7 @@ function Navbar(props) {
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
     const [formmenu, setFormmenu] = useState(false)
-    const [authenticate, setAuthenticate] = useState(true)
+    // const [authenticate, setAuthenticate] = useState(false)
     // const [windowScroll, setWindowScroll] = useState(false)
     // const [prevScrollPos, setPrevScrollPos] = useState()
     // const [currentScrollPos, setCurrentScrollPos] = useState()
@@ -28,6 +28,7 @@ function Navbar(props) {
 
     const login = useSelector(state => state.login)
     const message = useSelector(state => state.message)
+
 
     const openSignInMenu = () => {
         setSignmenu(!signmenu)
@@ -44,12 +45,14 @@ function Navbar(props) {
     }
     const closeMenuHandler = () => {
         setClick(false)
+        setFormmenu(false)
     }
     const handleSearchAnimation = () => {
         setSearch(!search)
         setClick(false)
     }
     const handleLogIN = () => {
+        setFormmenu(false)
         props.logAction(true)
         // setClick(false)
         // setAuthenticate(false)

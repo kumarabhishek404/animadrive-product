@@ -28,10 +28,8 @@
     /* justify-content: center; */
     text-align: center;
 }
-.cart_action button {
-}
 .cart_container_wrapper {
-    border: 2px solid #e1e1e1;
+    /* border: 2px solid #e1e1e1; */
     /* border: 2px solid green; */
     width: 100%;
     display: flex;
@@ -41,10 +39,11 @@
     padding: 30px 0;
 }
 .product_item_list {
-    border: 2px solid black;
+    border: 2px solid #d5dbd9;
     margin-bottom: 10px;
     /* margin-left: -170px; */
-    width: 90%;
+    width: 70%;
+    height: 184px;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -62,16 +61,23 @@
 }
 .cart_product_image {
     /* border: 2px solid red; */
-    overflow: hidden;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
 }
-.cart_product_image img {
-    width: 300px;
-    height: 200px;
-
+.product_image_wrap {
+    /* border: 2px solid red; */
+    overflow: hidden;
+    width: 200px;
+    height: 150px;
+}
+.cart_image_single {
+    width: 250px;
+    height: 150px;
+}
+.cart_price {
+    display: flex;
 }
 .cart_product_info {
     /* border: 2px solid blue; */
@@ -89,16 +95,26 @@
 .product_action {
     /* border: 2px solid green; */
     /* height: 100%; */
+    color: #99cc4a;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
     padding: 10px 30px;
 }
+.product_action h2 {
+    /* color: black; */
+}
+.product_action h2::before {
+    content: '₹ ';
+    color: #99cc4a;
+    font-size: 21px;
+}
 .product_quantity {
-    /* border: 2px solid green; */
+    border: 1px solid #99cc4a;
+    color: #99cc4a;
     display: flex;
-    background-color: #e1e1e1   ;
+    /* background-color: #e1e1e1   ; */
     padding: 3px 6px;
     border-radius: 5px;
 }
@@ -106,7 +122,7 @@
     margin: 0 13px;
 }
 .cart_action {
-    border: 2px solid #e1e1e1;
+    /* border: 2px solid #e1e1e1; */
     margin: 10px;
 
 }
@@ -123,7 +139,8 @@
 }
 .coupon_container{
     /* border: 2px solid green; */
-    background-color: #e1e1e1;
+    /* background-color: #e1e1e1; */
+    border: 2px solid #d5dbd9 ;
     padding: 10px 40px;
     line-height: 3.5rem;
     display: flex;
@@ -140,24 +157,38 @@
     height: 38px;
     margin-top: 7px;
 }
+.coupon_container form input:focus {
+    color: #99cc4a;
+}
 .coupon_container form Button {
     /* margin-right: 20px; */
     /* width: 100px; */
 }
 .cart_total {
-    background-color: #e1e1e1;
+    /* background-color: #e1e1e1; */
+    border: 2px solid #d5dbd9 ;
     padding: 10px 40px;
     width: 35%;
     text-align: start;
     line-height: 2.5rem;
 }
 
+@media screen and (max-width: 1200px) {
+    .product_item_list {
+        width: 84%;
+    }
+}
 
 @media screen and (max-width: 960px) {
     .product_item_container {
         flex-flow: column;
         justify-content: center;
         text-align: center;
+    }
+    .product_item_list {
+        height: 100%;
+        width: 70%;
+        padding: 0;
     }
     .cart_product_info {
         width: 100%;
@@ -192,6 +223,16 @@
 }
 
 @media screen and (max-width: 500px) {
+    .product_item_list {
+        height: 100%;
+        width: 90%;
+    }
+    .cart_product_info {
+        flex-flow: column;
+    }
+    .cart_product_info h2{
+        margin-bottom: 5px;
+    }
     .coupon_container form {
         flex-flow: column;
     }
@@ -219,6 +260,12 @@
     .coupon_container form input {
         width: 200px;
         margin-bottom: 7px;
+    }
+    .product_action{
+        flex-flow: column;
+    }
+    .product_action h2{
+        margin-bottom: 5px;
     }
 }
 

@@ -8,19 +8,19 @@ const product_list = [
         id: 1,
         title: "product_1",
         price: '$23,000',
-        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
+        image: "/Images/1.jpg"
     },
     {
         id: 2,
         title: "product_2",
         price: '$21,000',
-        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
+        image: "/Images/2.jpg"
     },
     {
         id: 3,
         title: "product_3",
         price: '$13,000',
-        image: "https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70"
+        image: "/Images/3.jpg"
     }
 ]
 

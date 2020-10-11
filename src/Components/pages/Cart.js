@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom'
 import CartItem from './Cart_item'
 import Button from '../Button'
 import './Cart.css'
+import { Description } from '@material-ui/icons'
 
 const result = [
-    { title: 'product_1', price: 1, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_2', price: 20, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_3', price: 8, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 3 }
+    { title: 'product_1', price: 149, image: '/Images/1.jpg', quantity: 2 },
+    { title: 'product_2', price: 149, image: '/Images/2.jpg', quantity: 2 },
+    { title: 'product_3', price: 149, image: '/Images/3.jpg', quantity: 3 }
 ]
 
 
@@ -85,8 +86,8 @@ function Cart() {
                         <div className='cart_total'>
                             <h1>Cart total</h1>
                             <hr />
-                            <h3>Total amount: ${total}</h3>
-                            <h3>After Discount: ${coupon ? Math.ceil(total - (total / 10)) : total}</h3>
+                            <h3>Total amount: ₹{total}</h3>
+                            <h3>After Discount: ₹{coupon ? Math.ceil(total - (total / 10)) : total}</h3>
                             <Button path='/order'>Proceed</Button>
                         </div>
                     </div>
@@ -97,3 +98,5 @@ function Cart() {
 }
 
 export default Cart
+
+

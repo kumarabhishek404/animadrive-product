@@ -58,9 +58,6 @@ function Product() {
                             <p>Made from floral waste</p>
                             <p>Tulsi seed packaging</p>
                             <p>40 incense sticks</p>
-                            <p>Bambooless</p>
-                            <p>Charcoal free</p>
-                            <p>30 minutes burning time</p>
                         </div>
                         <h3>Category: Essence of India</h3>
                         <h3>Tags: Aromatic Incense Sticks, Essence Of India, Help Us Green</h3>

@@ -25,13 +25,12 @@
     /* border: 1px solid black; */
 }
 .product_image_slide_single {
-    border: 2px solid #e1e1e1;
+    border: 2px solid #d5dbd9;
+    /* box-shadow:  5px 10px 8px 10px #888888; */
 }
 .product_main_image {
     width: 500px;
 
-}
-.product_main_image img {
 }
 
 /* Product Details */
@@ -138,7 +137,7 @@
     margin-left: 15px;
 }
 .input_detail textarea:focus, .user input:focus {
-    background-color: orangered;
+    background-color: #99cc4a;
     /* opacity: 0.2; */
     color: #000;
     font-weight: bold;

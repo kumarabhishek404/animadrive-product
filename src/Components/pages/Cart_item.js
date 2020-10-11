@@ -36,18 +36,18 @@ function Cart_item({ productName, product_src, price, ProductQuantity, onProduct
             <div className='product_item_container'>
                 <div className='cart_product_image'>
                     <figure className='product_image_wrap'>
-                        <img src={product_src} />
+                        <img src={product_src} className='cart_image_single' />
                     </figure>
-                    <h2>{`$${price}`}</h2>
+                    <h2>{`₹${price}`}</h2>
                 </div>
                 <div className='cart_product_info'>
                     <h2>{productName}</h2>
-                    <h2 className='price_head'>{`$${productPrice}`}</h2>
-                </div>
-                <div className='product_action'>
                     <div className='product_quantity'>
                         <RemoveIcon onClick={handleQuantityDecrement} /><h3>{quantity}</h3><AddIcon onClick={handleQuantityIncrement} />
                     </div>
+                </div>
+                <div className='product_action'>
+                    <h2 className='price_head'>{`${productPrice}`}</h2>
                     <div>
                         <Button>Remove</Button>
                     </div>
