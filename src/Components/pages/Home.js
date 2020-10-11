@@ -14,20 +14,13 @@ const images = [
 
 function Home() {
 
- Axios.create({
-    baseURL: 'http://localhost:3000/',
-    withCredentials: true,
-});
-
-Axios.defaults.headers.post['Content-Type'] = 'application/x-www-form- urlencoded';
-Axios.defaults.withCredentials = true;
-Axios.defaults.crossDomain = true;
+   
 
     const targetSrc = useRef()
     const [imageIndex, setImageIndex] = useState(0)
-    const [user,setUser]=useState({});
-    const [error,setError]=useState(null);
-    const [authenticated,setAuthenticated]=useState(false);
+    const [user, setUser] = useState({});
+    const [error, setError] = useState(null);
+    const [authenticated, setAuthenticated] = useState(false);
 
 
     useEffect(() => {
@@ -43,36 +36,8 @@ Axios.defaults.crossDomain = true;
         }, 2000);
         return () => clearInterval(interval)
     }, [imageIndex])
-    
-      useEffect(()=>{
-          Axios.get("http://localhost:3000/authSuccess")
-          .then(response=>{
-            console.log(response.status)
-              if(response.status === 200) {
-                setUser(response.data.user)
-                setAuthenticated(true)
-            }
-            else{
-            setAuthenticated(false)
+ 
 
-            }
-          })
-          .catch(error=>{
-            // setLoading(false)
-              setAuthenticated(false)
-              setError(error)
-          })
-      },[])
-
-    // const handleImageSrc = (e) => {
-    //     if (imageIndex < images.length) {
-    //         targetSrc.current.src = images[imageIndex]
-    //         setImageIndex(prevState => prevState + 1)
-    //     }
-    //     else {
-    //         setImageIndex(0)
-    //     }
-    // }
 
     return (
         <>

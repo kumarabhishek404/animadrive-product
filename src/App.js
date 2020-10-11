@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import './App.css';
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
@@ -11,6 +11,7 @@ import Colleboration from './Components/pages/Colleboration'
 import JoinUs from './Components/pages/JoinUs'
 import Cart from './Components/pages/Cart'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import { useSelector } from 'react-redux';
 // import Shop from './Components/pages/Shop'
 // import CartNew from './Components/pages/Cart';
 import MyOrders from './Components/pages/MyOrders';
@@ -19,6 +20,7 @@ import { Provider } from 'react-redux'
 import store from './Redux/Store'
 function App() {
   // const scrollDoc = useRef()
+  const login = useSelector(state => state.login)
   const scrollNavbar = useRef()
 
   const [scrollState, setScrollState] = useState(true)
@@ -37,7 +39,6 @@ function App() {
 
 
   return (
-    <Provider store={store}>
       <div className='App'>
         <div className={scrollState ? 'comeToStart' : 'comeToStart signDisplay'} onClick={handleScrollToFirst}>
           <ExpandLessIcon fontSize='large' />
@@ -51,12 +52,27 @@ function App() {
               <Route path='/products' component={Product} />
               <Route path='/colleboration' component={Colleboration} />
               <Route path='/joinus' component={JoinUs} />
-
-              <Route path='/cart' component={Cart} />
-              {/* <Route path='/acount' component={Orders} /> */}
-              <Route path='/order' component={Order} />
-              <Route path='/acount' component={MyOrders} />
-              {/* <Route path='/offers' component={Orders} /> */}
+              <Route exact path="/cart" render={() => (
+                !login ? (
+                  <Redirect to="/" />
+                ) : (
+                    <Cart />
+                  )
+              )} />
+              <Route exact path="/order" render={() => (
+                !login ? (
+                  <Redirect to="/" />
+                ) : (
+                    <Order />
+                  )
+              )} />
+              <Route exact path="/acount" render={() => (
+                !login ? (
+                  <Redirect to="/" />
+                ) : (
+                    <MyOrders />
+                  )
+              )} />
               <Route path='/shop' component={Shop} exact />
               <Route path='/' component={Home} exact />
             </Switch>
@@ -64,7 +80,6 @@ function App() {
           </div>
         </Router>
       </div>
-    </Provider>
   );
 }
 

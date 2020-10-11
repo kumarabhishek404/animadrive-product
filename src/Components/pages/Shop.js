@@ -8,7 +8,7 @@ function Products() {
 
     const [products,setProducts]=useState([])
     useEffect(()=>{
-        Axios.get("http://localhost:3000/products")
+        Axios.get("http://localhost:4000/products")
         .then(response=>{
             setProducts(response.data)
         })
@@ -32,7 +32,7 @@ function Products() {
                     <h1>Products</h1>
                     <div className='all_products'>
                         <ul className='all_products_item'>{products.map(item =>
-                            <Card id={item.id} name={item.product_name} price={item.price} pic_src={item.thumnail} description={item.shot_desc} />
+                            <Card id={item.id} name={item.product_name} price={item.price} pic_src={item.thumbnail} description={item.shot_desc} />
                         )}
                         </ul>
                         <h1 onClick={handleScrollToTop}>Scroll</h1>
