@@ -4,7 +4,7 @@ import './Products_card.css'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
 
-function Product_card({ id, name, price, pic_src, description, onSelectAddToCart }) {
+function Product_card({ id, name, price, pic_src, description }) {
     const [product, setProduct, removeProduct] = useCookies()
 
     const [changeClass, setChangeClass] = useState('')

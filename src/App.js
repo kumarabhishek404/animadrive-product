@@ -25,6 +25,7 @@ function App() {
   const handleScroll = () => {
     setScrollState(scrollDoc.current.scrollTop)
   }
+  
 
   return (
     <div className='App' ref={scrollDoc} onScroll={handleScroll}>
@@ -45,11 +46,15 @@ function App() {
           {/* <Route path='/offers' component={Orders} /> */}
           <Route path='/shop' component={Shop} exact />
           <Route path='/' component={Home} exact />
+          {/* <Route path='/login' component={ window.open("http://localhost:3000/google/auth", "_self")} exactt/>
+          <Route path='/logout' component={ window.open("http://localhost:3000/auth/logout", "_self")} exactt/> */}
         </Switch>
         <Footer />
       </Router>
     </div>
   );
+  
 }
+
 
 export default App;

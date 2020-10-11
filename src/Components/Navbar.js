@@ -2,6 +2,7 @@ import './Navbar.css'
 import React, { useState, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
+import Header from './login';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 import PetIcon from '@material-ui/icons/Pets';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -86,27 +87,7 @@ function Navbar() {
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
-                                        {(authenticate) ? <PersonOutlineIcon /> : 'SignUp'}
-                                        <div className={(signmenu && authenticate) ? 'dropdown_content_active' : 'dropdown_content'}>
-
-                                            <div className='dropdown_content_container'>
-                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                    Your Orders
-                                        </Link>
-                                            </div>
-                                            <hr />
-                                            <div className='register_container'>
-                                                <Link to='/signin' onClick={handleLogOut}>
-                                                    <Route exact path='/signin'>
-                                                        {!authenticate ? <Redirect to='/' /> : null}
-                                                    </Route>
-                                                    <button>LogOut</button>
-                                                </Link>
-                                                <CloseIcon className='signmenu_close_btn' />
-                                            </div>
-                                        </div>
-                                    </Link>
+                                    <Header/>
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
