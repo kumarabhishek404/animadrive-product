@@ -1,0 +1,53 @@
+
+#vision-section{
+    height: 550px;
+    width: 100%;
+    font: 'opensans-bold', sans-serif;
+    margin: 50px 0px;
+}
+
+#vision-section > h2 {
+    text-align: center;
+    font-size: 2.5rem;   
+    margin: 10px;
+}
+
+#vision-section > h2::after {
+    content: '';
+    background: #99cc4a;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.vision{
+    border: 1px solid #99cc4a;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #67b930;
+}
+
+.div-vision-img {
+    flex: 1.5;
+    overflow: hidden;
+}
+
+.vision-text{
+    flex: 1;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+.vision-text > p {
+    margin: 45px;
+    color: #ffffff;
+}
+
+.div-vision-img img {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%)
+}
