@@ -21,16 +21,23 @@
     justify-content: center;
     align-items: center;
 }
-.additional_info textarea, .question textarea {
-    background-color: #e1e1e1;
-    padding: 6px 8px ;
+/* .username,.contact {
+    border: 2px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+} */
+.user_already_exist {
+    display: flex;
+    margin-top: 10px;
+}
+.user_already_exist h5 {
+    margin-right: 5px;
+}
+.username,.email,.mobile_number, .password {
     width: 100%;
 }
-.new_user_role, .name, .email, .mobile, .new_user_address, .qualification, .college, .resume, .technical_skills, .additional_info, .question, .pincode, .alternate_mobile, .relate, .name_of_org {
-    width: 100%;
-}
-.new_user_role select, .name input,.email input,.qualification input, .mobile input, .password input, .new_user_address input, .college input, .resume input, .technical_skills input, .pincode input, .alternate_mobile input, .relate input, .name_of_org input {
-    /* border: 2px solid red; */
+.username input,.email input,.code input, .phone input, .password input {
     width: 100%;
     padding: 6px 8px;
     font-size: 1.2rem;
@@ -40,12 +47,12 @@
     outline: none;
     border-bottom: 1px solid #e1e1e1;
 }
-.name input:focus,.email input:focus,.qualification input:focus, .mobile input:focus .password input:focus, .new_user_address input:focus, .college input:focus, .resume input:focus, .technical_skills input:focus, .pincode input:focus, .alternate_mobile input:focus, .relate input:focus, .name_of_org input:focus{
+.username input:focus,.email input:focus,.code input:focus, .phone input:focus .password input:focus{
     background-color: green;
     transition: background-color 1s ease-in;
 
 }
-/* .mobile_number {
+.mobile_number {
     display: flex;
 }
 .code input {
@@ -66,7 +73,7 @@
     border: none;
     outline: none;
     border: 2px solid #000;
-} */
+}
 
 @media screen and (max-width: 700px) {
     .register_form_container {

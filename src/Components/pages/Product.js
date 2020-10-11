@@ -17,11 +17,57 @@ function Product() {
 
     const slideImage = useRef()
 
+    const [rating1, setRating1] = useState(false)
+    const [rating2, setRating2] = useState(false)
+    const [rating3, setRating3] = useState(false)
+    const [rating4, setRating4] = useState(false)
+    const [rating5, setRating5] = useState(false)
+
+
     const clickLoadImage = (e) => {
         setSelectedImage(e.target.src)
         slideImage.current.style.border = "red"
     }
 
+    const rating1ClickHandler = () => {
+        setRating1(true)
+        setRating2(false)
+        setRating3(false)
+        setRating4(false)
+        setRating5(false)
+    }
+
+    const rating2ClickHandler = () => {
+        setRating1(true)
+        setRating2(true)
+        setRating3(false)
+        setRating4(false)
+        setRating5(false)
+    }
+
+    const rating3ClickHandler = () => {
+        setRating2(true)
+        setRating1(true)
+        setRating3(true)
+        setRating4(false)
+        setRating5(false)
+    }
+
+    const rating4ClickHandler = () => {
+        setRating1(true)
+        setRating2(true)
+        setRating3(true)
+        setRating4(true)
+        setRating5(false)
+    }
+
+    const rating5ClickHandler = () => {
+        setRating1(true)
+        setRating2(true)
+        setRating3(true)
+        setRating4(true)
+        setRating5(true)
+    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -85,7 +131,28 @@ function Product() {
                         </div>
                         <form>
                             <div className='product_rating_container'>
+<<<<<<< HEAD
                                 <h1>Your Valuable Review</h1>
+=======
+                                <h3>Rating:</h3>
+                                <div className='product_rating'>
+                                    <div onClick={rating1ClickHandler}>
+                                        {rating1 ? <StarIcon /> : <StarBorderIcon />}
+                                    </div>
+                                    <div onClick={rating2ClickHandler}>
+                                        {rating2 ? <StarIcon /> : <StarBorderIcon />}
+                                    </div>
+                                    <div onClick={rating3ClickHandler}>
+                                        {rating3 ? <StarIcon /> : <StarBorderIcon />}
+                                    </div>
+                                    <div onClick={rating4ClickHandler}>
+                                        {rating4 ? <StarIcon /> : <StarBorderIcon />}
+                                    </div>
+                                    <div onClick={rating5ClickHandler}>
+                                        {rating5 ? <StarIcon /> : <StarBorderIcon />}
+                                    </div>
+                                </div>
+>>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
                             </div>
                             <div className='input_detail'>
                                 <textarea cols='80' rows='10' placeholder='Write Somethings about product' />

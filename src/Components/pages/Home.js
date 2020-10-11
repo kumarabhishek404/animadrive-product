@@ -1,12 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Home.css'
+<<<<<<< HEAD
 import Header from '../Header';
 import About from '../About'
 import Vision from '../Vision';
 import OurProduct from '../OurProducts'
 import Impact from '../Impact'
 import { logAction } from '../../Redux'
+=======
+>>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Header from '../Header';
+import About from '../About';
+import Vision from '../Vision';
+import OurProducts from '../OurProducts';
+import Impact from '../Impact';
 
 const images = [
     'https://m.media-amazon.com/images/I/41+fXlXMPyL._SR500,500_.jpg',
@@ -14,17 +22,29 @@ const images = [
     'https://images-na.ssl-images-amazon.com/images/I/5103Xi7yQgL._SL1024_.jpg'
 ]
 
-function Home(props) {
+function Home() {
     const targetSrc = useRef()
     const [imageIndex, setImageIndex] = useState(0)
-    const [login, setLogin] = useState(false)
 
 
+<<<<<<< HEAD
+=======
+    // const handleImageSrc = (e) => {
+    //     if (imageIndex < images.length) {
+    //         targetSrc.current.src = images[imageIndex]
+    //         setImageIndex(prevState => prevState + 1)
+    //     }
+    //     else {
+    //         setImageIndex(0)
+    //     }
+    // }
+>>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
 
     return (
         <>
             <div className='home'>
                 <div className='home_container'>
+<<<<<<< HEAD
                     {/* <div className='home_wrapper'> */}
                     {/* <div className='all_products'> */}
                     {/* <div className='single_product'> */}
@@ -36,6 +56,20 @@ function Home(props) {
                     {/* </div> */}
                     {/* </div> */}
                     {/* </div> */}
+=======
+                    <div className='home_wrapper'>
+                            <Header />
+                            <About />
+                            <Vision />
+                            <OurProducts />
+                            <Impact />
+                        <div className='all_products'>
+                            <div className='single_product'>
+
+                            </div>
+                        </div>
+                    </div>
+>>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
                 </div>
             </div>
         </>

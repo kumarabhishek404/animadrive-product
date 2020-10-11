@@ -19,28 +19,7 @@ function Footer() {
                     <Link to='/' className='logo'>
                         ANIMADRIVE <PetIcon className='petIcon' fontSize="large" />
                     </Link>
-                    <ul className='footer_links'>
-                        <Link className='footer_link_item'>
-                            <li>Home</li>
-                        </Link>
-                        <span>|</span>
-                        <Link className='footer_link_item'>
-                            <li>Orders</li>
-                        </Link>
-                        <span>|</span>
-                        <Link className='footer_link_item'>
-                            <li>Products</li>
-                        </Link>
-                        <span>|</span>
-                        <Link className='footer_link_item'>
-                            <li>About</li>
-                        </Link>
-                        <span>|</span>
-                        <Link className='footer_link_item'>
-                            <li>Contact</li>
-                        </Link>
-                    </ul>
-                    <div className='websites_rights'>
+                        <div className='websites_rights'>
                         ANIMADRIVE <CopyrightIcon className='copyright' /> 2020
                     </div>
                 </div>
