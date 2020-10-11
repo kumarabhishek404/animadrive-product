@@ -52,6 +52,7 @@ function Navbar(props) {
     }
 
     const handleLogOUT = () => {
+        window.open("http://localhost:3000/logout", "_self");
         alert('alert')
         props.logAction(false)
     }
