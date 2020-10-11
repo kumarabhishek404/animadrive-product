@@ -12,7 +12,11 @@ import Cart from './Components/pages/Cart'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Shop from './Components/Cart/Shop'
 import CartNew from './Components/Cart/Cart';
-
+import Header from './Components/Header';
+import About from './Components/About';
+import Vision from './Components/Vision';
+import OurProducts from './Components/OurProducts';
+import Impact from './Components/Impact';
 
 
 function App() {
@@ -42,7 +46,7 @@ function App() {
       </div>
       <Router>
         <Navbar />
-          
+          <Route component={Header} />
         <Switch>
           {/* <Route path='/products' component={Product} /> */}
           <Route path='/register' component={Register} />
@@ -52,8 +56,12 @@ function App() {
           {/* <Route path='/acount' component={Orders} /> */}
           <Route path='/order' component={Order} />
           {/* <Route path='/offers' component={Orders} /> */}
-          <Route path='/' component={Home} exact />
+          <Route path='/' component={Shop} exact />
         </Switch>
+        <Route component={About} />
+        <Route component={Vision} />
+        <Route component={OurProducts} />
+        <Route component={Impact} />
         <Footer />
       </Router>
     </div>
