@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect,useRef, useState } from 'react'
 import './Products_card.css'
 import Axios from 'axios'
 import Card from './Product_card'
 
 
 function Products() {
-<<<<<<< HEAD
+
     const [products,setProducts]=useState([])
     useEffect(()=>{
         Axios.get("http://localhost:3000/products")
@@ -13,19 +13,7 @@ function Products() {
             setProducts(response.data)
         })
     },[])
-=======
     const scrollDoc2 = useRef()
-
-    useEffect(() => {
-        Axios.get("http://api.openweathermap.org/data/2.5/weather?q=Agra,IN&appid=28eadd90ad607fa43911b4f733752611&units=metric")
-            .then((result) => {
-                console.log(result);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
-    }, [])
->>>>>>> 3f15a15b35db8d0cc27c14d46907f15bd6c4d7d0
 
     const handleScrollToTop = () => {
         alert('clicked')

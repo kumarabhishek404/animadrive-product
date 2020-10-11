@@ -31,15 +31,10 @@ function App() {
   }
 
 
-  const handleScroll = () => {
-    setScrollState(scrollDoc.current.scrollTop)
-  }
-  
-
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
 
   return (
     <Provider store={store}>
@@ -69,31 +64,9 @@ function App() {
           </div>
         </Router>
       </div>
-      <Router>
-        <Navbar />
-        <Switch>
-          <Route path='/products' component={Product} />
-          <Route path='/colleboration' component={Colleboration} />
-          <Route path='/joinus' component={JoinUs} />
-
-          <Route path='/cart' component={Cart} />
-          {/* <Route path='/acount' component={Orders} /> */}
-          <Route path='/order' component={Order} />
-          <Route path='/acount' component={MyOrders} />
-          {/* <Route path='/offers' component={Orders} /> */}
-          <Route path='/shop' component={Shop} exact />
-          <Route path='/' component={Home} exact />
-          {/* <Route path='/login' component={ window.open("http://localhost:3000/google/auth", "_self")} exactt/>
-          <Route path='/logout' component={ window.open("http://localhost:3000/auth/logout", "_self")} exactt/> */}
-        </Switch>
-        <Footer />
-      </Router>
-
     </Provider>
   );
-  
 }
-
 
 export default App;
 

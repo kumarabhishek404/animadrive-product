@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
-import Header from './login';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 import PetIcon from '@material-ui/icons/Pets';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -13,6 +12,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
+import Axios from 'axios';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
@@ -45,6 +45,7 @@ function Navbar(props) {
         setClick(false)
     }
     const handleLogIN = () => {
+        window.open("http://localhost:3000/google/auth", "_self");
         props.logAction(true)
         // setClick(false)
         // setAuthenticate(false)
@@ -54,6 +55,27 @@ function Navbar(props) {
         alert('alert')
         props.logAction(false)
     }
+
+    useEffect(()=>{
+        Axios.get("http://localhost:3000/authSuccess")
+        .then(response=>{
+          console.log(response.status)
+            if(response.status === 200) {
+            //   setUser(response.data.user)
+              props.logAction(true)
+          }
+          else{
+            alert('alert')
+            props.logAction(false)
+
+          }
+        })
+        .catch(error=>{
+          // setLoading(false)
+            // setAuthenticated(false)
+            // setError(error)
+        })
+    },[])
     // useEffect(() => {
     //     console.log('running');
     //     window.addEventListener('scroll', () => {
@@ -110,7 +132,30 @@ function Navbar(props) {
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Header/>  
+                                    <Link className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
+                                        <div onClick={openSignInMenu}>
+                                            {(login) ? <PersonOutlineIcon /> : 'SignUp'}
+                                            <div className={(signmenu && login) ? 'dropdown_content_active' : 'dropdown_content'}>
+
+                                                <div className='dropdown_content_container'>
+                                                    <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                        Your Orders
+                                        </Link>
+                                                </div>
+                                                <hr />
+                                                <div className='register_container'>
+                                                    <Link onClick={handleLogOUT}>
+                                                        {/* <Route exact path='/'>
+                                                            {!login ? <Redirect to='/' /> : null}
+                                                        </Route> */}
+                                                        {/* <button onClick={handleLogOUT}>LogOut</button> */}
+                                                        LogOut
+                                                    </Link>
+                                                    <CloseIcon className='signmenu_close_btn' />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
