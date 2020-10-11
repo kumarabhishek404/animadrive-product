@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Home.css'
+import { logAction } from '../../Redux'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import Axios from 'axios';
@@ -9,6 +10,7 @@ const images = [
     'https://elcopcbonline.com/photos/product/4/176/4.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/5103Xi7yQgL._SL1024_.jpg'
 ]
+
 
 function Home() {
 

@@ -1,5 +1,8 @@
 import './Navbar.css'
-import React, { useState, useRef } from 'react'
+import { logAction } from '../Redux';
+import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import React, { useState, useEffect, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
 import Header from './login';
@@ -13,7 +16,7 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-function Navbar() {
+function Navbar(props) {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
@@ -22,6 +25,9 @@ function Navbar() {
     // const [prevScrollPos, setPrevScrollPos] = useState()
     // const [currentScrollPos, setCurrentScrollPos] = useState()
     // const scrollNavbar = useRef()
+
+    const login = useSelector(state => state.login)
+    const message = useSelector(state => state.message)
 
     const openSignInMenu = (e) => {
         setSignmenu(!signmenu)
@@ -38,10 +44,26 @@ function Navbar() {
         setSearch(!search)
         setClick(false)
     }
-    const handleLogOut = () => {
-        setClick(false)
-        setAuthenticate(false)
+    const handleLogIN = () => {
+        props.logAction(true)
+        // setClick(false)
+        // setAuthenticate(false)
     }
+
+    const handleLogOUT = () => {
+        alert('alert')
+        props.logAction(false)
+    }
+    // useEffect(() => {
+    //     console.log('running');
+    //     window.addEventListener('scroll', () => {
+    //         console.log('scrolling');
+    //         if (window.pageYOffset >= 100) {
+    //             alert('alert')
+    //         }
+    //     })
+    // }, [])
+
 
     return (
         <>
@@ -49,6 +71,7 @@ function Navbar() {
                 <div className='navbar_container'>
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
                         <div><PetIcon className='petIcon' fontSize="large" /></div>
+                        <h4>Log - {message}</h4>
                     </Link>
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
@@ -87,7 +110,7 @@ function Navbar() {
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Header/>
+                                    <Header/>  
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
@@ -104,4 +127,5 @@ function Navbar() {
     )
 }
 
-export default Navbar
+// export default Navbar
+export default connect(null, { logAction })(Navbar);

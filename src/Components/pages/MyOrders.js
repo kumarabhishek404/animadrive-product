@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './MyOrders.css'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
@@ -29,6 +29,12 @@ const MyOrders = [
 ]
 
 function Acount() {
+
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
     return (
         <>
             <div className='acount'>
@@ -62,8 +68,8 @@ function Acount() {
                                             }
                                         </div>
                                         <div className='more_shoping'>
-                                            <Link to='/products'>
-                                                <Button>More Shoping</Button>
+                                            <Link to='/shop'>
+                                                <Button path='/shop'>More Shoping</Button>
                                             </Link>
                                         </div>
                                     </div>
