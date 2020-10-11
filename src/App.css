@@ -3,9 +3,32 @@
     scroll-behavior: smooth;
 }
 .App {
-    height: 669px;
+    /* height: 669px; */
     /* padding-bottom: 100%; */
     overflow: auto;
+    position: relative;
+}
+.activate_navbar {
+    position: static;
+    top: 0px;
+}
+.hidden_navbar {
+    position: fixed;
+    top: -80px;
+}
+.app_navbar {
+    position: relative;
+    top: 0px;
+    background-color: #333;
+  width: 100%;
+  display: inline-block;
+  transition: top 0.3s;
+    /* overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  margin-bottom: 300px;
+  top: 0;
+  width: 100%; */
 }
 .comeToStart {
     border: 2px solid black;

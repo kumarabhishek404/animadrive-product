@@ -26,16 +26,7 @@ const product_list = [
 
 
 function Products() {
-    // const ScrollDoc = useRef()
-
-    // const handleScroll = () => {
-    //     const scrollY = window.scrollY //Don't get confused by what's scrolling - It's not the window
-    //     const scrollTop = ScrollDoc.current.scrollTop
-    //     console.log(`onScroll, window.scrollY: ${scrollTop} myRef.scrollTop: ${scrollTop}`)
-    //     // if (scrollTop >= 10) {
-    //     //     alert('scrolled')
-    //     // }
-    // }
+    const scrollDoc2 = useRef()
 
     useEffect(() => {
         Axios.get("http://api.openweathermap.org/data/2.5/weather?q=Agra,IN&appid=28eadd90ad607fa43911b4f733752611&units=metric")
@@ -47,13 +38,19 @@ function Products() {
             })
     }, [])
 
+    const handleScrollToTop = () => {
+        alert('clicked')
+        // window.scrollTo(0, 0)
+        scrollDoc2.current.scrollTo(0, 0)
+    }
+
     useEffect(() => {
         window.scrollTo(0, 0)
-    }, [])
+    })
 
     return (
         <>
-            <div className='products'>
+            <div className='products' ref={scrollDoc2}>
                 <div className='products_container'>
                     <h1>Products</h1>
                     <div className='all_products'>
@@ -61,6 +58,7 @@ function Products() {
                             <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} />
                         )}
                         </ul>
+                        <h1 onClick={handleScrollToTop}>Scroll</h1>
                     </div>
                 </div>
             </div>

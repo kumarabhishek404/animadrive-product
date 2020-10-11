@@ -1,3 +1,14 @@
+.home_navbar_hide {
+    display: none;
+    position: fixed;
+    top: 0;
+}
+.home_navbar_visible {
+    display: block;
+    position: fixed;
+    top: 0;
+}
+
 .products {
     /* border: 2px solid red; */
     text-align: center;

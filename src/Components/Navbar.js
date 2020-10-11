@@ -1,5 +1,8 @@
 import './Navbar.css'
-import React, { useState, useRef } from 'react'
+import { logAction } from '../Redux';
+import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
+import React, { useState, useEffect, useRef } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
 // import SvgIcon from '@material-ui/core/SvgIcon';
@@ -12,7 +15,7 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-function Navbar() {
+function Navbar(props) {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
@@ -21,6 +24,9 @@ function Navbar() {
     // const [prevScrollPos, setPrevScrollPos] = useState()
     // const [currentScrollPos, setCurrentScrollPos] = useState()
     // const scrollNavbar = useRef()
+
+    const login = useSelector(state => state.login)
+    const message = useSelector(state => state.message)
 
     const openSignInMenu = (e) => {
         setSignmenu(!signmenu)
@@ -37,10 +43,25 @@ function Navbar() {
         setSearch(!search)
         setClick(false)
     }
-    const handleLogOut = () => {
-        setClick(false)
-        setAuthenticate(false)
+    const handleLogIN = () => {
+        props.logAction(true)
+        // setClick(false)
+        // setAuthenticate(false)
     }
+
+    const handleLogOUT = () => {
+        props.logAction(false)
+    }
+    // useEffect(() => {
+    //     console.log('running');
+    //     window.addEventListener('scroll', () => {
+    //         console.log('scrolling');
+    //         if (window.pageYOffset >= 100) {
+    //             alert('alert')
+    //         }
+    //     })
+    // }, [])
+
 
     return (
         <>
@@ -48,6 +69,7 @@ function Navbar() {
                 <div className='navbar_container'>
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
                         <div><PetIcon className='petIcon' fontSize="large" /></div>
+                        <h4>Log - {message}</h4>
                     </Link>
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
@@ -85,25 +107,33 @@ function Navbar() {
                             </Link>
                             </li>
                             <li className='nav_item'>
+                                <Link className='navbar_links_item' onClick={handleLogOUT}>
+                                    LogOut
+                            </Link>
+                            </li>
+                            <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={openSignInMenu}>
-                                        {(authenticate) ? <PersonOutlineIcon /> : 'SignUp'}
-                                        <div className={(signmenu && authenticate) ? 'dropdown_content_active' : 'dropdown_content'}>
+                                    <Link className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
+                                        <div onClick={openSignInMenu}>
+                                            {(login) ? <PersonOutlineIcon /> : 'SignUp'}
+                                            <div className={(signmenu && login) ? 'dropdown_content_active' : 'dropdown_content'}>
 
-                                            <div className='dropdown_content_container'>
-                                                <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                    Your Orders
+                                                <div className='dropdown_content_container'>
+                                                    <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                        Your Orders
                                         </Link>
-                                            </div>
-                                            <hr />
-                                            <div className='register_container'>
-                                                <Link to='/signin' onClick={handleLogOut}>
-                                                    <Route exact path='/signin'>
-                                                        {!authenticate ? <Redirect to='/' /> : null}
-                                                    </Route>
-                                                    <button>LogOut</button>
-                                                </Link>
-                                                <CloseIcon className='signmenu_close_btn' />
+                                                </div>
+                                                <hr />
+                                                <div className='register_container'>
+                                                    <Link onClick={handleLogOUT}>
+                                                        {/* <Route exact path='/'>
+                                                            {!login ? <Redirect to='/' /> : null}
+                                                        </Route> */}
+                                                        {/* <button onClick={handleLogOUT}>LogOut</button> */}
+                                                        LogOut
+                                                    </Link>
+                                                    <CloseIcon className='signmenu_close_btn' />
+                                                </div>
                                             </div>
                                         </div>
                                     </Link>
@@ -123,4 +153,5 @@ function Navbar() {
     )
 }
 
-export default Navbar
+// export default Navbar
+export default connect(null, { logAction })(Navbar);

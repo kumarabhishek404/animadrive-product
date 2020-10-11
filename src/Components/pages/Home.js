@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './Home.css'
+import { logAction } from '../../Redux'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const images = [
@@ -8,9 +9,10 @@ const images = [
     'https://images-na.ssl-images-amazon.com/images/I/5103Xi7yQgL._SL1024_.jpg'
 ]
 
-function Home() {
+function Home(props) {
     const targetSrc = useRef()
     const [imageIndex, setImageIndex] = useState(0)
+    const [login, setLogin] = useState(false)
 
 
     useEffect(() => {
