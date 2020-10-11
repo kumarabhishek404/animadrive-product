@@ -50,6 +50,7 @@ function Navbar(props) {
     }
 
     const handleLogOUT = () => {
+        alert('alert')
         props.logAction(false)
     }
     // useEffect(() => {
@@ -104,11 +105,6 @@ function Navbar(props) {
                             <li className='nav_item'>
                                 <Link to='/colleboration' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Colleboration
-                            </Link>
-                            </li>
-                            <li className='nav_item'>
-                                <Link className='navbar_links_item' onClick={handleLogOUT}>
-                                    LogOut
                             </Link>
                             </li>
                             <li className='nav_item'>
