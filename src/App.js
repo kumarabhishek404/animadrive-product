@@ -15,9 +15,17 @@ import { useSelector } from 'react-redux';
 // import Shop from './Components/pages/Shop'
 // import CartNew from './Components/pages/Cart';
 import MyOrders from './Components/pages/MyOrders';
+import Axios from 'axios';
 
 import { Provider } from 'react-redux'
 import store from './Redux/Store'
+
+// Axios.create({
+//   url: 'http://localhost:4000/',
+//   method:'POST'
+//   // withCredentials: true,
+// });
+
 function App() {
   // const scrollDoc = useRef()
   const login = useSelector(state => state.login)

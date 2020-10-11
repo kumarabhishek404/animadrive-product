@@ -63,6 +63,8 @@ let axiosConfig = {
     const onhandleRemoveProduct = (id) => {
         removeProduct(`product_${id}`)
     }
+    Axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+
     const orderNow = () => {
      Axios.post("http://localhost:4000/placeOrder/main/order",{
         firstName:"jk",
@@ -75,7 +77,7 @@ let axiosConfig = {
         total_amount:23,
         product_id:1,
         customer_id:1
-     },axiosConfig).then((res) =>{
+     },{ withCredentials: true }).then((res) =>{
          console.log(res, "this is res");
      }).catch((err) => {console.log(err, "hey error ppppppppp")});
     }

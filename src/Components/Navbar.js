@@ -15,13 +15,13 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import Axios from 'axios';
 // import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 // import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-Axios.create({
-    baseURL: 'http://localhost:4000/',
-    // withCredentials: true,
-});
+// Axios.create({
+//     url: 'http://localhost:4000/',
+//     // withCredentials: true,
+// });
 
 // Axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-Axios.defaults.withCredentials = true;
+// Axios.defaults.withCredentials = true;
 // Axios.defaults.crossDomain = true;
 
 
@@ -89,7 +89,7 @@ function Navbar(props) {
     }
 
     useEffect(()=>{
-        Axios.get("http://localhost:4000/authSuccess")
+        Axios.get("http://localhost:4000/authSuccess",{ withCredentials: true })
         .then(response=>{
           console.log(response.status)
             if(response.status === 200) {
