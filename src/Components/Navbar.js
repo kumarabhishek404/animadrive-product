@@ -19,6 +19,7 @@ function Navbar(props) {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
+    const [formmenu, setFormmenu] = useState(false)
     const [authenticate, setAuthenticate] = useState(true)
     // const [windowScroll, setWindowScroll] = useState(false)
     // const [prevScrollPos, setPrevScrollPos] = useState()
@@ -28,8 +29,13 @@ function Navbar(props) {
     const login = useSelector(state => state.login)
     const message = useSelector(state => state.message)
 
-    const openSignInMenu = (e) => {
+    const openSignInMenu = () => {
         setSignmenu(!signmenu)
+        // setSignmenu(false)
+    }
+
+    const openFormMenu = (e) => {
+        setFormmenu(!formmenu)
     }
 
     const closeButtonHandler = () => {
@@ -50,7 +56,6 @@ function Navbar(props) {
     }
 
     const handleLogOUT = () => {
-        alert('alert')
         props.logAction(false)
     }
     // useEffect(() => {
@@ -70,7 +75,6 @@ function Navbar(props) {
                 <div className='navbar_container'>
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
                         <div><PetIcon className='petIcon' fontSize="large" /></div>
-                        <h4>Log - {message}</h4>
                     </Link>
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
@@ -97,7 +101,7 @@ function Navbar(props) {
                                     Shop
                             </Link>
                             </li>
-                            <li className='nav_item'>
+                            {/* <li className='nav_item'>
                                 <Link to='/joinus' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Join Us
                             </Link>
@@ -106,28 +110,43 @@ function Navbar(props) {
                                 <Link to='/colleboration' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Colleboration
                             </Link>
+                            </li> */}
+                            <li className='nav_item'>
+                                <div className='dropdown'>
+                                    <Link className='navbar_links_item dropdown_btn'>
+                                        <div onClick={openFormMenu}>
+                                            Join
+                                            <div className={(formmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
+                                                <div className='dropdown_content_container'>
+                                                    <Link to='/joinus' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                        Join as Team
+                                        </Link>
+                                                    <Link to='/colleboration' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                        Colleboration with us
+                                        </Link>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </li>
+                            <li className={login ? 'nav_item' : 'nav_item hidden'}>
+                                <Link className='navbar_links_item' onClick={handleLogOUT}>
+                                    LogOut
+                                </Link>
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
                                     <Link className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
                                         <div onClick={openSignInMenu}>
-                                            {(login) ? <PersonOutlineIcon /> : 'SignUp'}
-                                            <div className={(signmenu && login) ? 'dropdown_content_active' : 'dropdown_content'}>
-
+                                            {(login) ? 'Profile' : 'SignUp'}
+                                            <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
                                                     <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                         Your Orders
                                         </Link>
                                                 </div>
-                                                <hr />
                                                 <div className='register_container'>
-                                                    <Link onClick={handleLogOUT}>
-                                                        {/* <Route exact path='/'>
-                                                            {!login ? <Redirect to='/' /> : null}
-                                                        </Route> */}
-                                                        {/* <button onClick={handleLogOUT}>LogOut</button> */}
-                                                        LogOut
-                                                    </Link>
                                                     <CloseIcon className='signmenu_close_btn' />
                                                 </div>
                                             </div>
