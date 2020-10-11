@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useCookies } from 'react-cookie';
+// import { connect } from 'react-redux'
 import './Products_card.css'
 import { Link } from 'react-router-dom'
 import Button from '../Button'
+// import { addToCart } from '../Cart/actions/cartActions'
 
 function Product_card({ id, name, price, pic_src, description, onSelectAddToCart }) {
     const [product, setProduct, removeProduct] = useCookies()
@@ -32,24 +34,38 @@ function Product_card({ id, name, price, pic_src, description, onSelectAddToCart
 
     return (
         <>
-            <li className='card_item'>
-                <Link to='/products' className='card_item_link'>
-                    <figure className='card_item_pic-wrap'>
-                        <img src={pic_src} alt={id} className='card_item_image' />
-                    </figure>
-                    <div className='card_item_info'>
-                        <h1 className='card_item_text'>{name}</h1>
-                        <h1>Price: {price}</h1>
-                        <div className='product_description'>
-                            <p>{description}</p>
-                        </div>
-                        <div className='product_btn'>
-                            <Button className='btn' buttonStyle='btn_outline' onClick={() => handleAddToCart({ id, name, price, pic_src, description })} >Add to cart</Button>
-                            <Button buttonStyle='btn_outline' onClick={() => onhandleRemoveProduct(id)} >Buy now</Button>
-                        </div>
-                    </div>
-                </Link>
-            </li>
+           <section class="product">
+	<div class="product__photo">
+		<div class="photo-container">
+			<div class="photo-main">
+				<img src="images/plant.png" alt="green apple slice"/>
+			</div>
+
+		</div>
+	</div>
+	<div class="product__info">
+		<div class="title">
+			<h1>Delicious plants</h1>
+		</div>
+		<div class="price">
+			R$ <span>7.93</span>
+		</div>
+		
+		<div class="description">
+			<h3>DESCRIPTION</h3>
+			<ul>
+				<li>green plants are green</li>
+				<li>green plants are green</li>
+				<li>green plants are green</li>
+				<li>green plants are green and plant food </li>
+			</ul>
+		</div>
+		<button class="buy--btn">ADD TO CART</button>
+	</div>
+</section>
+        <hr/>
+
+
         </>
     )
 }

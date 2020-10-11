@@ -3,21 +3,18 @@
     margin: 0;
     box-sizing: border-box;
 }
-.hidden {
-    display: none;
-}
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    background: #fff;
     height: 80px;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
-    /* position: sticky; */
-    /* width: 100%; */
+    position: sticky;
+    width: 100%;
     display: flex;
     transition: top 0.3s;
-    /* top: 0px; */
-    /* z-index: 9; */
+    top: 0px;
+    z-index: 9;
 }
 .navbar_container {
     display: flex;
@@ -25,17 +22,18 @@
     align-items: center;
     height: 80px;
     max-width: 1500px;
+    margin-top: 50px;
 }
 .navbar_logo {
     display: flex;
-    justify-self: start;
-    align-items: center;
+    /* justify-self: start;
+    align-items: center; */
     font-size: 2rem;
     text-decoration: none;
-    width: 20vw;
-    color: #fff;
+    /* width: 20vw; */
+    color: #000000;
     cursor: pointer;
-    margin-left: 15px;
+    /* margin-left: 15px; */
 }
 .petIcon  {
     margin-left: 5px;
@@ -164,20 +162,18 @@
 
 .nav_menu {
     display: grid;
-    justify-content: end;
+    justify-content: center;
     grid-template-columns: repeat(5, auto);
     grid-gap: 0px;
     text-align: center;
-    margin-right: 1rem;
+    margin-left: 2.5rem;
     width: 70vw;
-    /* border: 2px solid blue; */
 }
 .nav_menu_box {
-    /* float: right; */
     /* border: 2px solid blue; */
     min-width: 50px;
-    margin-right: 0;
     display: flex;
+    margin-left: 3.7rem;
 }
 .signIn .navbar_links_item{
     border: 2px solid #e1e1e1;
@@ -280,27 +276,25 @@
     width: 100px;
 }
 .nav_item {
-    padding: 10px 8px;
+    padding: 10px 30px;
     color: #fff;
     list-style: none;
-    width: 100px;
+    /* width: 80px; */
+    font-size: 1.3rem;
     /* border-bottom: 4px solid   rgb(28, 27, 27); */
 }
 /* .nav_item:hover {
     border-bottom: 4px solid #fff;
 } */
+
+.navbar_links_item:hover{
+    color: #99cc4a;
+}
+
 .navbar_links_item {
     text-decoration: none;
-    color: #fff;
+    color: grey;
 }
-/* .cart_image::after {
-    content: '3';
-    color: red;
-    position: absolute;
-    top: 12px;
-    right: 80px;
-    z-index: 1;
-} */
 
 @media screen and (max-width: 960px){
     .nav_menu {
@@ -427,3 +421,8 @@
     }
 }
 
+
+/* cart */
+.cart_icon{
+    color: #99cc4a;
+}
