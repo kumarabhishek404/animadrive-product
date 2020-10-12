@@ -3,16 +3,14 @@ import "./Impact.css";
 
 function Impact() {
   return <>
-  <section id="impact-section">
-       <h2>-Impact-</h2>
-       <div className='impact-text' >
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!
-        Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit
-        Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!
+    <section id="impact-section">
+      <h2>-Impact-</h2>
+      <div className='impact-text' >
+        <p>There are around 192 million stray cattles in India. There are more than a crore stray cattle while there is shelter and food for not even 10 per cent of these animals — and no resources for this purpose. In the Delhi-NCR region, more than 200 cows and bulls die every year due to lack of such resources. Our purpose is to save or preserve these stray and dairy cattles as much as possible. We are also teaching new art to women residing in rural areas called " Waste to art." which also provides employment to rural women. Nonetheless, with regards to plants, wreck isn't the main expected disaster, plants can be toxic and a peril to your kids whenever ingested. To solve that we are also giving a non toxic plant food to plant parents.
         </p>
-     </div>
- </section>;
- </> 
+      </div>
+    </section>;
+  </>
 }
 
 export default Impact;

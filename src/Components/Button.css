@@ -11,14 +11,15 @@
     cursor: pointer;
     outline: none;
     border: none;
+    color: #99cc4a;
     border-radius: 5px;
     padding: 5px 17px;
     margin-right: 10px;
-    border: 0.2px solid #e1e1e1;
-    background-color: #e1e1e1;
+    border: 0.2px solid #99cc4a;
+    background-color: white;
 }
 .btn_outline:hover {
-    background-color: black;
+    background-color: #99cc4a;
     color: white;
 }
 
@@ -28,13 +29,13 @@
     border: none;
     padding: 5px 17px;
     color: white;
-    background-color: black;
-    border: 2px solid black;
+    background-color: #99cc4a;
+    border: 2px solid white;
 }
 .btn_primary:hover {
-    color: black;
+    color: #99cc4a;
     background: transparent;
-    border: 2px solid black;
+    border: 2px solid #99cc4a;
 }
 .btn_size {
     /* border: 2px solid red; */

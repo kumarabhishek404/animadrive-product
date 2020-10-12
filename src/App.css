@@ -9,16 +9,20 @@
     /* overflow: auto; */
 }
 .comeToStart {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 5px;
-    background-color: black;
+    background-color: #99cc4a;
     color: white;
     position: fixed;
     transition: all 1s ease;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    /* z-index: -1; */
+    z-index: 999;
+}
+.comeToStart:hover {
+    background-color: black;
+    
 }
 .signDisplay {
     /* position: fixed; */

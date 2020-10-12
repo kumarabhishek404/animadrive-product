@@ -6,21 +6,24 @@ import Card from './Product_card'
 const product_list = [
     {
         id: 1,
-        title: "product_1",
-        price: '$23,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        title: "Green Gud",
+        price: '₹ 149',
+        image: "/Images/1.jpg",
+        description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     },
     {
         id: 2,
-        title: "product_2",
-        price: '$21,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        title: "Green Gud",
+        price: '₹ 149',
+        image: "/Images/2.jpg",
+        description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     },
     {
         id: 3,
-        title: "product_3",
-        price: '$13,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg"
+        title: "Green Gud",
+        price: '₹ 149',
+        image: "/Images/3.jpg",
+        description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     }
 ]
 
@@ -38,12 +41,6 @@ function Products() {
             })
     }, [])
 
-    const handleScrollToTop = () => {
-        alert('clicked')
-        // window.scrollTo(0, 0)
-        scrollDoc2.current.scrollTo(0, 0)
-    }
-
     useEffect(() => {
         window.scrollTo(0, 0)
     })
@@ -54,11 +51,10 @@ function Products() {
                 <div className='products_container'>
                     <h1>Products</h1>
                     <div className='all_products'>
-                        <ul className='all_products_item'>{product_list.map(item =>
-                            <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} />
+                        <div className='all_products_item'>{product_list.map(item =>
+                            <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} desc={item.description} />
                         )}
-                        </ul>
-                        <h1 onClick={handleScrollToTop}>Scroll</h1>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../pages/Product.css'
+// import '../pages/Product.css'
 // import { connect } from 'react-redux'
-import Card from '../pages/Product_card'
+// import Card from '../pages/Product_card'
 // import Button from '../Button'
 // import { addToCart } from './actions/cartActions'
 

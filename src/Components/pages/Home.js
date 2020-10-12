@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './Home.css'
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Header from '../Header';
-import About from '../About';
+import './Home.css';
+import Header from '../Header'
+import About from '../About'
 import Vision from '../Vision';
-import OurProducts from '../OurProducts';
-import Impact from '../Impact';
+import OurProduct from '../OurProducts'
+import Impact from '../Impact'
+import { logAction } from '../../Redux';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 const images = [
     'https://m.media-amazon.com/images/I/41+fXlXMPyL._SR500,500_.jpg',
@@ -18,32 +19,23 @@ function Home() {
     const [imageIndex, setImageIndex] = useState(0)
 
 
-    // const handleImageSrc = (e) => {
-    //     if (imageIndex < images.length) {
-    //         targetSrc.current.src = images[imageIndex]
-    //         setImageIndex(prevState => prevState + 1)
-    //     }
-    //     else {
-    //         setImageIndex(0)
-    //     }
-    // }
-
     return (
         <>
             <div className='home'>
                 <div className='home_container'>
-                    <div className='home_wrapper'>
-                            <Header />
-                            <About />
-                            <Vision />
-                            <OurProducts />
-                            <Impact />
-                        <div className='all_products'>
-                            <div className='single_product'>
 
-                            </div>
-                        </div>
-                    </div>
+                    {/* <div className='home_wrapper'> */}
+                    {/* <div className='all_products'> */}
+                    {/* <div className='single_product'> */}
+                    <Header />
+                    <About />
+                    <Vision />
+                    <OurProduct />
+                    <Impact />
+                    {/* </div> */}
+                    {/* </div> */}
+                    {/* </div> */}
+
                 </div>
             </div>
         </>
