@@ -3,7 +3,7 @@
     height: 550px;
     width: 100%;
     font: 'opensans-bold', sans-serif;
-    margin: 50px 0px;
+    margin: 100px auto;
 }
 
 #vision-section > h2 {
@@ -51,3 +51,24 @@
     height: 100%;
     filter: brightness(80%)
 }
+
+
+   
+@media screen and (max-width: 1060px) {
+    .vision{
+    flex-direction: column;
+    }
+    #vision-section{
+    height: 800px;
+    }
+    
+    }
+    
+    @media screen and (max-width: 450px) {
+    #vision-section{
+    height: 1300px;
+    margin: auto;
+    text-align: center;
+    }
+    
+    }

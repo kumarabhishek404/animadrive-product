@@ -37,6 +37,7 @@ function Navbar(props) {
 
     const openFormMenu = (e) => {
         setFormmenu(!formmenu)
+        setSignmenu(false)
     }
 
     const closeButtonHandler = () => {
@@ -45,6 +46,7 @@ function Navbar(props) {
     }
     const closeMenuHandler = () => {
         setClick(false)
+        setSignmenu(false)
         setFormmenu(false)
     }
     const handleSearchAnimation = () => {
@@ -60,6 +62,8 @@ function Navbar(props) {
 
     const handleLogOUT = () => {
         props.logAction(false)
+        setSignmenu(false)
+        setFormmenu(false)
     }
     // useEffect(() => {
     //     console.log('running');
@@ -145,7 +149,7 @@ function Navbar(props) {
                                             {(login) ? 'Profile' : 'SignUp'}
                                             <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
-                                                    <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                    <Link to='/order' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                         Your Orders
                                         </Link>
                                                 </div>

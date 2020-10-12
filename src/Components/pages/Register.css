@@ -34,32 +34,24 @@
 .user_already_exist h5 {
     margin-right: 5px;
 }
-.username,.email,.mobile_number, .password {
+.name, .username,.email,.mobile, .password, .new_user_role, .new_user_address, .qualification, .college, .resume, .technical_skills, .additional_info, .questions, .name_of_org, .relate, .alternate_mobile, .pincode {
     width: 100%;
 }
-.username input,.email input,.code input, .phone input, .password input {
+.name input, .username input,.email input,.code input, .mobile input, .password input, .new_user_role select, .new_user_address input, .qualification input, .college input, .resume input, .technical_skills input, .additional_info textarea, .questions textarea, .name_of_org input, .relate input, .alternate_mobile input, .pincode input {
     width: 100%;
     padding: 6px 8px;
     font-size: 1.2rem;
+    background-color: none;
     margin-bottom: 30px;
     height: 40px;
     border: none;
     outline: none;
     border-bottom: 1px solid #e1e1e1;
 }
-.username input:focus,.email input:focus,.code input:focus, .phone input:focus .password input:focus{
+.name input:focus, .username input:focus,.email input:focus,.code input:focus, .mobile input:focus, .password input:focus, .new_user_role input:focus, .new_user_address input:focus, .qualification input:focus, .college input:focus, .resume input:focus, .technical_skills input:focus, .additional_info textarea:focus, .questions textarea:focus, .name_of_org input:focus, .relate input:focus, .alternate_mobile input:focus, .pincode input:focus{
     background-color: green;
     transition: background-color 1s ease-in;
 
-}
-.mobile_number {
-    display: flex;
-}
-.code input {
-    width: 40%;
-}
-.code {
-    width: 40%;
 }
 .phone {
     width: 100%;

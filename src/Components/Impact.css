@@ -29,3 +29,30 @@
     line-height: 35px;
     letter-spacing: 1.5px;
 }
+
+
+@media screen and (max-width: 1060px) {
+    #impact-section{
+    height: 400px;
+    }
+    
+    }
+    
+    @media screen and (max-width: 635px) {
+    #impact-section{
+    height: 600px;
+    }
+    .impact-text > p{
+    margin: auto;
+    }
+    }
+    
+    
+    @media screen and (max-width: 452px) {
+    #impact-section{
+    height: 800px;
+    }
+    .impact-text > p{
+    margin: auto;
+    }
+    }

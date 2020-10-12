@@ -12,106 +12,55 @@ import StarIcon from '@material-ui/icons/Star';
 
 
 function Product() {
-    const [selectedImage, setSelectedImage] = useState('https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70')
+    const [selectedImage, setSelectedImage] = useState('/Images/1.jpg')
     // const [slideImage, setSlideImage] = useState(false)
 
     const slideImage = useRef()
-
-    const [rating1, setRating1] = useState(false)
-    const [rating2, setRating2] = useState(false)
-    const [rating3, setRating3] = useState(false)
-    const [rating4, setRating4] = useState(false)
-    const [rating5, setRating5] = useState(false)
-
-
     const clickLoadImage = (e) => {
         setSelectedImage(e.target.src)
-        slideImage.current.style.border = "red"
     }
 
-    const rating1ClickHandler = () => {
-        setRating1(true)
-        setRating2(false)
-        setRating3(false)
-        setRating4(false)
-        setRating5(false)
-    }
-
-    const rating2ClickHandler = () => {
-        setRating1(true)
-        setRating2(true)
-        setRating3(false)
-        setRating4(false)
-        setRating5(false)
-    }
-
-    const rating3ClickHandler = () => {
-        setRating2(true)
-        setRating1(true)
-        setRating3(true)
-        setRating4(false)
-        setRating5(false)
-    }
-
-    const rating4ClickHandler = () => {
-        setRating1(true)
-        setRating2(true)
-        setRating3(true)
-        setRating4(true)
-        setRating5(false)
-    }
-
-    const rating5ClickHandler = () => {
-        setRating1(true)
-        setRating2(true)
-        setRating3(true)
-        setRating4(true)
-        setRating5(true)
-    }
 
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
 
     return (
-        <div className='product'>
+        <div className='products'>
             <div className='product_container'>
                 <div className='product_image'>
                     <div className='product_detail_heading'>
-                        <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1>
+                        <h1>Green Gud</h1>
                     </div>
                     <div className='product_image_container'>
                         <div className='product_main_image'>
                             <img src={selectedImage} alt='Image' />
                         </div>
                         <div className='product_image_side'>
-                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/c/n/5/ydtdqc01jy-mi-original-imaftfwercszkuby.jpeg?q=70' alt='Image' onMouseEnter={clickLoadImage} ref={slideImage} />
-                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/w/v/z/ydtdqc01jy-mi-original-imaftfwewqvy9rnf.jpeg?q=70' onMouseEnter={clickLoadImage} />
-                            <img src='https://rukminim1.flixcart.com/image/416/416/kbs9k7k0/headphone/z/x/e/ydtdqc01jy-mi-original-imaftfwebp6gd5xw.jpeg?q=70' alt='Image' onMouseEnter={clickLoadImage} />
+                            <img src='/Images/1.jpg' alt='Image' onMouseEnter={clickLoadImage} />
+                            <img src='/Images/2.jpg' onMouseEnter={clickLoadImage} />
+                            <img src='Images/3.jpg' alt='Image' onMouseEnter={clickLoadImage} />
                         </div>
                     </div>
                 </div>
                 <div className='product_details'>
-                    <h1>Product Details</h1>
+                    {/* <h1>Product Details</h1> */}
                     <div className='product_detail_container'>
                         <div className='product_detail_price'>
-                            <h1>$29,000</h1><h6>In Stoke</h6>
+                            <h1>₹ 149</h1><h3>In Stoke</h3>
                         </div>
                         <div className='product_detail_heading'>
-                            <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1>
+                            {/* <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1> */}
                         </div>
                         <div className='product_description'>
-                            <p>Made from floral waste</p>
-                            <p>Tulsi seed packaging</p>
-                            <p>40 incense sticks</p>
+                            <p>Nutrition food plant</p>
+                            <p>Aromatic and decorative</p>
+                            <p>40 pieces per packet</p>
                         </div>
-                        <h3>Category: Essence of India</h3>
-                        <h3>Tags: Aromatic Incense Sticks, Essence Of India, Help Us Green</h3>
+                        <h3>Brand: A product of AnimaDrive</h3>
+                        <h3>Tags: Aromatic & Decorative Nutrition Plant Food, AnimaDrive</h3>
+                        <p>It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has  palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month. Another benefit of our product is that you can't over feed your plants with it, Because it won't consume plants like different kinds of fertilizers. The Design of our  product is inspired by dung beetle concept.</p>
                     </div>
-                </div>
-                <div className='description'>
-                    <h1>Description</h1>
-                    <p>HelpUsGreen Incense sticks are made out of floral waste from religious sites. The packaging is made of Tulsi seed paper which when sown in the soil, grows into a Tulsi plant. The pack contains 40 incense sticks which are bambooless and charcoal-free. A stand is included inside. Burning time for each incense stick is approximately 30 minutes.</p>
                 </div>
                 <div className='other_product_action'>
                     <div className='other_product_action_container'>
@@ -131,28 +80,7 @@ function Product() {
                         </div>
                         <form>
                             <div className='product_rating_container'>
-<<<<<<< HEAD
                                 <h1>Your Valuable Review</h1>
-=======
-                                <h3>Rating:</h3>
-                                <div className='product_rating'>
-                                    <div onClick={rating1ClickHandler}>
-                                        {rating1 ? <StarIcon /> : <StarBorderIcon />}
-                                    </div>
-                                    <div onClick={rating2ClickHandler}>
-                                        {rating2 ? <StarIcon /> : <StarBorderIcon />}
-                                    </div>
-                                    <div onClick={rating3ClickHandler}>
-                                        {rating3 ? <StarIcon /> : <StarBorderIcon />}
-                                    </div>
-                                    <div onClick={rating4ClickHandler}>
-                                        {rating4 ? <StarIcon /> : <StarBorderIcon />}
-                                    </div>
-                                    <div onClick={rating5ClickHandler}>
-                                        {rating5 ? <StarIcon /> : <StarBorderIcon />}
-                                    </div>
-                                </div>
->>>>>>> f803b1623fc34a58f416a1b7300b15a986511c6f
                             </div>
                             <div className='input_detail'>
                                 <textarea cols='80' rows='10' placeholder='Write Somethings about product' />
