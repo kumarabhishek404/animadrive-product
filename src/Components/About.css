@@ -1,46 +1,78 @@
-
-#About-us-home{
-    height: 400px;
-    width: 80%;
-    margin: auto;
-    font: 'opensans-bold', sans-serif;
-}
-
-.about h2{
-    text-align: center;
-    font-size: 2.5rem;   
-    margin: 10px;
-}
-
-.about h2::after {
-    content: '';
-    background: #99cc4a;
-    display: block;
-    height: 3px;
-    width: 170px;
-    margin: 20px auto 5px;
-}
-
-.about p{
-    font-size: 20px;
-    padding: 10px;
-    margin: auto;
-    width: 90%;
-    line-height: 35px;
-    letter-spacing: 1.5px;
-}
-
-.aboutus-img-div {
-    text-align: center;
-    overflow: hidden;
-    height: 300px;
-    width: 300px;
-    display: block;
-    margin: 0 auto;
+  
+    #About-us-home{
+        height: 550px;
+        width: 80%;
+        margin: 40px auto;
+        font: 'opensans-bold', sans-serif;
+        }
+        
+        .about h2{
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 10px;
+        }
+        
+        .about h2::after {
+        content: '';
+        background: #99cc4a;
+        display: block;
+        height: 3px;
+        width: 170px;
+        margin: 20px auto 5px;
+        }
+        
+        .about p{
+        font-size: 20px;
+        padding: 10px;
+        margin: auto;
+        width: 90%;
+        max-height: 100px;
+        line-height: 35px;
+        letter-spacing: 1.5px;
+        }
+        
+        .aboutus-img-div {
+        text-align: center;
+        overflow: hidden;
+        height: 300px;
+        width: 300px;
+        display: block;
+        margin: 0 auto;
+        
+        }
+        
+        .aboutus-img-div img{
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        }
+        
+        
+        @media screen and (max-width: 1060px) {
+        #About-us-home{
+        height: 700px;
+        }
+        
+        }
+        
+        @media screen and (max-width: 735px) {
+        #About-us-home{
+        height: 900px;
+        }
+        .about p{
+        margin: auto;
+        }
+        }
+        
     
-}
+    
+    @media screen and (max-width: 452px) {
+    #About-us-home{
+    height: 1300px;
+    margin: auto;
+    text-align: center;
+    }
+    
+    }
 
-.aboutus-img-div img{
-    height: 100%;
-    width: 100%;
-}
+    

@@ -1,18 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './Home.css'
-import Header from '../Header';
+import './Home.css';
+import Header from '../Header'
 import About from '../About'
 import Vision from '../Vision';
 import OurProduct from '../OurProducts'
 import Impact from '../Impact'
-import { logAction } from '../../Redux'
-
+import { logAction } from '../../Redux';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Header from '../Header';
-import About from '../About';
-import Vision from '../Vision';
-import OurProducts from '../OurProducts';
-import Impact from '../Impact';
 
 const images = [
     'https://m.media-amazon.com/images/I/41+fXlXMPyL._SR500,500_.jpg',

@@ -9,9 +9,13 @@ import Product from './Components/pages/Product'
 import Register from './Components/pages/Register'
 import Signin from './Components/pages/Signin'
 import Cart from './Components/pages/Cart'
+import Joinus from './Components/pages/JoinUs';
+import Colleboration from './Components/pages/Colleboration'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
-import Shop from './Components/Cart/Shop'
-import CartNew from './Components/Cart/Cart';
+import Shop from './Components/pages/Shop'
+import { Provider } from 'react-redux';
+import store from './Redux/Store'
+// import CartNew from './Components/Cart/Cart';
 
 
 
@@ -20,14 +24,12 @@ function App() {
   const [scrollState, setScrollState] = useState()
 
   const handleScrollToFirst = () => {
-    scrollDoc.current.scrollTo(0, 0)
+    window.scrollTo(0, 0)
+    // scrollDoc.current.scrollTo(0, 0)
   }
 
   const handleScroll = () => {
     setScrollState(scrollDoc.current.scrollTop)
-    // if (scrollDoc.scrollY > 10) {
-    //   alert(window.pageYOffset, scrollDoc.scrollY);
-    // }
   }
 
 
@@ -36,27 +38,31 @@ function App() {
   // }
 
   return (
-    <div className='App' ref={scrollDoc} onScroll={handleScroll}>
-      <div className={(scrollState >= 300) ? 'comeToStart' : 'comeToStart signDisplay'} onClick={handleScrollToFirst}>
-        <ExpandLessIcon fontSize='large' />
-      </div>
-      <Router>
-        <Navbar />
-          
-        <Switch>
-          {/* <Route path='/products' component={Product} /> */}
-          <Route path='/register' component={Register} />
-          <Route path='/signin' component={Signin} />
+    <Provider store={store}>
+      <div className='App' ref={scrollDoc} onScroll={handleScroll}>
+        <div className='comeToStart' onClick={handleScrollToFirst}>
+          <ExpandLessIcon fontSize='large' />
+        </div>
+        <Router>
+          <Navbar />
 
-          <Route path='/cart' component={CartNew} />
-          {/* <Route path='/acount' component={Orders} /> */}
-          <Route path='/order' component={Order} />
-          {/* <Route path='/offers' component={Orders} /> */}
-          <Route path='/' component={Home} exact />
-        </Switch>
-        <Footer />
-      </Router>
-    </div>
+          <Switch>
+            <Route path='/products' component={Product} />
+            <Route path='/register' component={Register} />
+            <Route path='/signin' component={Signin} />
+
+            <Route path='/cart' component={Cart} />
+            <Route path='/joinus' component={Joinus} />
+            <Route path='/colleboration' component={Colleboration} />
+            <Route path='/order' component={Order} />
+            <Route path='/shop' component={Shop} />
+            {/* <Route path='/offers' component={Orders} /> */}
+            <Route path='/' component={Home} exact />
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

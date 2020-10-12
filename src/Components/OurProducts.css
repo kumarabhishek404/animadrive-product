@@ -1,11 +1,12 @@
 #Ourproducts-section{
     height: 600px;
+    margin-bottom: 60px;
 }
 
 #Ourproducts-section > h1{
     text-align: center;
     font-size: 2.5rem;   
-    margin: 10px;
+    margin: 20px;
 }
 
 .OurProducts-main-div{
@@ -62,3 +63,21 @@
     color: #99cc4a;
     border: 1px solid #99cc4a;    
 }
+
+    
+@media screen and (max-width: 1060px) {
+    .OurProducts-main-div{
+    flex-direction: column;
+    }
+    #Ourproducts-section{
+    height: 1700px;
+    }
+    
+    }
+    
+    @media screen and (max-width: 450px) {
+    #Ourproducts-section{
+    margin: 100px 0px;
+    }
+    
+    }

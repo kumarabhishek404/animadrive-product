@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Button from '../Button'
 import './Register.css'
 
@@ -44,7 +44,7 @@ function JoinUs() {
                         <div className='additional_info'>
                             <textarea type='text' for='additional_info' name='additional_info' placeholder='Your Additional_info:' />
                         </div>
-                        <div className='question'>
+                        <div className='questions'>
                             <textarea type='text' for='question' name='question' placeholder='Why do you want to join us?' />
                         </div>
                         <Button>Join us</Button>

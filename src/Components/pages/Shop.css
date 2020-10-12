@@ -9,35 +9,38 @@
 }
 .product_image_container {
     /* border: 2px solid blue; */
+    width: 60%;
+    /* height: 540px; */
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    margin: 50px 100px;
+    margin: 20px 0;
 }
 .product_image_side {
     display: flex;
-    margin-top: 30px;
+    /* margin-top: 30px; */
     flex-direction: column;
 }
 .product_image_side img {
     width: 100px;
     /* margin-top: 10px; */
-    /* border: 1px solid black; */
-}
-.product_image_slide_single {
-    border: 2px solid #d5dbd9;
-    /* box-shadow:  5px 10px 8px 10px #888888; */
+    border: 1px solid grey;
 }
 .product_main_image {
+    width: 400px;
+    height: 400px;
+    margin-right: 10px;
+}
+.product_main_image img {
     width: 500px;
-
+    height: 500px;
 }
 
 /* Product Details */
 .product_details {
     text-align: center;
     /* border: 2px solid pink; */
-    padding: 30px 0px;
+    padding: 10px 0px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -50,21 +53,10 @@
     padding: 50px 200px 50px 200px ;
     line-height: 2.3rem;
 }
-
-
-/* Desription */
-.description {
-    /* border: 2px solid green; */
-    padding: 50px 270px 50px 270px;
-}
-.description h1 {
-    margin-bottom: 20px;
-}
-
 /* Other product action */
 .other_product_action {
     /* border: 2px solid red; */
-    padding: 30px 0px;
+    padding: 10px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +68,6 @@
     margin-left: 10px;
     /* padding: 30px 60px; */
 }
-
 /* share */
 .share {
     display: flex;
@@ -160,14 +151,26 @@
 } */
 
 @media screen and (max-width: 960px) {
+    .product_image {
+        padding: 0;
+    }
+    .product_detail_container {
+        padding: 0 200px;
+    }
     .product_image_container {
         flex-flow: column;
     }
+    .product_main_image{
+        height: 280px;
+    }
     .product_main_image img {
-        width: 300px;
-        margin-top: 50px;
+        width: 250px;
+        height: 250px;
+        /* margin-bottom: 0px; */
+        /* margin-top: 50px; */
     }
     .product_image_side {
+        /* margin-top: 90px; */
         flex-direction: row;
     }
     .other_product_action_container {
@@ -184,6 +187,10 @@
 @media screen and (max-width: 750px) {
     .product_detail_container, .description, .other_product_action_container {
         padding: 50px 150px 50px 150px;
+    }
+    .product_main_image, .product_main_image img {
+        width: 200px;
+        height: 200;
     }
     .user_detail {
         flex-flow: column;
