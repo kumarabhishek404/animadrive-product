@@ -94,7 +94,9 @@ function Navbar(props) {
           console.log(response.status)
             if(response.status === 200) {
             //   setUser(response.data.user)
-              props.logAction(true)
+              props.logAction(response.data)
+            //   console.log(message)
+            window.userData=response.data.user
           }
           else{
             alert('alert')

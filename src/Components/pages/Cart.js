@@ -24,11 +24,12 @@ function Cart() {
     const [total, setTotal] = useState(0)
     const [quant, setQuant] = useState(0)
     const [couponState, setCouponState] = useState()
+    const DATA=window.userData
 
     // const couponInput = useRef()
     useEffect(() => {
         window.scrollTo(0, 0)
-        Axios.get("http://localhost:3000/cart/mycart")
+        Axios.get("http://localhost:4000/cart/mycart/?ID="+DATA.email)
         .then(response=>{
             setCartData(response.data)
         })

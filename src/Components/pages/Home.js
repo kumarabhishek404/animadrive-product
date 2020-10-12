@@ -18,9 +18,6 @@ function Home() {
 
     const targetSrc = useRef()
     const [imageIndex, setImageIndex] = useState(0)
-    const [user, setUser] = useState({});
-    const [error, setError] = useState(null);
-    const [authenticated, setAuthenticated] = useState(false);
 
 
     useEffect(() => {
