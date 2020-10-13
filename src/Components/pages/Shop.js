@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Products_card.css'
 import Axios from 'axios'
 import Card from './Product_card'
@@ -29,17 +29,15 @@ const product_list = [
 
 
 function Products() {
-    const scrollDoc2 = useRef()
 
+    const [products, setProducts] = useState([])
     useEffect(() => {
-        Axios.get("http://api.openweathermap.org/data/2.5/weather?q=Agra,IN&appid=28eadd90ad607fa43911b4f733752611&units=metric")
-            .then((result) => {
-                console.log(result);
-            })
-            .catch((err) => {
-                console.log(err);
+        Axios.get("http://localhost:4000/products")
+            .then(response => {
+                setProducts(response.data)
             })
     }, [])
+    const scrollDoc2 = useRef()
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -51,8 +49,8 @@ function Products() {
                 <div className='products_container'>
                     <h1>Our Products</h1>
                     <div className='all_products'>
-                        <div className='all_products_item'>{product_list.map(item =>
-                            <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} desc={item.description} />
+                        <div className='all_products_item'>{products.map(item =>
+                            <Card id={item.id} name={item.product_name} price={item.price} pic_src="/Images/3.jpg" description={item.shot_desc} />
                         )}
                         </div>
                     </div>

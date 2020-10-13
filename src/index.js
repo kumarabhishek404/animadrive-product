@@ -4,8 +4,8 @@ import App from './App';
 import cartReducer from './Components/Cart/reducers/cartReducer';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import store from './Redux/Store'
 
-const store = createStore(cartReducer);
 
 ReactDOM.render(
   <Provider store={store}><App /></Provider>,

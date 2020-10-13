@@ -24,11 +24,12 @@ function Cart() {
     const [total, setTotal] = useState(0)
     const [quant, setQuant] = useState(0)
     const [couponState, setCouponState] = useState()
+    const DATA = window.userData
 
     // const couponInput = useRef()
     useEffect(() => {
         window.scrollTo(0, 0)
-        Axios.get("http://localhost:3000/cart/mycart")
+        Axios.get("http://localhost:4000/cart/mycart")
             .then(response => {
                 setCartData(response.data)
             })
@@ -65,8 +66,8 @@ function Cart() {
                 <div className='cart_container'>
                     <div className='cart_container_wrapper'>
                         {
-                            result.map(product =>
-                                <CartItem productName={product.title} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.image} ProductQuantity={product.quantity} />
+                            cartData.map(product =>
+                                <CartItem productName={product.product_name} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.thumbnail} ProductQuantity={product.quantity} />
                             )
                         }
                     </div>

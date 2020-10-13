@@ -3,7 +3,6 @@ import { logAction } from '../Redux';
 import { connect } from 'react-redux';
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 import PetIcon from '@material-ui/icons/Pets';
@@ -11,28 +10,19 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-// import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
+import Axios from 'axios';
 function Navbar(props) {
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
     const [formmenu, setFormmenu] = useState(false)
-    // const [authenticate, setAuthenticate] = useState(false)
-    // const [windowScroll, setWindowScroll] = useState(false)
-    // const [prevScrollPos, setPrevScrollPos] = useState()
-    // const [currentScrollPos, setCurrentScrollPos] = useState()
-    // const scrollNavbar = useRef()
-
     const login = useSelector(state => state.login)
+    console.log(login)  
     const message = useSelector(state => state.message)
 
 
     const openSignInMenu = () => {
         setSignmenu(!signmenu)
-        // setSignmenu(false)
     }
 
     const openFormMenu = (e) => {
@@ -54,26 +44,36 @@ function Navbar(props) {
         setClick(false)
     }
     const handleLogIN = () => {
+        window.open("http://localhost:4000/google/auth", "_self");
         setFormmenu(false)
-        props.logAction(true)
-        // setClick(false)
-        // setAuthenticate(false)
-    }
+        }
 
     const handleLogOUT = () => {
+        window.open("http://localhost:4000/logout", "_self");
         props.logAction(false)
         setSignmenu(false)
         setFormmenu(false)
     }
-    // useEffect(() => {
-    //     console.log('running');
-    //     window.addEventListener('scroll', () => {
-    //         console.log('scrolling');
-    //         if (window.pageYOffset >= 100) {
-    //             alert('alert')
-    //         }
-    //     })
-    // }, [])
+
+    useEffect(()=>{
+        Axios.get("http://localhost:4000/authSuccess",{ withCredentials: true })
+        .then(response=>{
+          console.log(response.status)
+            if(response.status === 200) {
+                Axios.defaults.headers.common['Authorization'] = response.data.token;
+              props.logAction(response.data)
+          }
+          else{
+            alert('alert')
+            props.logAction(false)
+
+          }
+        })
+        .catch(error=>{
+      console.log(error)
+        })
+    },[])
+
 
 
     return (
