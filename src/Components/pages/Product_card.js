@@ -40,36 +40,10 @@ function Product_card({ id, name, price, pic_src, description }) {
 
         
     }
-    // const handleAddToCart = ({ id, name, pic_src, price, description }) => {
-    //     setProduct_id(id)
-    //     setProduct(`product_${id}`, { id: id, title: name, price: price, image: pic_src, desc: description, quantity: 1 }, { path: '/' })
-    // }
-
     const onhandleRemoveProduct = (id) => {
         removeProduct(`product_${id}`)
     }
-    const orderNow = () => {
-     Axios.post("http://localhost:4000/placeOrder/main/order",{
-        firstName:DATA.firstName,
-        lastName:DATA.lastName,
-        email:DATA.email,
-        address:"AA",
-        pincode:123,
-        country:"jk",
-        payment_method:"jk",
-        total_amount:23,
-        product_id:1,
-        customer_id:1
-     },{headers: {
-        'Access-Control-Allow-Origin': 'http://localhost:3000',
-        // 'Content-Type': 'text/plain',
-        withCredentials: true,
-        crossDomain: true,
-        mode: 'no-cors',
-      }}).then((res) =>{
-         console.log(res, "this is res");
-     }).catch((err) => {console.log(err, "hey error ppppppppp")});
-    }
+    
 
 
 
