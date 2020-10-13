@@ -12,7 +12,7 @@ import StarIcon from '@material-ui/icons/Star';
 
 
 function Product() {
-    const [selectedImage, setSelectedImage] = useState('/Images/1.jpg')
+    const [selectedImage, setSelectedImage] = useState('/Images/1.png')
     // const [slideImage, setSlideImage] = useState(false)
 
     const slideImage = useRef()
@@ -37,9 +37,9 @@ function Product() {
                             <img src={selectedImage} alt='Image' />
                         </div>
                         <div className='product_image_side'>
-                            <img src='/Images/1.jpg' alt='Image' onMouseEnter={clickLoadImage} />
-                            <img src='/Images/2.jpg' onMouseEnter={clickLoadImage} />
-                            <img src='Images/3.jpg' alt='Image' onMouseEnter={clickLoadImage} />
+                            <img src='/Images/1.png' alt='Image' onMouseEnter={clickLoadImage} />
+                            <img src='/Images/2.png' onMouseEnter={clickLoadImage} />
+                            <img src='Images/3.png' alt='Image' onMouseEnter={clickLoadImage} />
                         </div>
                     </div>
                 </div>

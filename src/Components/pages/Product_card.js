@@ -40,7 +40,7 @@ function Product_card({ id, name, price, pic_src, description, onSelectAddToCart
                         <h1 className='card_item_text'>{name}</h1>
                         <h1>Price: {price}</h1>
                         <div className='product_description'>
-                            <p>A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea.</p>
+                            <p>It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has  palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month. Another benefit of our product is that you can't over feed your plants with it, Because it won't consume plants like different kinds of fertilizers. The Design of our  product is inspired by dung beetle concept.</p>
                         </div>
                         <div className='product_btn'>
                             <Button path='/cart' className='btn' buttonStyle='btn_outline' onClick='' >Add to cart</Button>

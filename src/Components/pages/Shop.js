@@ -8,21 +8,21 @@ const product_list = [
         id: 1,
         title: "Green Gud",
         price: '₹ 149',
-        image: "/Images/1.jpg",
+        image: "/Images/1.png",
         description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     },
     {
         id: 2,
         title: "Green Gud",
         price: '₹ 149',
-        image: "/Images/2.jpg",
+        image: "/Images/2.png",
         description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     },
     {
         id: 3,
         title: "Green Gud",
         price: '₹ 149',
-        image: "/Images/3.jpg",
+        image: "/Images/3.png",
         description: 'It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month.'
     }
 ]
@@ -49,7 +49,7 @@ function Products() {
         <>
             <div className='products' ref={scrollDoc2}>
                 <div className='products_container'>
-                    <h1>Products</h1>
+                    <h1>Our Products</h1>
                     <div className='all_products'>
                         <div className='all_products_item'>{product_list.map(item =>
                             <Card id={item.id} name={item.title} price={item.price} pic_src={item.image} desc={item.description} />

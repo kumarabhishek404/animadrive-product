@@ -39,9 +39,19 @@
     cursor: pointer;
     margin-left: 15px;
 }
-.petIcon  {
-    margin-left: 5px;
+.logo_image {
+    /* border: 2px solid red; */
+    height: 130px;
+    /* margin: 20px; */
+    width: 230px;
 }
+.logo_image img {
+    width: 100%;
+    height: 100%;
+}
+/* .petIcon  {
+    margin-left: 5px;
+} */
 
 
 .search_box {
@@ -308,8 +318,8 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        /* min-width: 110px; */
+        width: 20%;
+        min-width: 130px;
         height: 90vh;
         position: absolute;
         top: 80px;
@@ -318,7 +328,7 @@
         z-index: 999;
         transition: all 1.5s ease;
     }.navbar_logo {
-        margin-right: 200%;
+        margin-right: 100%;
     }
     .nav_menu_box {
         flex-direction: column;
@@ -380,12 +390,6 @@
     }
     .navbar_search input {
         width: 100%;
-    }
-    .navbar_logo {
-        width: 80vw;
-        position: absolute;
-        top: 25px;
-        left: 15px;
     }
     .search_Bar {
         display: block;

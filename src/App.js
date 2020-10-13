@@ -13,6 +13,10 @@ import Joinus from './Components/pages/JoinUs';
 import Colleboration from './Components/pages/Colleboration'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 import Shop from './Components/pages/Shop'
+import MyOrder from './Components/pages/MyOrders'
+import Contact from './Components/pages/Contact';
+import Initiative from './Components/pages/Initiative'
+
 import { Provider } from 'react-redux';
 import store from './Redux/Store'
 // import CartNew from './Components/Cart/Cart';
@@ -47,16 +51,18 @@ function App() {
           <Navbar />
 
           <Switch>
-            <Route path='/products' component={Product} />
             <Route path='/register' component={Register} />
             <Route path='/signin' component={Signin} />
-
-            <Route path='/cart' component={Cart} />
-            <Route path='/joinus' component={Joinus} />
-            <Route path='/colleboration' component={Colleboration} />
             <Route path='/order' component={Order} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/initiative' component={Initiative} />
+
+            <Route path='/products' component={Product} />
+            <Route path='/cart' component={Cart} />
+            <Route path='/colleboration' component={Colleboration} />
+            <Route path='/joinus' component={Joinus} />
+            <Route path='/myorder' component={MyOrder} />
             <Route path='/shop' component={Shop} />
-            {/* <Route path='/offers' component={Orders} /> */}
             <Route path='/' component={Home} exact />
           </Switch>
           <Footer />

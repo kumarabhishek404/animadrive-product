@@ -3,6 +3,10 @@
 }
 .home_container {
     /* border: 2px solid blue; */
+    text-align: center;
+}
+.home_container h1 {
+    margin-top: 40px;
 }
 .home_wrapper {
     /* border: 2px solid pink; */

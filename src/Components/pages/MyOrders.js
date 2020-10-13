@@ -7,25 +7,25 @@ import Button from '../Button'
 const MyOrders = [
     {
         id: 1,
-        title: "product_1",
-        price: '$23,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
+        title: "Green Gud",
+        price: '149',
+        image: "/Images/1.png",
         quantity: 2
     },
     {
         id: 2,
-        title: "product_2",
-        price: '$21,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
-        quantity: 4
+        title: "Green Gud",
+        price: '149',
+        image: "/Images/2.png",
+        quantity: 6
     },
     {
         id: 3,
-        title: "product_3",
-        price: '$13,000',
-        image: "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
-        quantity: 1
-    }
+        title: "Green Gud",
+        price: '149',
+        image: "/Images/3.png",
+        quantity: 4
+    },
 ]
 
 function Acount() {
@@ -56,13 +56,15 @@ function Acount() {
                                             {
                                                 MyOrders.map(order =>
                                                     <div className='my_order_list'>
-                                                        <h2>{order.id}</h2>
+                                                        <h2 className='order_list_id'>{order.id}</h2>
                                                         <figure className='order_image'>
                                                             <img src={order.image} />
                                                         </figure>
                                                         <h2>{order.title}</h2>
-                                                        <h3>{order.price}</h3>
-                                                        <h3>{order.quantity}</h3>
+                                                        <div className='order_list_info'>
+                                                            <h3>₹{order.price}</h3>
+                                                            <h3>{order.quantity}</h3>
+                                                        </div>
                                                     </div>
                                                 )
                                             }

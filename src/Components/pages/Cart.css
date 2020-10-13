@@ -74,7 +74,8 @@
 }
 .product_image_wrap img {
     width: 170px;
-    height: 150px;
+    height: 140px;
+    margin-top: 10px;
 }
 .cart_image_single {
     width: 250px;

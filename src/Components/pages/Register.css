@@ -2,8 +2,51 @@
     /* border: 2px solid red; */
     padding: 100px 0px;
     display: flex;
+    flex-flow: column;
+    align-items: center;
     justify-content: center;
 }
+.details {
+    width: 90%;
+    margin-bottom: 100px;
+    /* border: 2px solid red; */
+}
+.details_container {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.details_heading {
+    margin-bottom: 80px;
+}
+.details_contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.details_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; 
+}
+.phone, .address, .email {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+}
+.phone h2, .address h2, .email h2 {
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
+.address p{
+    /* border: 2px solid red; */
+    max-width: 250px;
+}   
 .register_form_container {
     width: 400px;
     min-width: 400px;
@@ -34,10 +77,10 @@
 .user_already_exist h5 {
     margin-right: 5px;
 }
-.name, .username,.email,.mobile, .password, .new_user_role, .new_user_address, .qualification, .college, .resume, .technical_skills, .additional_info, .questions, .name_of_org, .relate, .alternate_mobile, .pincode {
+.name, .username,.email,.mobile, .subject, .password, .new_user_role, .new_user_address, .qualification, .college, .resume, .technical_skills, .additional_info, .questions, .name_of_org, .relate, .alternate_mobile, .pincode, .message {
     width: 100%;
 }
-.name input, .username input,.email input,.code input, .mobile input, .password input, .new_user_role select, .new_user_address input, .qualification input, .college input, .resume input, .technical_skills input, .additional_info textarea, .questions textarea, .name_of_org input, .relate input, .alternate_mobile input, .pincode input {
+.name input, .username input,.email input,.code input, .mobile input, .password input, .new_user_role select, .new_user_address input, .qualification input, .college input, .resume input, .technical_skills input, .name_of_org input, .relate input, .alternate_mobile input, .pincode input, .subject input {
     width: 100%;
     padding: 6px 8px;
     font-size: 1.2rem;
@@ -48,8 +91,11 @@
     outline: none;
     border-bottom: 1px solid #e1e1e1;
 }
-.name input:focus, .username input:focus,.email input:focus,.code input:focus, .mobile input:focus, .password input:focus, .new_user_role input:focus, .new_user_address input:focus, .qualification input:focus, .college input:focus, .resume input:focus, .technical_skills input:focus, .additional_info textarea:focus, .questions textarea:focus, .name_of_org input:focus, .relate input:focus, .alternate_mobile input:focus, .pincode input:focus{
-    background-color: green;
+.message textarea, .join_additional_info textarea, .questions textarea {
+    padding: 0px;
+}
+.name input:focus, .username input:focus,.email input:focus,.code input:focus, .mobile input:focus, .password input:focus, .new_user_role input:focus, .new_user_address input:focus, .qualification input:focus, .college input:focus, .resume input:focus, .technical_skills input:focus, .join_additional_info textarea:focus, .questions textarea:focus, .name_of_org input:focus, .relate input:focus, .alternate_mobile input:focus, .pincode input:focus, .subject input:focus, .message textarea:focus{
+    background-color: #99cc4a;
     transition: background-color 1s ease-in;
 
 }
@@ -64,7 +110,32 @@
     border-radius: 5px;
     border: none;
     outline: none;
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
+}
+
+@media screen and (max-width: 960px) {
+    .details_contact {
+        flex-flow: column;;
+    }
+    .details_box {
+        width: 50%;
+        /* border: 2px solid red; */
+        align-self: center;
+        margin-bottom: 30px;
+    }
+    .phone, .address, .email{
+        margin-left: 14px;
+    }
+    .details_box h3{
+        align-self: flex-start;
+    }  
+    .address p{
+        max-width: 100%;
+        /* margin-left: -30px; */
+    }   
+    .message textarea {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -74,7 +145,28 @@
         padding: 0 10px;
         /* border: 2px solid blue; */
     }
+    .details_box {
+        flex-flow: column;
+    }
+    .phone h2, .phone h3, .address h2, .address p, .email h2, .email h3{
+        align-self: center;
+        text-align: center;
+    }
+    .email h3, .phone h3 {
+        font-size: 1rem;
+    }
     .code {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .email h3 {
+        /* font-size: 0.9rem; */
+    }
+}
+@media screen and (max-width: 580px) {
+    .email h3 {
+        font-size: 0.8rem;
     }
 }

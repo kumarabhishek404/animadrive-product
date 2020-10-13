@@ -16,6 +16,10 @@
   border-radius: 6px;
   /* border: 1px solid black; */
 }
+.products_container h1{
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
 .all_products_item {
     /* border: 1px solid #a6a6a6; */
     display: flex;
@@ -58,6 +62,7 @@
     height: 100%;
     text-align: start;
     padding: 10px;
+    color: black;
 }
 .product_btn {
     margin-top: 20px;

@@ -81,7 +81,9 @@ function Navbar(props) {
             <nav className='navbar'>
                 <div className='navbar_container'>
                     <Link to='/' className='navbar_logo' onClick={closeMenuHandler}>
-                        <div><PetIcon className='petIcon' fontSize="large" /></div>
+                        <div className='logo_image'>
+                            <img src='/Images/logo2.png' />
+                        </div>
                     </Link>
                     <div className='navbar_menu_icon' onClick={closeButtonHandler}>
                         {click ? <CloseIcon fontSize='large' /> : <MenuIcon fontSize='large' />}
@@ -106,6 +108,16 @@ function Navbar(props) {
                             <li className='nav_item'>
                                 <Link to='/shop' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Shop
+                            </Link>
+                            </li>
+                            <li className='nav_item'>
+                                <Link to='/contact' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Contact
+                            </Link>
+                            </li>
+                            <li className='nav_item'>
+                                <Link to='/initiative' className='navbar_links_item' onClick={closeMenuHandler}>
+                                    Initiative
                             </Link>
                             </li>
                             {/* <li className='nav_item'>
@@ -149,7 +161,7 @@ function Navbar(props) {
                                             {(login) ? 'Profile' : 'SignUp'}
                                             <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
-                                                    <Link to='/order' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                    <Link to='/myorder' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                         Your Orders
                                         </Link>
                                                 </div>

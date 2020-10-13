@@ -1,83 +1,82 @@
-#Ourproducts-section{
-    height: 600px;
-    margin-bottom: 60px;
-}
-
-#Ourproducts-section > h1{
-    text-align: center;
-    font-size: 2.5rem;   
-    margin: 20px;
-}
-
-.OurProducts-main-div{
-    display: flex;
-    flex-direction: row;
-}
-
-#Ourproducts-section > h1::after {
-    content: '';
-    background: #99cc4a;
-    display: block;
-    height: 3px;
-    width: 170px;
-    margin: 20px auto 5px;
-}
-
-.OurProduct-section-card{
-    width: 360px;
-    height: 500px;
-    padding: 15px;
-    margin: 15px auto;
-    /* background-color: rgb(138, 113, 113); */
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-img-div img{
-    height: 100%;
+.our_products {
+    /* color: #5d5b5b; */
+    box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+    /* border: 2px solid red; */
+    /* background-color: #99cc4a; */
     width: 100%;
-    overflow: hidden;
+    padding: 10px;
 }
-
-.card-down-div{
+.our_products h1 {
+    margin-bottom: 30px;
+}
+.our_products Button {
+    margin-bottom: 30px;
+}
+.our_products h1:after {
+    content: '';
+}
+.our_products_container {
+    /* border: 2px solid blue; */
+    width: 100%;
+    /* padding: 0 30px; */
+    margin-bottom: 20px;
+}
+.our_products_wrapper {
+    width: 100%;
+    /* border: 2px solid green; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.single_product {
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 8px;
+    width: 30%;
+}
+.single_product_image_container {
+    /* border: 2px solid red; */
+    padding: 8px 0;
     text-align: center;
 }
-
-.card-down-div h3{
-   margin: 15px;
+.single_product_image_container figure img {
+    display: flex;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
 }
 
-.button-shop-now {
-    text-align: center; 
-    margin: 10px;  
+@media screen and (max-width: 1100px) {
+    .single_product {
+        width: 25%;
+    }
 }
 
-.button-shop-now Button {
-    background-color: #99cc4a;
-    border: none;
+@media screen and (max-width: 960px) {
+    .our_products_wrapper {
+        flex-flow: column;
+    }
+    .single_product {
+        width: 40%;
+        height: 400px;
+    }   
+    .single_product_image_container figure img {
+        height: 230px;
+        justify-content: center;
+        align-items: center;
+    }
 }
-
-.button-shop-now Button:hover{
-    background-color: #fff;
-    color: #99cc4a;
-    border: 1px solid #99cc4a;    
+@media screen and (max-width: 750px) {
+    .single_product {
+        width: 50%;
+        height: 350px;
+    }   
+    .single_product_image_container figure img {
+        height: 200px;
+    }
 }
-
-    
-@media screen and (max-width: 1060px) {
-    .OurProducts-main-div{
-    flex-direction: column;
-    }
-    #Ourproducts-section{
-    height: 1700px;
-    }
-    
-    }
-    
-    @media screen and (max-width: 450px) {
-    #Ourproducts-section{
-    margin: 100px 0px;
-    }
-    
-    }

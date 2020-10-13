@@ -6,9 +6,9 @@ import Button from '../Button'
 import './Cart.css'
 
 const result = [
-    { title: 'Green Gud', price: 149, image: '/Images/1.jpg', quantity: 1 },
-    { title: 'Green Gud', price: 149, image: '/Images/2.jpg', quantity: 2 },
-    { title: 'Green Gud', price: 149, image: 'Images/3.jpg', quantity: 3 }
+    { title: 'Green Gud', price: 149, image: '/Images/1.png', quantity: 1 },
+    { title: 'Green Gud', price: 149, image: '/Images/2.png', quantity: 2 },
+    { title: 'Green Gud', price: 149, image: 'Images/3.png', quantity: 3 }
 ]
 
 

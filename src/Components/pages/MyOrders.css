@@ -53,6 +53,36 @@
 .order_image img {
     height: 100px;
 }
+.order_list_info {
+    width: 26%;
+    display: flex;
+    justify-content: space-between;
+}
 .more_shoping {
     margin-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .my_order_list_head, .order_list_id {
+        display: none;
+    }
+    .order_list_info {
+        flex-flow: column;
+    }
+    .order_list_info h3{
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .my_order_list {
+        flex-flow: column;
+    }
+    .order_list_info{
+        flex-flow: row;
+    }
+    .order_list_info h3{
+        margin-bottom: 0;
+        margin-right: 20px;
+    }
 }

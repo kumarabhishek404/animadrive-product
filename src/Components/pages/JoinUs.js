@@ -41,11 +41,11 @@ function JoinUs() {
                         <div className='technical_skills'>
                             <input type='text' for='technical_skills' name='technical_skills' placeholder='Your Technical_skills:' />
                         </div>
-                        <div className='additional_info'>
-                            <textarea type='text' for='additional_info' name='additional_info' placeholder='Your Additional_info:' />
+                        <div className='join_additional_info'>
+                            <textarea type='text' for='additional_info' cols='53' rows="5" name='additional_info' placeholder='Your Additional_info:' />
                         </div>
                         <div className='questions'>
-                            <textarea type='text' for='question' name='question' placeholder='Why do you want to join us?' />
+                            <textarea type='text' for='question' cols='53' rows="5" name='question' placeholder='Why do you want to join us?' />
                         </div>
                         <Button>Join us</Button>
                     </form>
