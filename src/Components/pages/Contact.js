@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../Button'
 import { green } from '@material-ui/core/colors';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -6,6 +6,20 @@ import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 function Contact() {
+
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [subject, setSubject] = useState('')
+    const [message, setMessage] = useState('')
+
+    const handleSubmit = () => {
+        console.log(name, email, subject, message);
+        setName('')
+        setEmail('')
+        setSubject('')
+        setMessage('')
+    }
+
     return (
         <div>
             <div className='register'>
@@ -43,18 +57,18 @@ function Contact() {
                     <h1>Get in touch with us</h1>
                     <form className='register_form'>
                         <div className='username'>
-                            <input type='text' for='name' name='name' placeholder='Username:' />
+                            <input type='text' for='name' name='name' value={name} onChange={(e) => setName(e.target.value)} placeholder='Username:' />
                         </div>
                         <div className='email'>
-                            <input type='email' for='email' name='email' placeholder='Your email;' />
+                            <input type='email' for='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Your email;' />
                         </div>
                         <div className='subject'>
-                            <input type='text' name='subject' placeholder='Your subject' />
+                            <input type='text' name='subject' value={subject} onChange={(e) => setSubject(e.target.value)} placeholder='Your subject' />
                         </div>
                         <div className='message'>
-                            <textarea type='text' cols='47' rows="8" placeholder='Your message here' />
+                            <textarea type='text' cols='47' rows="8" value={message} onChange={(e) => setMessage(e.target.value)} placeholder='Your message here' />
                         </div>
-                        <Button>Submit</Button>
+                        <Button onClick={handleSubmit}>Submit</Button>
                     </form>
                 </div>
             </div>
