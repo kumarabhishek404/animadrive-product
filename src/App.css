@@ -1,46 +1,28 @@
 *{
     font-family: 'Abril Fatface', cursive;
     scroll-behavior: smooth;
+    box-sizing: border-box;
 }
 .App {
-    /* height: 669px; */
+    height: 669px;
     /* padding-bottom: 100%; */
-    overflow: auto;
-    position: relative;
-}
-.activate_navbar {
-    position: static;
-    top: 0px;
-}
-.hidden_navbar {
-    position: fixed;
-    top: -80px;
-}
-.app_navbar {
-    position: relative;
-    top: 0px;
-    background-color: #333;
-  width: 100%;
-  display: inline-block;
-  transition: top 0.3s;
-    /* overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  margin-bottom: 300px;
-  top: 0;
-  width: 100%; */
+    /* overflow: auto; */
 }
 .comeToStart {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 5px;
-    background-color: black;
+    background-color: #99cc4a;
     color: white;
     position: fixed;
     transition: all 1s ease;
     bottom: 20px;
     right: 20px;
     cursor: pointer;
-    /* z-index: -1; */
+    z-index: 999;
+}
+.comeToStart:hover {
+    background-color: black;
+    
 }
 .signDisplay {
     /* position: fixed; */

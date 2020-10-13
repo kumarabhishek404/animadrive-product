@@ -5,13 +5,6 @@ import CartItem from './Cart_item'
 import Button from '../Button'
 import './Cart.css'
 
-const result = [
-    { title: 'product_1', price: 1, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_2', price: 20, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 2 },
-    { title: 'product_3', price: 8, image: 'https://elcopcbonline.com/photos/product/4/176/4.jpg', quantity: 3 }
-]
-
-
 
 function Cart() {
     const [cartData, setCartData] = useState([])
@@ -29,14 +22,15 @@ function Cart() {
     // const couponInput = useRef()
     useEffect(() => {
         window.scrollTo(0, 0)
-        Axios.get("http://localhost:4000/cart/mycart/?ID="+DATA.email)
+        Axios.get("http://localhost:4000/cart/mycart")
         .then(response=>{
             setCartData(response.data)
         })
 
-    }, [])
+    },[])
 
     const handleUpdateCart = () => {
+        window.location.reload()
         // alert("alert")
         // handleProductTotal()
         // setTotal(total)
@@ -75,7 +69,7 @@ function Cart() {
 
                     <div className='cart_action'>
                         <Button buttonStyle='btn_outline' onClick={handleUpdateCart}>Update cart</Button>
-                        <Button buttonStyle='btn_outline'>More Shop</Button>
+                        <Button path='/shop' buttonStyle='btn_outline'>More Shop</Button>
                     </div>
                     <div className='final_payment'>
                         <div className='coupon_container'>
@@ -90,8 +84,8 @@ function Cart() {
                         <div className='cart_total'>
                             <h1>Cart total</h1>
                             <hr />
-                            <h3>Total amount: ${total}</h3>
-                            <h3>After Discount: ${coupon ? Math.ceil(total - (total / 10)) : total}</h3>
+                            <h3>Total amount: ₹{total}</h3>
+                            <h3>After Discount: ₹{coupon ? Math.ceil(total - (total / 10)) : total}</h3>
                             <Button path='/order'>Proceed</Button>
                         </div>
                     </div>
@@ -102,3 +96,5 @@ function Cart() {
 }
 
 export default Cart
+
+

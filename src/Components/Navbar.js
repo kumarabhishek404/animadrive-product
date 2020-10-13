@@ -3,7 +3,6 @@ import { logAction } from '../Redux';
 import { connect } from 'react-redux';
 import { useSelector } from 'react-redux';
 import React, { useState, useEffect, useRef } from 'react'
-import { BrowserRouter as Router } from 'react-router-dom';
 import { Link, Route, Redirect } from 'react-router-dom';
 // import SvgIcon from '@material-ui/core/SvgIcon';
 import PetIcon from '@material-ui/icons/Pets';
@@ -11,57 +10,24 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import Axios from 'axios';
-// import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
-// import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-// Axios.create({
-//     url: 'http://localhost:4000/',
-//     // withCredentials: true,
-// });
-
-// Axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-// Axios.defaults.withCredentials = true;
-// Axios.defaults.crossDomain = true;
-
-
 function Navbar(props) {
-     //  Axios.create({
-    //     baseURL: 'http://localhost:3000/',
-    //     withCredentials: true,
-    // });
-
-    // Axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-    // Axios.defaults.withCredentials = true;
-    // Axios.defaults.crossDomain = true;
-    // let axiosConfig = {
-    //     headers: {
-    //         'Content-Type': 'application/json;charset=UTF-8,"application/x-www-form- urlencoded',
-    //         "Access-Control-Allow-Origin": "*",
-    //         "withCredentials":true,
-    //         "crossDomain":true
-    //     }
-    //   };
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
     const [formmenu, setFormmenu] = useState(false)
-    const [authenticate, setAuthenticate] = useState(true)
-    // const [windowScroll, setWindowScroll] = useState(false)
-    // const [prevScrollPos, setPrevScrollPos] = useState()
-    // const [currentScrollPos, setCurrentScrollPos] = useState()
-    // const scrollNavbar = useRef()
-
     const login = useSelector(state => state.login)
+    console.log(login)  
     const message = useSelector(state => state.message)
+
 
     const openSignInMenu = () => {
         setSignmenu(!signmenu)
-        // setSignmenu(false)
     }
 
     const openFormMenu = (e) => {
         setFormmenu(!formmenu)
+        setSignmenu(false)
     }
 
     const closeButtonHandler = () => {
@@ -70,6 +36,8 @@ function Navbar(props) {
     }
     const closeMenuHandler = () => {
         setClick(false)
+        setSignmenu(false)
+        setFormmenu(false)
     }
     const handleSearchAnimation = () => {
         setSearch(!search)
@@ -77,15 +45,14 @@ function Navbar(props) {
     }
     const handleLogIN = () => {
         window.open("http://localhost:4000/google/auth", "_self");
-        // props.logAction(true)
-        // setClick(false)
-        // setAuthenticate(false)
-    }
+        setFormmenu(false)
+        }
 
     const handleLogOUT = () => {
         window.open("http://localhost:4000/logout", "_self");
-        // alert('alert')
         props.logAction(false)
+        setSignmenu(false)
+        setFormmenu(false)
     }
 
     useEffect(()=>{
@@ -93,10 +60,8 @@ function Navbar(props) {
         .then(response=>{
           console.log(response.status)
             if(response.status === 200) {
-            //   setUser(response.data.user)
+                Axios.defaults.headers.common['Authorization'] = response.data.token;
               props.logAction(response.data)
-            //   console.log(message)
-            window.userData=response.data.user
           }
           else{
             alert('alert')
@@ -105,20 +70,10 @@ function Navbar(props) {
           }
         })
         .catch(error=>{
-          // setLoading(false)
-            // setAuthenticated(false)
-            // setError(error)
+      console.log(error)
         })
     },[])
-    // useEffect(() => {
-    //     console.log('running');
-    //     window.addEventListener('scroll', () => {
-    //         console.log('scrolling');
-    //         if (window.pageYOffset >= 100) {
-    //             alert('alert')
-    //         }
-    //     })
-    // }, [])
+
 
 
     return (
@@ -194,7 +149,7 @@ function Navbar(props) {
                                             {(login) ? 'Profile' : 'SignUp'}
                                             <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
-                                                    <Link to='/acount' className='dropdown_content_item' onClick={closeButtonHandler} >
+                                                    <Link to='/order' className='dropdown_content_item' onClick={closeButtonHandler} >
                                                         Your Orders
                                         </Link>
                                                 </div>

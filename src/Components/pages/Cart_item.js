@@ -38,11 +38,11 @@ function Cart_item({ productName, product_src, price, ProductQuantity, onProduct
                     <figure className='product_image_wrap'>
                         <img src={product_src} />
                     </figure>
-                    <h2>{`$${price}`}</h2>
+                    <h2>{`₹${price}`}</h2>
                 </div>
                 <div className='cart_product_info'>
                     <h2>{productName}</h2>
-                    <h2 className='price_head'>{`$${productPrice}`}</h2>
+                    <h2 className='price_head'>{`₹${productPrice}`}</h2>
                 </div>
                 <div className='product_action'>
                     <div className='product_quantity'>

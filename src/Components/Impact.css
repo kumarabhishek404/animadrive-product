@@ -1,0 +1,58 @@
+
+#impact-section{
+    height: 300px;
+    width: 100%;
+    font: 'opensans-bold', sans-serif;
+    margin: 50px 0px;
+}
+
+#impact-section > h2 {
+    text-align: center;
+    font-size: 2.5rem;   
+    margin: 10px;
+}
+
+#impact-section > h2::after {
+    content: '';
+    background: #99cc4a;
+    display: block;
+    height: 3px;
+    width: 170px;
+    margin: 20px auto 5px;
+}
+
+.impact-text > p{
+    font-size: 20px;
+    padding: 10px;
+    margin: auto;
+    width: 90%;
+    line-height: 35px;
+    letter-spacing: 1.5px;
+}
+
+
+@media screen and (max-width: 1060px) {
+    #impact-section{
+    height: 400px;
+    }
+    
+    }
+    
+    @media screen and (max-width: 635px) {
+    #impact-section{
+    height: 600px;
+    }
+    .impact-text > p{
+    margin: auto;
+    }
+    }
+    
+    
+    @media screen and (max-width: 452px) {
+    #impact-section{
+    height: 800px;
+    }
+    .impact-text > p{
+    margin: auto;
+    }
+    }

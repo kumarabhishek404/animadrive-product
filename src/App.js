@@ -6,40 +6,28 @@ import Footer from './Components/Footer'
 import Home from './Components/pages/Home'
 import Order from './Components/pages/Order'
 import Product from './Components/pages/Product'
-import Shop from './Components/pages/Shop'
-import Colleboration from './Components/pages/Colleboration'
-import JoinUs from './Components/pages/JoinUs'
+import Register from './Components/pages/Register'
+import Signin from './Components/pages/Signin'
 import Cart from './Components/pages/Cart'
+import Joinus from './Components/pages/JoinUs';
+import Colleboration from './Components/pages/Colleboration'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess';
+import Shop from './Components/pages/Shop'
 import { useSelector } from 'react-redux';
-// import Shop from './Components/pages/Shop'
-// import CartNew from './Components/pages/Cart';
-import MyOrders from './Components/pages/MyOrders';
-import Axios from 'axios';
-
-import { Provider } from 'react-redux'
-import store from './Redux/Store'
-
-// Axios.create({
-//   url: 'http://localhost:4000/',
-//   method:'POST'
-//   // withCredentials: true,
-// });
-
 function App() {
-  // const scrollDoc = useRef()
   const login = useSelector(state => state.login)
+  console.log(login)
   const scrollNavbar = useRef()
-
-  const [scrollState, setScrollState] = useState(true)
-  // const [hidden, setHidden] = useState(false);
-  // const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
-  // const [hideNavbar, setHideNavbar] = useState(true)
+  const scrollDoc = useRef()
+  const [scrollState, setScrollState] = useState()
 
   const handleScrollToFirst = () => {
     window.scrollTo(0, 0)
   }
 
+  const handleScroll = () => {
+    setScrollState(scrollDoc.current.scrollTop)
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -48,61 +36,41 @@ function App() {
 
 
   return (
-      <div className='App'>
-        <div className={scrollState ? 'comeToStart' : 'comeToStart signDisplay'} onClick={handleScrollToFirst}>
+      <div className='App' ref={scrollDoc} onScroll={handleScroll}>
+        <div className='comeToStart' onClick={handleScrollToFirst}>
           <ExpandLessIcon fontSize='large' />
         </div>
-        <Router onUpdate={() => window.scrollTo(0, 0)}>
-          <div>
-            <div ref={scrollNavbar} className="app_navbar">
-              <Navbar />
-            </div>
-            <Switch>
-              <Route path='/products' component={Product} />
-              <Route path='/colleboration' component={Colleboration} />
-              <Route path='/joinus' component={JoinUs} />
-              <Route exact path="/cart" render={() => (
+        <Router>
+          <Navbar />
+
+          <Switch>
+            <Route path='/products' component={Product} />
+            <Route path='/register' component={Register} />
+            <Route path='/signin' component={Signin} />
+            <Route exact path="/cart" render={() => (
                 !login ? (
                   <Redirect to="/" />
                 ) : (
                     <Cart />
                   )
               )} />
-              <Route exact path="/order" render={() => (
+            <Route path='/joinus' component={Joinus} />
+            <Route path='/colleboration' component={Colleboration} />
+            <Route exact path="/order" render={() => (
                 !login ? (
                   <Redirect to="/" />
                 ) : (
                     <Order />
                   )
               )} />
-              <Route exact path="/acount" render={() => (
-                !login ? (
-                  <Redirect to="/" />
-                ) : (
-                    <MyOrders />
-                  )
-              )} />
-              <Route path='/shop' component={Shop} exact />
-              <Route path='/' component={Home} exact />
-            </Switch>
-            <Footer />
-          </div>
+            <Route path='/shop' component={Shop} />
+            {/* <Route path='/offers' component={Orders} /> */}
+            <Route path='/' component={Home} exact />
+          </Switch>
+          <Footer />
         </Router>
       </div>
   );
 }
 
 export default App;
-
-
-// {
-//   "product_name": "product_1",
-//     "price": "23,000",
-//       "shot_desc": "short_desc",
-//         "brief_desc": "brief_desc",
-//           "thumbnail": "thumbnail",
-//             "img1": "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
-//               "img2": "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
-//                 "img3": "https://m.media-amazon.com/images/I/71wPwmxo2NL._AC_UY218_.jpg",
-//                   "stock": "true",
-// }

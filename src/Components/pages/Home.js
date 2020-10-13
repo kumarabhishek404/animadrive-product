@@ -1,6 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react'
-import './Home.css'
-import { logAction } from '../../Redux'
+import './Home.css';
+import Header from '../Header'
+import About from '../About'
+import Vision from '../Vision';
+import OurProduct from '../OurProducts'
+import Impact from '../Impact'
+import { logAction } from '../../Redux';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import Axios from 'axios';
@@ -13,18 +18,13 @@ const images = [
 
 
 function Home() {
-
-   
-
     const targetSrc = useRef()
     const [imageIndex, setImageIndex] = useState(0)
-
-
     useEffect(() => {
         // window.scrollTo(0, 0)
         const interval = setInterval(() => {
             if (imageIndex < images.length) {
-                targetSrc.current.src = images[imageIndex]
+                // targetSrc.current.src = images[imageIndex]
                 setImageIndex(prevState => prevState + 1)
             }
             else {
@@ -40,18 +40,19 @@ function Home() {
         <>
             <div className='home'>
                 <div className='home_container'>
-                    <div className='home_wrapper'>
-                        <div className='home_image_slide'>
-                            <figure >
-                                <img src='https://rukminim1.flixcart.com/flap/50/50/image/283de1e2883fb0fd.jpg?q=50' alt='Image' ref={targetSrc} />
-                            </figure>
-                        </div>
-                        <div className='all_products'>
-                            <div className='single_product'>
 
-                            </div>
-                        </div>
-                    </div>
+                    {/* <div className='home_wrapper'> */}
+                    {/* <div className='all_products'> */}
+                    {/* <div className='single_product'> */}
+                    <Header />
+                    <About />
+                    <Vision />
+                    <OurProduct />
+                    <Impact />
+                    {/* </div> */}
+                    {/* </div> */}
+                    {/* </div> */}
+
                 </div>
             </div>
         </>

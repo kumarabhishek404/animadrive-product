@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import './Product.css'
+import React, { useState, useEffect, useRef } from 'react'
+import './Shop.css'
 import { Link } from 'react-router-dom'
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Button from '../Button'
@@ -12,8 +12,10 @@ import StarIcon from '@material-ui/icons/Star';
 
 
 function Product() {
-    const [selectedImage, setSelectedImage] = useState('https://elcopcbonline.com/photos/product/4/176/4.jpg')
+    const [selectedImage, setSelectedImage] = useState('/Images/1.jpg')
+    // const [slideImage, setSlideImage] = useState(false)
 
+    const slideImage = useRef()
     const clickLoadImage = (e) => {
         setSelectedImage(e.target.src)
     }
@@ -24,44 +26,41 @@ function Product() {
     }, [])
 
     return (
-        <div className='product'>
+        <div className='products'>
             <div className='product_container'>
                 <div className='product_image'>
+                    <div className='product_detail_heading'>
+                        <h1>Green Gud</h1>
+                    </div>
                     <div className='product_image_container'>
                         <div className='product_main_image'>
                             <img src={selectedImage} alt='Image' />
                         </div>
                         <div className='product_image_side'>
-                            <img src='https://elcopcbonline.com/photos/product/4/176/4.jpg' alt='Image' onClick={clickLoadImage} />
-                            <img src='https://m.media-amazon.com/images/I/41+fXlXMPyL._SR500,500_.jpg' onClick={clickLoadImage} />
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/5103Xi7yQgL._SL1024_.jpg' alt='Image' onClick={clickLoadImage} />
+                            <img src='/Images/1.jpg' alt='Image' onMouseEnter={clickLoadImage} />
+                            <img src='/Images/2.jpg' onMouseEnter={clickLoadImage} />
+                            <img src='Images/3.jpg' alt='Image' onMouseEnter={clickLoadImage} />
                         </div>
                     </div>
                 </div>
                 <div className='product_details'>
-                    <h1>Product Details</h1>
+                    {/* <h1>Product Details</h1> */}
                     <div className='product_detail_container'>
                         <div className='product_detail_price'>
-                            <h1>$29,000</h1><h6>In Stoke</h6>
+                            <h1>₹ 149</h1><h3>In Stoke</h3>
                         </div>
                         <div className='product_detail_heading'>
-                            <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1>
+                            {/* <h1>LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine</h1> */}
                         </div>
                         <div className='product_description'>
-                            <p>Made from floral waste</p>
-                            <p>Tulsi seed packaging</p>
-                            <p>40 incense sticks</p>
-                            <p>Bambooless</p>
-                            <p>Charcoal free</p>
-                            <p>30 minutes burning time</p>
+                            <p>Nutrition food plant</p>
+                            <p>Aromatic and decorative</p>
+                            <p>40 pieces per packet</p>
                         </div>
-                        <h3>Category: Essence of India</h3>
-                        <h3>Tags: Aromatic Incense Sticks, Essence Of India, Help Us Green</h3>
+                        <h3>Brand: A product of AnimaDrive</h3>
+                        <h3>Tags: Aromatic & Decorative Nutrition Plant Food, AnimaDrive</h3>
+                        <p>It is eco-friendly, non-toxic, consumes low energy input for composting and is a recycled biological product. It has  palette in multicolours and multi-flavors with an adept shape and size which acts like a top off of supplements to recharge the sustenance in the plants root and you can arrange off it after a month. Another benefit of our product is that you can't over feed your plants with it, Because it won't consume plants like different kinds of fertilizers. The Design of our  product is inspired by dung beetle concept.</p>
                     </div>
-                </div>
-                <div className='description'>
-                    <h1>Description</h1>
-                    <p>HelpUsGreen Incense sticks are made out of floral waste from religious sites. The packaging is made of Tulsi seed paper which when sown in the soil, grows into a Tulsi plant. The pack contains 40 incense sticks which are bambooless and charcoal-free. A stand is included inside. Burning time for each incense stick is approximately 30 minutes.</p>
                 </div>
                 <div className='other_product_action'>
                     <div className='other_product_action_container'>
@@ -81,7 +80,7 @@ function Product() {
                         </div>
                         <form>
                             <div className='product_rating_container'>
-                                <h3>Rating:</h3>
+                                <h1>Your Valuable Review</h1>
                             </div>
                             <div className='input_detail'>
                                 <textarea cols='80' rows='10' placeholder='Write Somethings about product' />
