@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './Register.css'
 // import { Link } from 'react-router-dom'
 import Button from '../Button'
+import Axios from 'axios';
+
 
 function Colleboration() {
 
@@ -29,7 +31,11 @@ function Colleboration() {
     }
 
     const handleSubmit = () => {
-        console.log(form.name, form.mobile, form.email, form.name_of_org, form.email, form.category);
+        Axios.post("http://localhost:4000/join/collaborator",{form})
+        .then(response=>{
+            console.log(response.data)
+        })
+        .catch(err=>console.log(err))
         setForm({
             category: '',
             name_of_org: '',

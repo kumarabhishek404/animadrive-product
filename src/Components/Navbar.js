@@ -17,7 +17,6 @@ function Navbar(props) {
     const [signmenu, setSignmenu] = useState(false)
     const [formmenu, setFormmenu] = useState(false)
     const login = useSelector(state => state.login)
-    console.log(login)  
     const message = useSelector(state => state.message)
 
 
@@ -132,7 +131,7 @@ function Navbar(props) {
                             </li> */}
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn'>
+                                    <div className='navbar_links_item dropdown_btn'>
                                         <div onClick={openFormMenu}>
                                             Join
                                             <div className={(formmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
@@ -146,17 +145,17 @@ function Navbar(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </div>
                                 </div>
                             </li>
                             <li className={login ? 'nav_item' : 'nav_item hidden'}>
-                                <Link className='navbar_links_item' onClick={handleLogOUT}>
+                                <div className='navbar_links_item' onClick={handleLogOUT}>
                                     LogOut
-                                </Link>
+                                </div>
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
+                                    <div className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
                                         <div onClick={openSignInMenu}>
                                             {(login) ? 'Profile' : 'SignUp'}
                                             <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
@@ -170,7 +169,7 @@ function Navbar(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </div>
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
