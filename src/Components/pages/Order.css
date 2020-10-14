@@ -55,6 +55,8 @@
 }
 .additional_info textarea, .order_region input, .order_region select, .order_username input, .order_address input, .order_email input, .order_phone input, .city input {
     background-color: #e1e1e1;
+    border: none;
+    outline: none;
 }
 .order_address input, .order_email input, .order_phone input, .city input {
     width: 100%;

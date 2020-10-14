@@ -104,7 +104,7 @@ function Order() {
                                     </select>
                                 </div>
                                 <div className='additional_info'>
-                                    <textarea cols='70' rows='5' name='additionInfo' value={form.additionalInfo} onChange={handleInputOnchange} placeholder='Additional Information' />
+                                    <textarea cols='70' rows='5' name='additionalInfo' value={form.additionalInfo} onChange={handleInputOnchange} placeholder='Additional Information' />
                                 </div>
                                 <Button onClick={handleSubmit}>Submit</Button>
                             </form>
