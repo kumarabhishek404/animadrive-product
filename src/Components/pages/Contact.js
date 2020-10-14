@@ -4,6 +4,8 @@ import { green } from '@material-ui/core/colors';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
+import Axios from 'axios';
+
 
 function Contact() {
 
@@ -14,6 +16,12 @@ function Contact() {
 
     const handleSubmit = () => {
         console.log(name, email, subject, message);
+        Axios.post("http://localhost:4000/join/contactUs",{
+            name:name,
+            email:email,
+            subject:subject,
+            message:message
+        })
         setName('')
         setEmail('')
         setSubject('')

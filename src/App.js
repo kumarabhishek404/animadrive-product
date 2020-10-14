@@ -18,9 +18,6 @@ import MyOrder from './Components/pages/MyOrders'
 import Contact from './Components/pages/Contact';
 import Initiative from './Components/pages/Initiative'
 
-import { Provider } from 'react-redux';
-import store from './Redux/Store'
-// import CartNew from './Components/Cart/Cart';
 
 import { useSelector } from 'react-redux';
 

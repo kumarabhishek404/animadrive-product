@@ -8,8 +8,6 @@ import Button from '../Button'
 import Axios from 'axios';
 
 function Product_card({ id, name, price, pic_src, description }) {
-    console.log(window.userData)
-    const DATA = window.userData
     const [product, setProduct, removeProduct] = useCookies()
 
     const [changeClass, setChangeClass] = useState('')

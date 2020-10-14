@@ -142,8 +142,8 @@ function Navbar(props) {
                             </li> */}
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn'>
-                                        <div onClick={openFormMenu} onMouseLeave={closeFormMenu}>
+                                    <div className='navbar_links_item dropdown_btn'>
+                                        <div onClick={openFormMenu}>
                                             Join
                                             <div className={(formmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
@@ -156,17 +156,17 @@ function Navbar(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </div>
                                 </div>
                             </li>
                             <li className={login ? 'nav_item' : 'nav_item hidden'}>
-                                <Link className='navbar_links_item' onClick={handleLogOUT}>
+                                <div className='navbar_links_item' onClick={handleLogOUT}>
                                     LogOut
-                                </Link>
+                                </div>
                             </li>
                             <li className='nav_item'>
                                 <div className='dropdown'>
-                                    <Link className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
+                                    <div className='navbar_links_item dropdown_btn' onClick={handleLogIN}>
                                         <div onClick={openSignInMenu}>
                                             {(login) ? 'Profile' : 'SignUp'}
                                             <div className={(signmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
@@ -180,7 +180,7 @@ function Navbar(props) {
                                                 </div>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </div>
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>

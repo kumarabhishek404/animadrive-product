@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 // import { Link } from 'react-router-dom'
 import Button from '../Button'
 import './Register.css'
+import Axios from 'axios';
 
 function JoinUs() {
 
@@ -46,6 +47,12 @@ function JoinUs() {
             additionalInfo: '',
             question: ''
         })
+
+        Axios.post("http://localhost:4000/join/joinUs", { form })
+            .then(response => {
+                console.log(response.data)
+            })
+            .catch(err => console.log(err))
     }
 
     return (
