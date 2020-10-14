@@ -50,7 +50,7 @@ function Products() {
                     <h1>Our Products</h1>
                     <div className='all_products'>
                         <div className='all_products_item'>{products.map(item =>
-                            <Card id={item.id} name={item.product_name} price={item.price} pic_src="/Images/3.jpg" description={item.shot_desc} />
+                            <Card id={item.id} name={item.product_name} price={item.price} pic_src="/Images/1.png" description={item.shot_desc} />
                         )}
                         </div>
                     </div>

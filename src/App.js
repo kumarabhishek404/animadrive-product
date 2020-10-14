@@ -18,15 +18,11 @@ import MyOrder from './Components/pages/MyOrders'
 import Contact from './Components/pages/Contact';
 import Initiative from './Components/pages/Initiative'
 
-import { Provider } from 'react-redux';
-import store from './Redux/Store'
-// import CartNew from './Components/Cart/Cart';
 
 import { useSelector } from 'react-redux';
 
 function App() {
   const login = useSelector(state => state.login)
-  console.log(login)
   const scrollNavbar = useRef()
   const scrollDoc = useRef()
   const [scrollState, setScrollState] = useState()
@@ -42,7 +38,6 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  console.log(login)
 
 
   return (

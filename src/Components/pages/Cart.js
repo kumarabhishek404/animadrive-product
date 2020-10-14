@@ -67,7 +67,7 @@ function Cart() {
                     <div className='cart_container_wrapper'>
                         {
                             cartData.map(product =>
-                                <CartItem productName={product.product_name} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.thumbnail} ProductQuantity={product.quantity} />
+                                <CartItem productName={product.product_name} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src="/Images/1.png" ProductQuantity={product.quantity} />
                             )
                         }
                     </div>
