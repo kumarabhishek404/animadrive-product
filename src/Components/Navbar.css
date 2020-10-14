@@ -11,6 +11,7 @@
     background-color: #fff;
     color: black;
     height: 80px;
+    /* width: 80px; */
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
@@ -35,7 +36,7 @@
     font-size: 2rem;
     text-decoration: none;
     width: 20vw;
-    color: black;
+    /* color: black; */
     cursor: pointer;
     margin-left: 15px;
 }
@@ -65,9 +66,6 @@
     border: 2px solid red;
     border-radius: 30px;
     
-}
-.active {
-    padding: 0px 8px 0px 0;
 }
 .navbar_search_input {
     width: 100%;
@@ -181,16 +179,22 @@
     grid-gap: 0px;
     text-align: center;
     /* margin-right: 1rem; */
-    width: 70vw;
+    width: 75vw;
+    /* width: 100%; */
     /* border: 2px solid blue; */
 }
 .nav_menu_box {
     /* float: right; */
     /* border: 2px solid blue; */
     color: black;
-    /* min-width: 50px; */
-    margin-right: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-width: 50px;
+    margin-right: 0; */
+}
+.crossCancel {
+    display: none;
 }
 .signIn .navbar_links_item{
     border: 2px solid #e1e1e1;
@@ -232,7 +236,7 @@
     /* top: 0px; */
     /* min-width: 160px; */
     /* padding: 20px 0; */
-    width: 300px;
+    width: 170px;
     z-index: 1;
     border: 2px solid #99cc4a;
 }
@@ -246,10 +250,12 @@
     color: #000;
 }
 .dropdown_content_item {
-    text-align: start;
+    /* text-align: start; */
     font-size: 1rem;
     text-decoration: none;
     color: #99cc4a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
     padding: 6px 8px;
 }
 .dropdown_content_container h3 {
@@ -315,28 +321,41 @@
 
 @media screen and (max-width: 960px){
     .nav_menu {
+        background-color: black;
+        border: 2px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 20%;
-        min-width: 130px;
-        height: 90vh;
-        position: absolute;
-        top: 80px;
-        left: -100%;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        /* color: black; */
+        position: fixed;
+        top: -1200px;
+        left: 0;
+        /* left: -100%; */
         opacity: 1;
         z-index: 999;
-        transition: all 1.5s ease;
+        transition: all 0.8s ease;
     }.navbar_logo {
         margin-right: 100%;
     }
     .nav_menu_box {
+        width: 100%;
+        letter-spacing: 4px;
+        margin-top: -180px;
         flex-direction: column;
-        margin-bottom: 25px;
-        margin-top: 25px;
+        /* margin-bottom: 25px; */
+        /* margin-top: 25px; */
+    }
+    .crossCancel {
+        display: block;
     }
     .nav_item {
-        margin-bottom: 15px;
+        margin-top: 10px;
+        /* margin-bottom: 15px; */
+        width: 100%;
+        font-size: 1.6rem;
     }
     .navbar_links_item {
         color: white;
@@ -344,11 +363,24 @@
     .nav_menu.active {
         background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
         left: 0;
-        top: 80px;
+        top: 0;
+        height: 110%;
+        width: 100%;
         opacity: 1;
         /* transition: all 1s ease; */
         z-index: 999;
         opacity: 1;
+    }
+    .dropdown_content_active {
+        /* display: none; */
+        background-color: #fff;
+        
+        /* position: absolute; */
+        left: -150%;
+        min-width: 300px;
+        width: 100%;
+        z-index: 1;
+        border: 2px solid #99cc4a;
     }
     .navbar_menu_icon {
         color: #000;
@@ -361,6 +393,9 @@
       font-size: 1.8rem;
       cursor: pointer;
       /* margin-left: 900px; */
+    }
+    .cart_image {
+        color: #99cc4a;
     }
     .search_box {
         right: 60px;
@@ -377,10 +412,6 @@
     .navbar_logo {
         margin-left: 10px;
         width: 40vw;
-    }
-    .dropdown_content_active {
-        left: 75px;
-        top: -3px;
     }
 }
 
@@ -426,9 +457,9 @@
         height: 150px;
         transition: all 1s ease-out;
     }
-    .dropdown_content_active{
+    /* .dropdown_content_active{
         width: 210px;
-    }    
+    }     */
 }
 
 @media screen and (max-width: 345px) {

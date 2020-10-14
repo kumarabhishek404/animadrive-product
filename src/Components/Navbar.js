@@ -11,13 +11,14 @@ import CloseIcon from '@material-ui/icons/Close';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Axios from 'axios';
+
 function Navbar(props) {
+
     const [click, setClick] = useState(false)
     const [search, setSearch] = useState(false)
     const [signmenu, setSignmenu] = useState(false)
     const [formmenu, setFormmenu] = useState(false)
     const login = useSelector(state => state.login)
-    console.log(login)  
     const message = useSelector(state => state.message)
 
 
@@ -26,7 +27,12 @@ function Navbar(props) {
     }
 
     const openFormMenu = (e) => {
-        setFormmenu(!formmenu)
+        setFormmenu(true)
+        setSignmenu(false)
+    }
+
+    const closeFormMenu = (e) => {
+        setFormmenu(false)
         setSignmenu(false)
     }
 
@@ -35,6 +41,7 @@ function Navbar(props) {
         setSearch(false)
     }
     const closeMenuHandler = () => {
+        window.scrollTo(0, 0)
         setClick(false)
         setSignmenu(false)
         setFormmenu(false)
@@ -46,7 +53,7 @@ function Navbar(props) {
     const handleLogIN = () => {
         window.open("http://localhost:4000/google/auth", "_self");
         setFormmenu(false)
-        }
+    }
 
     const handleLogOUT = () => {
         window.open("http://localhost:4000/logout", "_self");
@@ -55,24 +62,24 @@ function Navbar(props) {
         setFormmenu(false)
     }
 
-    useEffect(()=>{
-        Axios.get("http://localhost:4000/authSuccess",{ withCredentials: true })
-        .then(response=>{
-          console.log(response.status)
-            if(response.status === 200) {
-                Axios.defaults.headers.common['Authorization'] = response.data.token;
-              props.logAction(response.data)
-          }
-          else{
-            alert('alert')
-            props.logAction(false)
+    useEffect(() => {
+        Axios.get("http://localhost:4000/authSuccess", { withCredentials: true })
+            .then(response => {
+                console.log(response.status)
+                if (response.status === 200) {
+                    Axios.defaults.headers.common['Authorization'] = response.data.token;
+                    props.logAction(response.data)
+                }
+                else {
+                    alert('alert')
+                    props.logAction(false)
 
-          }
-        })
-        .catch(error=>{
-      console.log(error)
-        })
-    },[])
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }, [])
 
 
 
@@ -100,6 +107,9 @@ function Navbar(props) {
                     </div>
                     <ul className={click ? 'nav_menu active' : 'nav_menu'}>
                         <div className='nav_menu_box'>
+                            <div className='crossCancel'>
+                                <CloseIcon fontSize='large' style={{ color: "white", fontSize: "70" }} onClick={closeMenuHandler} />
+                            </div>
                             <li className='nav_item'>
                                 <Link to='/' className='navbar_links_item' onClick={closeMenuHandler}>
                                     Home
@@ -133,7 +143,7 @@ function Navbar(props) {
                             <li className='nav_item'>
                                 <div className='dropdown'>
                                     <Link className='navbar_links_item dropdown_btn'>
-                                        <div onClick={openFormMenu}>
+                                        <div onClick={openFormMenu} onMouseLeave={closeFormMenu}>
                                             Join
                                             <div className={(formmenu) ? 'dropdown_content_active' : 'dropdown_content'}>
                                                 <div className='dropdown_content_container'>
@@ -141,7 +151,7 @@ function Navbar(props) {
                                                         Join as Team
                                         </Link>
                                                     <Link to='/colleboration' className='dropdown_content_item' onClick={closeButtonHandler} >
-                                                        Colleboration with us
+                                                        Colleboration
                                         </Link>
                                                 </div>
                                             </div>
@@ -174,11 +184,13 @@ function Navbar(props) {
                                     {/* <ExpandMoreIcon className='dropdown_symbol' /> */}
                                 </div>
                             </li>
-                            <div className='nav_menu_boxer'>
-                                <Link to='/cart' className='navbar_links_item cart_image'>
-                                    <ShoppingCartIcon fontSize='large' />
-                                </Link>
-                            </div>
+                            <li className='nav_item'>
+                                <div className='nav_menu_boxer'>
+                                    <Link to='/cart' className='navbar_links_item cart_image' onClick={closeMenuHandler}>
+                                        <ShoppingCartIcon fontSize='large' style={{ fontSize: 60 }} />
+                                    </Link>
+                                </div>
+                            </li>
                         </div>
                     </ul>
                 </div>

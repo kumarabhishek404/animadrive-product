@@ -49,7 +49,7 @@ function OurProducts() {
                     }
                 </div>
             </div>
-            <Button buttonStyle='btn_outline'>Shoping</Button>
+            <Button path='/shop' buttonStyle='btn_outline'>Shopping</Button>
         </div>
     </>
 

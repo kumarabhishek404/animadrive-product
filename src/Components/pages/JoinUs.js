@@ -32,6 +32,20 @@ function JoinUs() {
 
     const handleSubmit = () => {
         console.log(form.name, form.mobile, form.email, form.college, form.qualification, form.category);
+
+        setForm({
+            category: '',
+            name: '',
+            mobile: '',
+            email: '',
+            address: '',
+            qualification: '',
+            college: '',
+            resume: '',
+            technicalSkill: '',
+            additionalInfo: '',
+            question: ''
+        })
     }
 
     return (

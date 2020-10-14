@@ -5,6 +5,48 @@ import data from './Region.json'
 
 function Order() {
 
+    const [form, setForm] = useState({
+        fname: '',
+        lname: '',
+        mobile: '',
+        email: '',
+        address: '',
+        city: '',
+        pin: '',
+        country: '',
+        state: '',
+        additionalInfo: ''
+    })
+
+    const handleInputOnchange = (e) => {
+        const { name, value } = e.target;
+
+        setForm((prevValues) => {
+            return {
+                ...prevValues,
+                [name]: value,
+            }
+        })
+    }
+
+    const handleSubmit = () => {
+        console.log(form.fname, form.mobile, form.email);
+
+        setForm({
+            fname: '',
+            lname: '',
+            mobile: '',
+            email: '',
+            address: '',
+            city: '',
+            pin: '',
+            country: '',
+            state: '',
+            additionalInfo: ''
+        })
+    }
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -24,31 +66,31 @@ function Order() {
                         <div className='order_details_form'>
                             <form>
                                 <div className='order_username'>
-                                    <input type='text' name='fname' placeholder='First Name' />
-                                    <input type='text' name='lname' placeholder='Last Name' />
+                                    <input type='text' name='fname' value={form.fname} onChange={handleInputOnchange} placeholder='First Name' />
+                                    <input type='text' name='lname' value={form.lname} onChange={handleInputOnchange} placeholder='Last Name' />
                                 </div>
                                 <div className='order_phone'>
-                                    <input type='number' placeholder='Phone' />
+                                    <input type='number' name='mobile' value={form.mobile} onChange={handleInputOnchange} placeholder='Phone' />
                                 </div>
                                 <div className='order_email'>
-                                    <input type='email' placeholder='Email' />
+                                    <input type='email' name='email' value={form.email} onChange={handleInputOnchange} placeholder='Email' />
                                 </div>
                                 <div className='order_address'>
-                                    <input type='text' placeholder='Address' />
+                                    <input type='text' name='address' value={form.address} onChange={handleInputOnchange} placeholder='Address' />
                                 </div>
                                 <div className='city'>
-                                    <input type='text' placeholder='City' />
+                                    <input type='text' name='city' value={form.city} onChange={handleInputOnchange} placeholder='City' />
                                 </div>
                                 <div className='order_region'>
-                                    <input type='number' placeholder='PIN' />
-                                    <select placeholder='India' onChange={handleSelectedOption}>
+                                    <input type='number' name='pin' value={form.pin} onChange={handleInputOnchange} placeholder='PIN' />
+                                    <select placeholder='India' name='country' value={form.country} onChange={handleInputOnchange} onChange={handleSelectedOption}>
                                         {
                                             data.map((element, index) => {
                                                 return <option>{element.country}</option>
                                             })
                                         }
                                     </select>
-                                    <select>
+                                    <select name='state' value={form.state} onChange={handleInputOnchange} >
                                         {
                                             (countryIndex != null)
                                                 ? data.map((element) => {
@@ -62,9 +104,9 @@ function Order() {
                                     </select>
                                 </div>
                                 <div className='additional_info'>
-                                    <textarea cols='70' rows='5' placeholder='Additional Information' />
+                                    <textarea cols='70' rows='5' name='additionInfo' value={form.additionalInfo} onChange={handleInputOnchange} placeholder='Additional Information' />
                                 </div>
-                                <Button>Submit</Button>
+                                <Button onClick={handleSubmit}>Submit</Button>
                             </form>
                         </div>
                     </div>

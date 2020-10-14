@@ -45,7 +45,7 @@ function Contact() {
                             </div>
                             <div className='details_box'>
                                 <MailOutlineIcon style={{ fontSize: 60, color: green[500] }} />
-                                <div className='email'>
+                                <div className='contact_email'>
                                     <h2>Email</h2>
                                     <h3>Helloanimadrive@gmail.com</h3>
                                 </div>

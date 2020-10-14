@@ -31,3 +31,13 @@
     top: 180px;
     right: 30px; */
 }
+.testimonial {
+    /* border: 2px solid red; */
+    /* background-color: #e1e1e1; */
+    background-image: linear-gradient(to right, rgba(255,0,0,0), #67ba37);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+}

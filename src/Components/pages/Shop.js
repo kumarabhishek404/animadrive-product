@@ -30,6 +30,8 @@ const product_list = [
 
 function Products() {
 
+
+
     const [products, setProducts] = useState([])
     useEffect(() => {
         Axios.get("http://localhost:4000/products")
@@ -49,8 +51,9 @@ function Products() {
                 <div className='products_container'>
                     <h1>Our Products</h1>
                     <div className='all_products'>
-                        <div className='all_products_item'>{products.map(item =>
-                            <Card id={item.id} name={item.product_name} price={item.price} pic_src="/Images/3.jpg" description={item.shot_desc} />
+                        <div className='all_products_item'>{product_list.map(item =>
+                            <Card id={item.id} name={item.product_name} price={item.price} pic_src={item.image} description={item.shot_desc} />
+
                         )}
                         </div>
                     </div>

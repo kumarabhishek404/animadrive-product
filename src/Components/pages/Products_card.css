@@ -28,13 +28,18 @@
     align-items: center;
 }
 .card_item {
-    width: 75%;
+    width: 100%;
     /* border: 2px solid red; */
-    box-shadow:  2px 2px 2px 4px rgba(0, 0, 0, 0.125);
+    /* box-shadow:  2px 2px 2px 4px rgba(0, 0, 0, 0.125); */
+    box-shadow:  0 0 20px  rgba(128, 128, 128, 0.6);
+      -moz-box-shadow: 0 0 20px  rgba(128, 128, 128, 0.6);
+      -webkit-box-shadow: 0 0 20px  rgba(128, 128, 128, 0.6);
+      -o-box-shadow: 0 0 20px  rgba(128, 128, 128, 0.6);
     /* padding: 70px 0; */
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 .card_item_link {
     width: 100%;
@@ -53,6 +58,7 @@
 }
 .card_item_image {
     /* border: 2px solid #e1e1e1; */
+    margin-top: 10px;
     width: 320px;
     height: 300px;
 }
