@@ -16,7 +16,7 @@ function Association({ headline }) {
                 <div className='association_wrapper'>
                     {
                         logos.map(item =>
-                            <figure className='association_container'>
+                            <figure className='association_image'>
                                 <img src={item.image} alt='logo' />
                             </figure>
                         )

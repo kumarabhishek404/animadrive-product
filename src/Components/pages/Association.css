@@ -9,7 +9,9 @@
 }
 .association_container {
     width: 90%;
-    /* border: 2px solid blue; */
+    overflow: hidden;
+    margin: auto;
+    border: 2px solid blue;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -22,37 +24,32 @@
     width: 90%;
     padding: 10px 0;
     display: flex;
-    justify-content: center ;
+    justify-content: space-between;
     align-items: center;
-    /* border: 2px solid green; */
-    overflow: hidden;
+    border: 2px solid green;
 }
-.association_container {
-    /* width: 200px; */
-    /* height: 200px; */
-    overflow: hidden;
+.association_image {
+    width: 200px;
     margin: auto;
+    height: 200px;
+    border: 2px solid blue;
+    /* display: flex; */
+    text-align: center;
+    /* flex-flow: column; */
+    border-radius: 10px;
+    /* justify-content: center; */
+    overflow: hidden;
+    /* align-items: center; */
 }
-.association_wrapper img {
+.association_image img {
     width: 200px;
     height: 200px;
-    /* margin: auto; */
-    border-radius: 10px;
-    /* box-shadow:  0 0 20px  rgba(0,0,0,0.6);
-    -moz-box-shadow: 0 0 20px  rgba(0,0,0,0.6);
-    -webkit-box-shadow: 0 0 20px  rgba(0,0,0,0.6);
-    -o-box-shadow: 0 0 20px  rgba(0,0,0,0.6); */
-    /* overflow: hidden; */
+    transition: all 0.5s ease-in-out;
 }
-.association_wrapper img:hover {
-    /* -ms-transform: scale(1.5);
-    -webkit-transform: scale(1.5);
-    transition: all 0.7s ease-in;
-    transform: scale(1.5); */
-    border-radius: 10px;
-    width: 200px;
+.association_image img:hover {
+    width: 250px;
+    height: 250px;
 }
-
 @media screen and (max-width: 1100px) {
     .association {
         height: 100%;

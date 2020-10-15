@@ -20,7 +20,7 @@ function Order() {
 
     const handleInputOnchange = (e) => {
         const { name, value } = e.target;
-
+        // console.log(e);
         setForm((prevValues) => {
             return {
                 ...prevValues,
@@ -30,8 +30,7 @@ function Order() {
     }
 
     const handleSubmit = () => {
-        console.log(form.fname, form.mobile, form.email);
-
+        // console.log(form.fname, form.lname, form.mobile, form.email, form.address, form.city, form.country, form.state, form.additionalInfo);
         setForm({
             fname: '',
             lname: '',
@@ -56,6 +55,7 @@ function Order() {
     const handleSelectedOption = (e) => {
         setCountryIndex(e.target.value)
     }
+    console.log(countryIndex);
 
     return (
         <>
@@ -83,14 +83,12 @@ function Order() {
                                 </div>
                                 <div className='order_region'>
                                     <input type='number' name='pin' value={form.pin} onChange={handleInputOnchange} placeholder='PIN' />
-                                    <select placeholder='India' name='country' value={form.country} onChange={handleInputOnchange} onChange={handleSelectedOption}>
+                                    <select name='country' onChange={handleInputOnchange} onChange={handleSelectedOption}>
                                         {
-                                            data.map((element, index) => {
-                                                return <option>{element.country}</option>
-                                            })
+                                            data.map(country => <option value={country.country}>{country.country}</option>)
                                         }
                                     </select>
-                                    <select name='state' value={form.state} onChange={handleInputOnchange} >
+                                    <select name='state' value={form.state} onChange={handleInputOnchange} onChange={handleInputOnchange} >
                                         {
                                             (countryIndex != null)
                                                 ? data.map((element) => {
@@ -99,7 +97,6 @@ function Order() {
                                                         : ''
                                                 })
                                                 : null
-
                                         }
                                     </select>
                                 </div>
