@@ -82,7 +82,7 @@ function Product_card({ id, name, price, pic_src, description }) {
                         </div>
                         <div className='product_btn'>
                             <Button path='/cart' className='btn' buttonStyle='btn_outline' onClick={() => handleAddToCart({ id, name, price, pic_src, description })} >Add to cart</Button>
-                            <Button path='/order' buttonStyle='btn_outline' onClick={() => onhandleRemoveProduct(id)} >Buy now</Button>
+                            <Button path={`/order/${id}`} buttonStyle='btn_outline' onClick={() => onhandleRemoveProduct(id)} >Buy now</Button>
                         </div>
                     </div>
                     <figure className='card_item_pic-wrap'>

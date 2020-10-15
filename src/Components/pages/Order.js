@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react'
 import './Order.css'
 import Button from '../Button'
 import data from './Region.json'
+import Axios from 'axios';
+import {useLocation} from 'react-router-dom';
 
 function Order() {
+
+    const {pathname} = useLocation()
+    console.log(pathname.slice(-1))
 
     const [form, setForm] = useState({
         fname: '',
@@ -12,7 +17,7 @@ function Order() {
         email: '',
         address: '',
         city: '',
-        pin: '',
+        pincode: '',
         country: '',
         state: '',
         additionalInfo: ''
@@ -28,9 +33,19 @@ function Order() {
             }
         })
     }
+    form.product_id=pathname.slice(-1)
 
     const handleSubmit = () => {
         console.log(form.fname, form.mobile, form.email);
+        form.mobile=parseInt(form.mobile)
+        form.product_id=parseInt(form.product_id)
+        form.pincode=parseInt(form.pincode)
+        console.log(form,'form')
+        Axios.post("http://localhost:4000/placeOrder/main/order",{form})
+        .then(response=>{
+            console.log(response)
+        })
+        .catch(err=> console.log(err))
 
         setForm({
             fname: '',
@@ -39,7 +54,7 @@ function Order() {
             email: '',
             address: '',
             city: '',
-            pin: '',
+            pincode: '',
             country: '',
             state: '',
             additionalInfo: ''
@@ -82,7 +97,7 @@ function Order() {
                                     <input type='text' name='city' value={form.city} onChange={handleInputOnchange} placeholder='City' />
                                 </div>
                                 <div className='order_region'>
-                                    <input type='number' name='pin' value={form.pin} onChange={handleInputOnchange} placeholder='PIN' />
+                                    <input type='number' name='pincode' value={form.pincode} onChange={handleInputOnchange} placeholder='PIN' />
                                     <select placeholder='India' name='country' value={form.country} onChange={handleInputOnchange} onChange={handleSelectedOption}>
                                         {
                                             data.map((element, index) => {

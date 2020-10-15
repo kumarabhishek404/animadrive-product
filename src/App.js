@@ -64,12 +64,12 @@ function App() {
           <Switch>
             <Route path='/register' component={Register} />
             <Route path='/signin' component={Signin} />
-            <Route path='/order' component={Order} />
+            {/* <Route path='/order' component={Order} /> */}
             <Route path='/contact' component={Contact} />
             <Route path='/initiative' component={Initiative} />
 
             <Route path='/products' component={Product} />
-            <Route path='/cart' component={Cart} />
+            {/* <Route path='/cart' component={Cart} /> */}
             <Route path='/colleboration' component={Colleboration} />
             <Route path='/joinus' component={Joinus} />
             <Route path='/myorder' component={MyOrder} />
@@ -83,7 +83,7 @@ function App() {
             )} />
             <Route path='/joinus' component={Joinus} />
             <Route path='/colleboration' component={Colleboration} />
-            <Route exact path="/order" render={() => (
+            <Route exact path="/order/:productID" render={() => (
               !login ? (
                 <Redirect to="/" />
               ) : (

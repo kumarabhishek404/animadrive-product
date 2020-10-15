@@ -68,7 +68,7 @@ function Navbar(props) {
                 console.log(response.status)
                 if (response.status === 200) {
                     Axios.defaults.headers.common['Authorization'] = response.data.token;
-                    props.logAction(response.data)
+                    props.logAction(true)
                 }
                 else {
                     alert('alert')
@@ -77,6 +77,7 @@ function Navbar(props) {
                 }
             })
             .catch(error => {
+                props.logAction(false)
                 console.log(error)
             })
     }, [])
