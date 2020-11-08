@@ -5,11 +5,11 @@ import CartItem from './Cart_item'
 import Button from '../Button'
 import './Cart.css'
 
-const result = [
-    { title: 'Green Gud', price: 149, image: '/Images/1.png', quantity: 1 },
-    { title: 'Green Gud', price: 149, image: '/Images/2.png', quantity: 2 },
-    { title: 'Green Gud', price: 149, image: 'Images/3.png', quantity: 3 }
-]
+// const result = [
+//     { title: 'Green Gud', price: 149, image: '/Images/1.png', quantity: 1 },
+//     { title: 'Green Gud', price: 149, image: '/Images/2.png', quantity: 2 },
+//     { title: 'Green Gud', price: 149, image: 'Images/3.png', quantity: 3 }
+// ]
 
 
 
@@ -66,8 +66,8 @@ function Cart() {
                 <div className='cart_container'>
                     <div className='cart_container_wrapper'>
                         {
-                            result.map(product =>
-                                <CartItem productName={product.title} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.image} ProductQuantity={product.quantity} />
+                            cartData.map(product =>
+                                <CartItem productName={product.title} productID={product.id} price={product.price} onProductTotal={handleProductTotal} onProductQuantity={handleProductQuantity} product_src={product.image} ProductQuantity={product.quantity} />
                             )
                         }
                     </div>

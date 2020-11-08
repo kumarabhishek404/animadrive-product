@@ -3,26 +3,48 @@ import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
 import Button from '../Button'
 import './Cart.css'
+import Axios from 'axios';
 
-function Cart_item({ productName, product_src, price, ProductQuantity, onProductTotal, onProductQuantity }) {
+
+function Cart_item({ productName,productID, product_src, price, ProductQuantity, onProductTotal, onProductQuantity }) {
 
     const [quantity, setQuantity] = useState(ProductQuantity)
     const [productPrice, setProductPrice] = useState(price)
     // const [singlePrice, setSinglePrice] = useState(price)
 
     const handleQuantityIncrement = () => {
-        setQuantity(prevCount => prevCount + 1)
-        setProductPrice((price * quantity) + price)
+        Axios.put("http://localhost:4000/cart/incrimentCart",{
+            ID: productID
+        })
+        .then(data=>{
+            console.log(data,"success");
+            setQuantity(prevCount => prevCount + 1)
+            setProductPrice((price * quantity) + price)
+        })
+        .catch(err=>{
+            console.log("there is an error",err);
+        })
+
+        // setQuantity(prevCount => prevCount + 1)
+        // setProductPrice((price * quantity) + price)
         // setSinglePrice(price * quantity)
         // onProductTotal(singlePrice)
     }
 
     const handleQuantityDecrement = () => {
-        if (quantity > 1) {
+            Axios.put("http://localhost:4000/cart/decrimentCart",{
+                ID: productID
+            })
+        .then(data=>{
+            console.log(data,"success");
             setQuantity(prevCount => prevCount - 1)
             setProductPrice(productPrice - price)
 
-        }
+        })
+        .catch(err=>{
+            console.log("there is an error",err);
+        })
+            
     }
 
     useEffect(() => {
