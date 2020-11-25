@@ -29,7 +29,7 @@ function Cart() {
     // const couponInput = useRef()
     useEffect(() => {
         window.scrollTo(0, 0)
-        Axios.get("http://localhost:4000/cart/mycart")
+        Axios.get("http://52.66.234.240:4000/cart/mycart")
             .then(response => {
                 setCartData(response.data)
             })

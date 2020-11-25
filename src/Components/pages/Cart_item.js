@@ -13,7 +13,7 @@ function Cart_item({ productName,productID, product_src, price, ProductQuantity,
     // const [singlePrice, setSinglePrice] = useState(price)
 
     const handleQuantityIncrement = () => {
-        Axios.put("http://localhost:4000/cart/incrimentCart",{
+        Axios.put("http://52.66.234.240:4000/cart/incrimentCart",{
             ID: productID
         })
         .then(data=>{
@@ -32,7 +32,7 @@ function Cart_item({ productName,productID, product_src, price, ProductQuantity,
     }
 
     const handleQuantityDecrement = () => {
-            Axios.put("http://localhost:4000/cart/decrimentCart",{
+            Axios.put("http://52.66.234.240:4000/cart/decrimentCart",{
                 ID: productID
             })
         .then(data=>{

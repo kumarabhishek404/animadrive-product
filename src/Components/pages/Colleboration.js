@@ -31,7 +31,7 @@ function Colleboration() {
     }
 
     const handleSubmit = () => {
-        Axios.post("http://localhost:4000/join/collaborator",{form})
+        Axios.post("http://52.66.234.240:4000/join/collaborator",{form})
         .then(response=>{
             console.log(response.data)
         })

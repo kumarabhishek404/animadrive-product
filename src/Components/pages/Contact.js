@@ -16,7 +16,7 @@ function Contact() {
 
     const handleSubmit = () => {
         console.log(name, email, subject, message);
-        Axios.post("http://localhost:4000/join/contactUs",{
+        Axios.post("http://52.66.234.240:4000/join/contactUs",{
             name:name,
             email:email,
             subject:subject,

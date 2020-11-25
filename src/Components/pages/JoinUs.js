@@ -48,7 +48,7 @@ function JoinUs() {
             question: ''
         })
 
-        Axios.post("http://localhost:4000/join/joinUs", { form })
+        Axios.post("http://52.66.234.240:4000/join/joinUs", { form })
             .then(response => {
                 console.log(response.data)
             })

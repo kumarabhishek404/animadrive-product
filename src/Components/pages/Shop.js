@@ -34,7 +34,7 @@ function Products() {
 
     const [products, setProducts] = useState([])
     useEffect(() => {
-        Axios.get("http://localhost:4000/products")
+        Axios.get("http://52.66.234.240:4000/products")
             .then(response => {
                 setProducts(response.data)
             })

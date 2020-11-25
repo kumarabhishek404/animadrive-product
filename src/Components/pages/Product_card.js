@@ -40,7 +40,7 @@ function Product_card({ id, name, price, pic_src, description }) {
     const handleAddToCart = ({ id, name, pic_src, price, description }) => {
         setProduct_id(id)
         setProduct(`product_${id}`, { id: id, title: name, price: price, image: pic_src, desc: description, quantity: 1 }, { path: '/' })
-        Axios.post("http://localhost:4000/cart/addToCart",
+        Axios.post("http://52.66.234.240:4000/cart/addToCart",
             {
                 product_name: name,
                 price: price,

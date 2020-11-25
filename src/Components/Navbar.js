@@ -51,19 +51,19 @@ function Navbar(props) {
         setClick(false)
     }
     const handleLogIN = () => {
-        window.open("http://localhost:4000/google/auth", "_self");
+        window.open("http://52.66.234.240:4000/google/auth", "_self");
         setFormmenu(false)
     }
 
     const handleLogOUT = () => {
-        window.open("http://localhost:4000/logout", "_self");
+        window.open("http://52.66.234.240:4000/logout", "_self");
         props.logAction(false)
         setSignmenu(false)
         setFormmenu(false)
     }
 
     useEffect(() => {
-        Axios.get("http://localhost:4000/authSuccess", { withCredentials: true })
+        Axios.get("http://52.66.234.240:4000/authSuccess", { withCredentials: true })
             .then(response => {
                 console.log(response.status)
                 if (response.status === 200) {
